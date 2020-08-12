@@ -31,7 +31,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <button class="js-button text-button">Нужна помощь?</button>
+                        <button class="js-button">Нужна помощь?</button>
                     </div>
                     <div class="header__top__main-info">
                         <ul class="header__top__list">
@@ -207,7 +207,7 @@
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/banner-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
@@ -217,7 +217,519 @@
                     </ul>
                 </div>
             </section>
+            <section class="products-block">
+                <div class="products-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Бестселлеры</p>
+                        <p class="general-header-block__sub">Хороший текст о магазине или о его товарах</p>
+                    </div>
+                    <ul class="products-list">
+                        <li class="products-item products-item--parameters">
+                            <div class="products-item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <div class="products-item__container">
+                                <div class="products-item__main-info">
+                                    <p class="products-item__category">Категория</p>
+                                    <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                    <div class="product-item__price product-price">
+                                        <p class="product__old-price product__old-price--item">300грн</p>
+                                        <p class="product__price product__price--item">280грн</p>
+                                    </div>
+                                </div>
+                                <div class="products-item__parameters">
+                                    <ul class="product-category__color-list">
+                                        <li class="product-category__color-item" style="background-color: red"></li>
+                                        <li class="product-category__color-item" style="background-color: blue"></li>
+                                        <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="add-to-favorite">
+                                <span class="icon-add-favorite"></span>
+                            </button>
+                            <div class="product-noty product-noty--products-item">SALE</div>
+                        </li>
+                        <li class="products-item products-item--parameters">
+                            <div class="products-item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <div class="products-item__container">
+                                <div class="products-item__main-info">
+                                    <p class="products-item__category">Категория</p>
+                                    <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                    <div class="product-item__price product-price">
+                                        <p class="product__old-price product__old-price--item">300грн</p>
+                                        <p class="product__price product__price--item">280грн</p>
+                                    </div>
+                                </div>
+                                <div class="products-item__parameters">
+                                    <ul class="product-category__color-list">
+                                        <li class="product-category__color-item" style="background-color: red"></li>
+                                        <li class="product-category__color-item" style="background-color: blue"></li>
+                                        <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="add-to-favorite">
+                                <span class="icon-add-favorite"></span>
+                            </button>
+                            <div class="product-noty product-noty--products-item">SALE</div>
+                        </li>
+                        <li class="products-item">
+                            <div class="products-item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <div class="products-item__container">
+                                <div class="products-item__main-info">
+                                    <p class="products-item__category">Категория</p>
+                                    <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                    <div class="product-item__price product-price">
+                                        <p class="product__old-price product__old-price--item">300грн</p>
+                                        <p class="product__price product__price--item">280грн</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="add-to-favorite">
+                                <span class="icon-add-favorite"></span>
+                            </button>
+                            <div class="product-noty product-noty--products-item">SALE</div>
+                        </li>
+                        <li class="products-item">
+                            <div class="products-item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <div class="products-item__container">
+                                <div class="products-item__main-info">
+                                    <p class="products-item__category">Категория</p>
+                                    <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                    <div class="product-item__price product-price">
+                                        <p class="product__old-price product__old-price--item">300грн</p>
+                                        <p class="product__price product__price--item">280грн</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="add-to-favorite">
+                                <span class="icon-add-favorite"></span>
+                            </button>
+                            <div class="product-noty product-noty--products-item">SALE</div>
+                        </li>
+                    </ul>
+                    <div class="general-navigation">
+                        <button class="general-button-more-info general-button-more-info--navigation">
+                            <span class="text">смотреть еще</span>
+                        </button>
+                        <div class="general-pagination">
+                            <button class="arrow-button arrow-button--pagination disabled">
+                                <span class="icon-arrow-left"></span>
+                            </button>
+                            <ul class="pagination__list">
+                                <li class="pagination__item active">1</li>
+                                <li class="pagination__item">2</li>
+                                <li class="pagination__item">3</li>
+                                <li class="pagination__item pagination__item--dots">...</li>
+                                <li class="pagination__item">12</li>
+                            </ul>
+                            <button class="arrow-button arrow-button--pagination">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about-company">
+                <div class="about-company__wrapper container">
+                    <div class="about-company__info">
+                        <p class="about-company__caption main-caption-m">О компаниии</p>
+                        <div class="about-company__sub">Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности</div>
+                        <button class="general-button-more-info">
+                            <span class="text">подробнее</span>
+                        </button>
+                    </div>
+                    <div class="about-company__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                </div>
+            </section>
+            <section class="our-clients">
+                <div class="our-clients__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Наши клиенты</p>
+                        <p class="general-header-block__sub">Хороший текст о магазине или о его товарах</p>
+                    </div>
+                    <ul class="our-clients__list">
+                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="reviews-block">
+                <div class="reviews-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Отзывы покупателей о магазине</p>
+                        <p class="general-header-block__sub">Дополнительный текст</p>
+                    </div>
+                    <ul class="reviews__list">
+                        <li class="reviews__item js-item-more">
+                            <div class="reviews__item__container js-reviews-container">
+                                <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                <div class="reviews__item__header">
+                                    <ul class="star__list star__list-checked">
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item active">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                    </ul>
+                                    <p class="reviews__item__date">12.11.2010</p>
+                                </div>
+                                <div class="reviews__item__text">
+                                    <div class="content js-item-more-container">
+                                        <p class="js-item-more-text">Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__footer">
+                                    <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
+                                    <div class="wrapper">
+                                        <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                        <p class="reviews__name">Иван Кротов</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="reviews__item js-item-more">
+                            <div class="reviews__item__container js-reviews-container">
+                                <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                <div class="reviews__item__header">
+                                    <ul class="star__list star__list-checked">
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item active">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                    </ul>
+                                    <p class="reviews__item__date">12.11.2010</p>
+                                </div>
+                                <div class="reviews__item__text">
+                                    <div class="content js-item-more-container">
+                                        <p class="js-item-more-text">Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__footer">
+                                    <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
+                                    <div class="wrapper">
+                                        <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                        <p class="reviews__name">Иван Кротов</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="reviews__item js-item-more">
+                            <div class="reviews__item__container js-reviews-container">
+                                <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                <div class="reviews__item__header">
+                                    <ul class="star__list star__list-checked">
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item active">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                    </ul>
+                                    <p class="reviews__item__date">12.11.2010</p>
+                                </div>
+                                <div class="reviews__item__text">
+                                    <div class="content js-item-more-container">
+                                        <p class="js-item-more-text">Семинар понравился, лекции ведут профессионалы. Спасибо УкрКонсалтингу за проведенное мероприятие.  Семинар понравился, лекции ведут профессионалы. Семинар понравился, лекции ведут профессионалы.</p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__footer">
+                                    <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
+                                    <div class="wrapper">
+                                        <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                        <p class="reviews__name">Иван Кротов</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="reviews__item js-item-more">
+                            <div class="reviews__item__container js-reviews-container">
+                                <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                <div class="reviews__item__header">
+                                    <ul class="star__list star__list-checked">
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item active">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                        <li class="star__item">
+                                            <span class="icon-star"></span>
+                                        </li>
+                                    </ul>
+                                    <p class="reviews__item__date">12.11.2010</p>
+                                </div>
+                                <div class="reviews__item__text">
+                                    <div class="content js-item-more-container">
+                                        <p class="js-item-more-text">Семинар понравился, лекции ведут </p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__footer">
+                                    <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
+                                    <div class="wrapper">
+                                        <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                        <p class="reviews__name">Иван Кротов</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="general-navigation">
+                        <button class="general-button-more-info general-button-more-info--navigation">
+                            <span class="text">больше отзывов</span>
+                        </button>
+                        <div class="general-pagination">
+                            <button class="arrow-button arrow-button--pagination disabled">
+                                <span class="icon-arrow-left"></span>
+                            </button>
+                            <ul class="pagination__list">
+                                <li class="pagination__item active">1</li>
+                                <li class="pagination__item">2</li>
+                                <li class="pagination__item">3</li>
+                                <li class="pagination__item pagination__item--dots">...</li>
+                                <li class="pagination__item">12</li>
+                            </ul>
+                            <button class="arrow-button arrow-button--pagination">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="advantages">
+                <div class="advantages__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Преимущества магазина</p>
+                        <p class="general-header-block__sub">Дополнительный текст</p>
+                    </div>
+                    <ul class="advantages__list">
+                        <li class="advantages__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="advantages__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="advantages__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="blog-block">
+                <div class="blog-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Блог</p>
+                        <p class="general-header-block__sub">Дополнительный текст</p>
+                    </div>
+                    <ul class="blog__list">
+                        <li class="blog__item">
+                            <div class="blog__item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <p class="blog__item__category">Категория блога</p>
+                            <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
+                        </li>
+                        <li class="blog__item">
+                            <div class="blog__item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <p class="blog__item__category">Категория блога</p>
+                            <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
+                        </li>
+                        <li class="blog__item">
+                            <div class="blog__item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <p class="blog__item__category">Категория блога</p>
+                            <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
+                        </li>
+                        <li class="blog__item">
+                            <div class="blog__item__img">
+                                <img v-lazy="'/img/banner-img.png'" alt="title">
+                            </div>
+                            <p class="blog__item__category">Категория блога</p>
+                            <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="social-block">
+                <div class="social-block__wrapper container">
+                    <div class="general-header-block general-header-block--social">
+                        <p class="general-header-block__caption main-caption-m">Мы в социальных сетях</p>
+                        <p class="general-header-block__sub">Дополнительный текст</p>
+                    </div>
+                    <ul class="social__list">
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <span class="icon-fb"></span>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <span class="icon-inst"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="subscription">
+                <div class="subscription__wrapper container">
+                    <p class="main-caption-s subscription__caption">Призыв на подписку о рассылке</p>
+                    <form class="subscription__form">
+                        <label class="input_wrapper input_wrapper--subscription">
+                            <span class="input-caption">Email</span>
+                            <input type="email" class="main_input" placeholder="Email">
+                        </label>
+                        <div class="checkbox__container">
+                            <label class="checkbox__wrapper">
+                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                <span class="custome-check">
+                                    <span class="icon-active"></span>
+                                </span>
+                                <span class="text">Тема для рассылки</span>
+                            </label>
+                            <label class="checkbox__wrapper">
+                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                <span class="custome-check">
+                                    <span class="icon-active"></span>
+                                </span>
+                                <span class="text">Тема для рассылки</span>
+                            </label>
+                            <label class="checkbox__wrapper">
+                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                <span class="custome-check">
+                                    <span class="icon-active"></span>
+                                </span>
+                                <span class="text">Тема для рассылки</span>
+                            </label>
+                        </div>
+                        <button class="main-button main-button--subscription">
+                            <span class="text">отправить</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
         </main>
+        <footer class="footer">
+            <div class="footer__wrapper container">
+                <div class="footer__main-info">
+                    <div class="footer__content">
+                        <a href="/" class="footer__logo">
+                            <img v-lazy="'/img/logo.png'" alt="Logo">
+                        </a>
+                        <div class="footer__text">
+                            <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</p>
+                        </div>
+                    </div>
+                    <div class="footer__navigation">
+                        <div class="footer__navigation__item">
+                            <p class="footer__navigation__item__caption">Информация</p>
+                            <ul class="footer__navigation__item__list">
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст1</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст2</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст3</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__navigation__item">
+                            <p class="footer__navigation__item__caption">Клиентам</p>
+                            <ul class="footer__navigation__item__list">
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст1</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст2</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст3</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__navigation__item">
+                            <p class="footer__navigation__item__caption">Нужна помощь?</p>
+                            <ul class="footer__navigation__item__list">
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст1</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст2</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__down">
+                    <a href="#" class="footer__link">Политика конфиденциальности</a>
+                    <p class="footer__copyright">2020 LOGO</p>
+                    <a href="#" class="footer__link">Все права защищены</a>
+                </div>
+            </div>
+        </footer>
+        <section class="popup popup-more-reviews js-popup" data-target="more-review">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper js-popup-reviews"></div>
+        </section>
         <div class="overlay"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

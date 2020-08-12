@@ -23,6 +23,8 @@ const app = new Vue({
                 this.currentIndex = 0;
         }
     },
+    components: {
+    },
     mounted() {
         this.category = [
             {

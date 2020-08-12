@@ -35,6 +35,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-active:before {
+  content: "\e90a";
+}
+.icon-close:before {
+  content: "\e909";
+}
+.icon-fb:before {
+  content: "\e906";
+}
+.icon-inst:before {
+  content: "\e908";
+}
+.icon-star:before {
+  content: "\e905";
+}
+.icon-add-favorite:before {
+  content: "\e907";
+}
 .icon-arrow-left:before {
   content: "\e900";
 }
@@ -178,6 +196,7 @@ main {
     padding: 0px 75px;
     margin: 0px auto;
 }
+@general-color: #333333;
 
 .general-drop-wrapper {
     display: flex;
@@ -224,7 +243,7 @@ main {
     background-color: #ffffff;
     box-shadow: 0px 4px 15px rgba(196, 196, 196, 0.35);
     border-radius: 2px;
-    color: #333333;
+    color: @general-color;
     z-index: 4;
     transition: visibility 0s .4s, opacity .4s;
 }
@@ -275,7 +294,7 @@ main {
     line-height: 12px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #333333;
+    color: @general-color;
     transition: color .4s, background-color .4s;
     
     .icon-drop-arrow {
@@ -333,7 +352,7 @@ main {
 .main_input {
     font-size: 12px;
     line-height: 14px;
-    color: #333333;
+    color: @general-color;
     width: 100%;
     height: 45px;
     background: transparent;
@@ -356,6 +375,21 @@ main {
     }
 }
 
+.text-button {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: @general-color;
+    transition: color .4s;
+    
+    &.disabled {
+        color: #BDBDBD;
+        pointer-events: none;
+    }
+}
+
 .main-button {
     display: flex;
     justify-content: center;
@@ -367,7 +401,7 @@ main {
     text-transform: uppercase;
     color: #FFFFFF;
     padding: 0px 30px;
-    max-width: 150px;
+    max-width: 250px;
     height: 45px;
     background: #2F80ED;
     border-radius: 2px;
@@ -382,7 +416,7 @@ main {
 .input-caption {
     font-size: 12px;
     line-height: 14px;
-    color: #333333;
+    color: @general-color;
     margin-bottom: 10px;
 }
 
@@ -390,11 +424,221 @@ main {
     font-weight: 500;
     font-size: 32px;
     line-height: 39px;
-    color: #333333;
+    color: @general-color;
+}
+
+.main-caption-m {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    color: @general-color;
+}
+
+.main-caption-s {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: @general-color;
 }
 
 .arrow-button {
     transition: color .4s;
+    
+    &.disabled {
+        color: #E0E0E0;
+        pointer-events: none;
+    }
+}
+
+.general-button-more-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    max-width: 250px;
+    height: 45px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: @general-color;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    transition: color .4s, border-color .4s;
+    
+    &.disabled {
+        color: #BDBDBD;
+        border-color: #EEEEEE;
+        pointer-events: none;
+    }
+}
+
+/* General navigation */
+
+.general-navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+
+.general-button-more-info--navigation {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pagination__list {
+    display: flex;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+.pagination__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: @general-color;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: color .4s, background-color .4s;
+    
+    &:last-child {
+        margin-right: 0px;
+    }
+    
+    &.active {
+        color: #2F80ED;
+        background: rgba(47, 128, 237, 0.05);
+    }
+}
+
+.pagination__item--dots {
+    pointer-events: none;
+}
+
+.arrow-button--pagination {
+    font-size: 12px;
+}
+
+.general-pagination {
+    display: flex;
+    align-items: center;
+}
+/* //General navigation */
+
+/* General header block */
+
+.general-header-block {
+    margin-bottom: 30px;
+}
+
+.general-header-block__caption {
+    margin-bottom: 20px;
+}
+
+.general-header-block__sub {
+    font-size: 14px;
+    line-height: 16px;
+    color: #4F4F4F;
+}
+
+/* //General header block */
+
+/* Stars */
+
+
+.star__list {
+    display: flex;
+    color: rgba(242, 153, 74, 0.35);
+}
+
+.star__list-checked {
+    color: #F2994A;
+}
+
+.star__item {
+    padding-right: 5px;
+    
+    &:last-child {
+        padding-right: 0px;
+    }
+    
+    &.active {
+        ~ .star__item {
+            color: rgba(242, 153, 74, 0.35);
+        }
+    }
+}
+
+/* //Stars */
+
+/* Checkbox */
+
+.checkbox__wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 14px;
+    color: @general-color;
+    cursor: pointer;
+    position: relative;
+    margin-right: 30px;
+    
+    &:last-child {
+        margin-right: 0px;
+    }
+}
+
+.input-checkbox {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    opacity: 0;
+        
+    &:checked {
+        + .custome-check {
+            .icon-active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.custome-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 1px;
+    flex-shrink: 0;
+    transition: border-color .4s, background-color .4s;
+    position: relative;
+    
+    .icon-active {
+        content: "";
+        font-size: 8px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        color: #2F80ED;
+        transition: opacity .4s;
+        color: #0009F7;
+    }
 }
 
 @media screen and (min-width: 1201px ) {
@@ -426,6 +670,12 @@ main {
         }
     }
     
+    .text-button {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+    
     .general-batton-more {
         &:hover {
             color: #2F80ED;
@@ -434,6 +684,19 @@ main {
     }
     
     .arrow-button {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+    
+    .general-button-more-info {
+        &:hover {
+            border-color: #2F80ED;
+            color: #2F80ED;
+        }
+    }
+    
+    .pagination__item {
         &:hover {
             color: #2F80ED;
         }

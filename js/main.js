@@ -54,53 +54,84 @@ document.addEventListener("DOMContentLoaded", function(){
     
     // Popup
         
-    let mainButton = document.querySelectorAll('.js-button');
     let overlay = document.querySelector('.overlay');
     let htmlOverflow = document.querySelector('html');
-    
-    for(var i = 0; mainButton.length > i; i++) {
-        if(mainButton[i] !== null) {
-            
-            mainButton[i].addEventListener('click', function(){
-                let getData = this.getAttribute('data-target');
-                let popupActive = document.querySelector('.popup.active');
-                let popup = document.querySelector('.popup[data-target = ' + getData + ']');
-                popup.classList.add('active');
-                overlay.classList.add('active');
-                htmlOverflow.classList.add('overflow');
-                
-                if(popupActive) {
-                    popupActive.classList.remove('active');
-                }
-            });
-        }
-    }
     
     document.addEventListener('click', function(e){
         let elem = e.target;
         
-        if(elem.closest('.js-close')){
-            let popupActive = document.querySelector('.popup.active');
-            if(!popupActive.classList.contains("js-gallery")) {
+        if(elem.closest('.js-button')) {
+            let getData = elem.closest('.js-button').getAttribute('data-target');
+            let popupActive = document.querySelector('.js-popup.active');
+            let popup = document.querySelector('.js-popup[data-target = ' + getData + ']');
+            popup.classList.add('active');
+            overlay.classList.add('active');
+            htmlOverflow.classList.add('overflow');
+            
+            if(popupActive) {
                 popupActive.classList.remove('active');
-                overlay.classList.remove('active');
-                htmlOverflow.classList.remove('overflow');
-            }else {
-                popupActive.classList.remove('active');
-                overlay.classList.remove('active');
-                setTimeout(function(){
-                    htmlOverflow.classList.remove('overflow');
-                },600);
             }
+        }
+        
+        if(elem.closest('.js-close')){
+            let popupActive = document.querySelector('.js-popup.active');
+            if(popupActive.classList.contains('popup-more-reviews')) {
+                let reviewPopupInfo = document.querySelector('.js-popup-reviews .js-reviews-container');
+                reviewPopupInfo.remove();
+            }
+            popupActive.classList.remove('active');
+            overlay.classList.remove('active');
+            htmlOverflow.classList.remove('overflow');
         }
     });
 
     overlay.addEventListener('click', function(){
-        let popupActive = document.querySelector('.popup.active');
+        let popupActive = document.querySelector('.js-popup.active');
+        if(popupActive.classList.contains('popup-more-reviews')) {
+            let reviewPopupInfo = document.querySelector('.js-popup-reviews .js-reviews-container');
+            reviewPopupInfo.remove();
+        }
         popupActive.classList.remove('active');
         overlay.classList.remove('active');
         htmlOverflow.classList.remove('overflow');
     });
     
     // Popup
+    
+    // More info
+        
+      function showMoreInfo() {
+            
+        let info = document.querySelectorAll('.js-item-more .js-item-more-text');
+        let content = document.querySelectorAll('.js-item-more .js-item-more-container');
+        let moreButton = document.querySelectorAll('.js-item-more .js-more-info');
+        
+        if(info) {
+            for(var i = 0; info.length > i; i++) {
+                if(info[i].offsetHeight > content[i].offsetHeight) {
+                    moreButton[i].classList.add('show');
+                }else {
+                    moreButton[i].classList.remove('show');
+                }
+            }
+        }
+    }
+        
+    showMoreInfo();
+    
+    window.addEventListener('resize', function(){
+        showMoreInfo();
+    });
+    
+    document.addEventListener('click', function(event) {
+        let elem = event.target;
+        
+        if(elem.closest('.js-more-info')) {
+            let fullInfo = elem.closest('.js-reviews-container').cloneNode(true);
+            let reviewPopupWrapper = document.querySelector('.js-popup-reviews');
+            reviewPopupWrapper.append(fullInfo);
+        }
+    });
+    
+    // /More info
 });
