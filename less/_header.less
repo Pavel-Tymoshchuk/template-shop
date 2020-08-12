@@ -1,0 +1,200 @@
+/* Header */
+
+.header__top {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background: #333333;
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.header__top__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.header__contact-info {
+    display: flex;
+    height: 100%;
+}
+
+.header__contact-info__phones {
+    margin-right: 20px;
+    
+    .general-drop-content__wrapper {
+        right: auto;
+        left: 50%;
+    }
+}
+
+.header-drop {
+    height: 100%;
+    cursor: pointer;
+    
+    .general-drop-content__wrapper {
+        top: calc(100% - 5px);
+    }
+}
+
+.header__top__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header__top__item {
+    margin-right: 30px;
+}
+
+.header__top__main-info {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.change-lang__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    position: relative;
+    background: #4F4F4F;
+    border-radius: 20px;
+    width: 50px;
+    height: 24px;
+    z-index: 1;
+    font-size: 10px;
+    line-height: 12px;
+    cursor: pointer;
+    
+    .hidden-input {
+        &:checked {
+            + .change-lang-decor-elem {
+                left: calc(100% - 21px);
+            }
+        }
+    }
+}
+
+.change-lang-decor-elem {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2F80ED;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: left .4s;
+}
+
+.header__main__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 0px;
+    
+    &.active {
+        .header-category-wrapper {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0s 0s, opacity .4s;
+         }
+    }
+}
+
+.header-logo {
+    max-width: 70px;
+    max-height: 29px;
+    margin-right: 32px;
+}
+
+.general-batton-more--header {
+    padding: 0px 20px;
+}
+
+.header-search {
+    margin: 0px 30px;
+    width: 57.4%;
+}
+
+.header-info-block {
+    background: #2F80ED;
+    padding: 6px 0px;
+    color: #FFFFFF;
+}
+
+.header-info-block__wrapper {
+    text-align: center;
+}
+
+.header-category-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: calc(100% - 10px);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(196, 196, 196, 0.35);
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 17px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 4;
+    transition: visibility 0s .4s, opacity .4s;
+}
+
+.header-category__buttons {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #000000;
+    background: #F6F6F6;
+    width: calc(25% - 15px);
+    padding: 30px 0px 20px;
+}
+
+.header-category__button {
+    text-align: left;
+    padding: 10px 0px 10px 50px;
+    transition: background-color .4s, color .4s;
+    
+    &.active {
+        color: #2F80ED;
+        background-color: rgba(47, 128, 237, 0.15);
+    }
+}
+
+.header-category__content {
+    width: calc(75% - 15px);
+    padding: 40px 0px 30px;
+}
+
+.header-category__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+}
+
+.header-category__item {
+    width: calc(25% - 10px);
+}
+
+@media screen and (min-width: 1201px) {
+    /* Header hover */
+    
+    .header-category__button {
+        &:hover {
+            color: #2F80ED;
+            background-color: rgba(47, 128, 237, 0.15);
+        }
+    }
+}

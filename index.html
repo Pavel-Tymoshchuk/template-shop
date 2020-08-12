@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template-shop</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header__top">
+                <div class="header__top__wrapper container">
+                    <div class="header__contact-info">
+                        <div class="header__contact-info__phones header-drop general-drop-wrapper js-drop-item">
+                            <button class="general-drop-wrapper__button js-drop-button">
+                                <span class="text">+38 (097) 234 54 65</span>
+                                <span class="icon-drop-arrow"></span>
+                            </button>
+                            <div class="general-drop-content__wrapper">
+                                <ul class="general-drop__list">
+                                    <li class="general-drop__item">
+                                        <a href="tel: +38 (097) 234 54 65" class="general-drop__link">+38 (097) 234 54 65</a>
+                                    </li>
+                                    <li class="general-drop__item">
+                                        <a href="tel: +38 (097) 234 54 65" class="general-drop__link">+38 (097) 234 54 65</a>
+                                    </li>
+                                    <li class="general-drop__item">
+                                        <a href="" class="general-drop__link">Перезвоните мне</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="js-button text-button">Нужна помощь?</button>
+                    </div>
+                    <div class="header__top__main-info">
+                        <ul class="header__top__list">
+                            <li class="header__top__item general-drop-wrapper header-drop js-drop-item">
+                                <button class="general-drop-wrapper__button js-drop-button">
+                                    <span class="text">Инфо</span>
+                                    <span class="icon-drop-arrow"></span>
+                                </button>
+                                <div class="general-drop-content__wrapper">
+                                    <ul class="general-drop__list">
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Доставка и оплата</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Возврат и обмен</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Контакты</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">FAQ</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Условия использования сайта</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header__top__item general-drop-wrapper header-drop js-drop-item">
+                                <button class="general-drop-wrapper__button js-drop-button">
+                                    <span class="text">Магазины</span>
+                                    <span class="icon-drop-arrow"></span>
+                                </button>
+                                <div class="general-drop-content__wrapper">
+                                    <ul class="general-drop__list">
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Доставка и оплата</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Возврат и обмен</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="#" class="general-drop__link">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header__top__item">
+                                <a href="#" class="header__top__link">О компании</a>
+                            </li>
+                            <li class="header__top__item">
+                                <a href="#" class="header__top__link">Блог</a>
+                            </li>
+                        </ul>
+                        <div class="change-lang">
+                            <label class="change-lang__wrapper">
+                                <input type="checkbox" class='hidden-input'>
+                                <span class="change-lang-decor-elem"></span>
+                                <span class="change-lang__item">Ru</span>
+                                <span class="change-lang__item">En</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__main">
+                <div class="container">
+                    <div class="header__main__wrapper js-drop-item">
+                        <a href="/" class="header-logo">
+                            <img v-lazy="'/img/logo.png'" alt="Logo">
+                        </a>
+                        <button class="general-batton-more general-batton-more--header js-drop-button">
+                            <span class="text">категории товаров</span>
+                            <span class="icon-drop-arrow"></span>
+                        </button>
+                        <div class="header-category-wrapper" v-if="category">
+                            <div class="header-category__buttons">
+                                <button type="button" class="header-category__button" :class="{active: filterHeaderCategory == index}" v-for="(item, index) in category" @click="filterHeaderCategory = index">{{item.name}}</button>
+                            </div>
+                            <div class="header-category__content">
+                                <ul class="header-category__list">
+                                    <li class="header-category__item" v-for="item in category[filterHeaderCategory].info">
+                                        <a :href="item.slug" class="header-category__link">{{item.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header-search">
+                            <label class="input_wrapper">
+                                <input type="text" class="main_input" placeholder="Поиск">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-info-block">
+                <div class="header-info-block__wrapper container">
+                    <p>Подпишись и получи -15% на категорию</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="main-banner">
+                <ul class="main-banner__list js-list">
+                    <li class="main-banner__item" :class="{show: currentIndex == index}" v-for="(item,index) in banner">
+                        <div class="main-banner__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="main-banner__info container">
+                            <div class="main-banner__info-wrapper">
+                                <p class="main-banner__info__type">{{item.type}}</p>
+                                <p class="main-caption-l main-banner__info__caption">{{item.caption}}</p>
+                                <p class="main-banner__info__sub">{{item.sub}}</p>
+                                <a href="#" class="main-button main-button--banners">
+                                    <span class="text">в каталог</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <button class="main-banner__arrow-button main-banner__arrow-button--left arrow-button" @click="prevSlide">
+                    <span class="icon-arrow-left"></span>
+                </button>
+                <button class="main-banner__arrow-button main-banner__arrow-button--right arrow-button" @click="nextSlide">
+                    <span class="icon-arrow-right"></span>
+                </button>
+                <div class="main-banner__dots">
+                    <ul class="main-banner__dots__list">
+                        <li class="main-banner__dots__item" v-for="(item,index) in banner" :class="{active: currentIndex == index}"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="popular-category">
+                <div class="popular-category__wrapper container">
+                    <ul class="popular-category__list">
+                        <li class="popular-category__item popular-category__item--big" v-lazy:background-image="'/img/popular-category-img.png'">
+                            <p class="popular-category__caption">Расспродажа</p>
+                            <p class="popular-category__sub">действует до 5 сентября</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                            <p class="popular-category__caption">Популярная категория</p>
+                            <p class="popular-category__sub">Дополнительное описание</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                            <p class="popular-category__caption">Популярная категория</p>
+                            <p class="popular-category__sub">Дополнительное описание</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                            <p class="popular-category__caption">Популярная категория</p>
+                            <p class="popular-category__sub">Дополнительное описание</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                            <p class="popular-category__caption">Популярная категория</p>
+                            <p class="popular-category__sub">Дополнительное описание</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                            <p class="popular-category__caption">Популярная категория</p>
+                            <p class="popular-category__sub">Дополнительное описание</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                        <li class="popular-category__item" v-lazy:background-image="'/img/banner-img.png'">
+                            <p class="popular-category__caption">Популярная категория</p>
+                            <p class="popular-category__sub">Дополнительное описание</p>
+                            <a href="#" class="general-batton-more">
+                                <span class="text">в каталог</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <div class="overlay"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
