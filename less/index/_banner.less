@@ -124,6 +124,7 @@
     left: calc((100vw - 1290px) / 2);
     top: 50%;
     z-index: 2;
+    transform: translateY(-50%);
 }
 
 .main-banner__arrow-button--right {
@@ -158,6 +159,27 @@
     
     &.active {
         background-color: #333333;
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .main-banner__arrow-button {
+        left: 20px;
+    }
+    
+    .main-banner__arrow-button--right {
+        left: auto;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-banner__arrow-button {
+        display: none;
+    }
+    
+    .main-banner__info-wrapper {
+        margin-left: 50px;
     }
 }
 

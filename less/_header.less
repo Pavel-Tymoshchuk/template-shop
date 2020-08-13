@@ -110,18 +110,92 @@
 }
 
 .header-logo {
-    max-width: 70px;
-    max-height: 29px;
+    width: 70px;
+    height: 29px;
     margin-right: 32px;
+    flex-shrink: 0;
 }
 
 .general-batton-more--header {
-    padding: 0px 20px;
+    padding: 0px 15px;
+    max-width: 196px;
+    width: 100%;
 }
 
 .header-search {
-    margin: 0px 30px;
+    margin: 0px 50px 0px 30px;
     width: 57.4%;
+    position: relative;
+    
+    .icon-search {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        font-size: 18px;
+        pointer-events: none;
+        transform: translateY(-50%);
+    }
+}
+
+.header__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header__buttons__item {
+    margin-right: 30px;
+    font-size: 17px;
+    color: #333333;
+    transition: color .4s;
+    position: relative;
+    
+    &.active {
+        .noty {
+            opacity: 1;
+        }
+    }
+    
+    &:last-child {
+        margin-right: 0px;
+    }
+    
+    .noty {
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        background-color: #2F80ED;
+        opacity: 0;
+        transition: opacity .4s;
+    }
+}
+
+.header__buttons__item--comparison {
+    color: #828282;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility 0s .4s;
+    
+    .noty-comparison {
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        font-size: 6px;
+        line-height: 6px;
+        font-weight: 700;
+    }
+    
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .4s, visibility 0s 0s;
+    }
+    
+    &.more {
+        color: #2F80ED;
+    }
 }
 
 .header-info-block {
@@ -188,13 +262,44 @@
     width: calc(25% - 10px);
 }
 
+/* Header hover */
+
 @media screen and (min-width: 1201px) {
-    /* Header hover */
-    
     .header-category__button {
         &:hover {
             color: #2F80ED;
-            background-color: rgba(47, 128, 237, 0.15);
         }
+    }
+    
+    .header__buttons__item {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+}
+
+/* //Header hover */
+
+/* header media */
+
+@media screen and (max-width: 1024px) {
+    .header-search {
+        margin: 0px 20px;
+        
+        .main_input {
+            padding: 0px 16px;
+        }
+        
+        .icon-search {
+            right: 16px;
+        }
+    }
+    
+    .header-logo {
+        margin-right: 20px;
+    }
+    
+    .header__buttons__item {
+        margin-right: 20px;
     }
 }

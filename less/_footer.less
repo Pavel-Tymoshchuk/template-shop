@@ -74,4 +74,27 @@
     color: #4F4F4F;
 }
 
+@media screen and (max-width: 1024px) {
+    .footer {
+        margin-top: 80px;
+    }
+    
+    .footer__content {
+        width: calc(45% - 25px);
+    }
+    
+    .footer__navigation {
+        width: calc(55% - 25px);
+        margin-right: 0px;
+    }
+    
+    .footer__navigation__item {
+        margin-right: 50px;
+        
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
 /* /Footer */
