@@ -1,0 +1,191 @@
+/* Catalog mobile */
+
+.catalog-mobile__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+    
+    .hidden-elem {
+        opacity: 0;
+        width: 14px;
+    }
+}
+
+.catalog-mobile__header__button {
+    font-size: 14px;
+}
+
+.catalog-mobile__buttons {
+    display: flex;
+    align-items: center;
+    
+    .general-drop-content__wrapper {
+        top: calc(100% + 40px);
+    }
+}
+
+.general-batton-more--catalog-mobile {
+    width: 100%;
+    color: #2F80ED;
+}
+
+.text-button--catalog-mobile {
+    display: flex;
+    margin: 20px 0px 0px auto;
+}
+
+.catalog__caption {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/* Popup filtration */
+
+@media screen and (max-width: 767px) {
+    
+    .catalog__wrapper__fixed {
+        height: 144px;
+        position: relative;
+    }
+    
+    .catalog-mobile__container {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        background-color: #ffffff;
+        padding-bottom: 10px;
+        z-index: 3;
+        visibility: visible;
+        transition: opacity .6s, transform .6s, visibility 0s 0s;
+        
+        &.hide {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-120%);
+            transition: opacity .6s, transform .6s, visibility 0s .6s;
+        }
+    }
+    
+    .popup-filtration {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    .popup__wrapper--filtration {
+        padding: 30px 16px 20px;
+        max-height: calc(100% - 100px);
+    }
+
+    .popup-filtration__caption {
+        margin-bottom: 35px;
+    }
+
+    .catalog__filtration__list {
+        margin: 0px 0px -20px 0px;
+    }
+    
+    .catalog__filtration__item {
+        margin-right: 0px;
+        margin-bottom: 20px;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EEEEEE;
+        
+        &.active {
+            .filtration__drop {
+                display: block;
+                animation: opacity-filter .6s;
+            }
+            
+            .catalog-mobile-filter-button {
+                color: #2F80ED;
+            }
+            
+            .icon-drop-arrow {
+                transform: rotate(180deg);
+                color: #2F80ED;
+            }
+        }
+    }
+
+    .catalog-mobile-filter-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        
+        .text {
+            margin-right: 15px;
+        }
+        
+        .icon-drop-arrow {
+            font-size: 4px;
+            // color: #2F80ED;
+            transition: transform .4s;
+        }
+    }
+    
+    .filtration__drop {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        padding: 0px;
+        width: 100%;
+        border: none;
+        display: none;
+        margin-top: 20px;
+    }
+    
+    .popup-filtration__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 16px;
+        bottom: 20px;
+        width: calc(100% - 32px);
+        
+        .text-button {
+            margin-top: 20px;
+        }
+    }
+    
+    .general-batton-more-transition {
+        margin-bottom: 10px;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .catalog-sub-category__item {
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333333;
+        margin-bottom: 30px;
+    }
+    
+    .catalog-sub-category__item--main {
+        font-weight: 500;
+    }
+}
+
+@keyframes opacity-filter {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}

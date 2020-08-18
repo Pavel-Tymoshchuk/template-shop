@@ -183,4 +183,35 @@
     }
 }
 
+@media screen and (max-width: 576px) {
+    .main-banner__list {
+        height: 200px;
+    }
+    
+    .main-banner__info-wrapper {
+        margin-left: 0px;
+    }
+    
+    .main-banner__info__sub {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    
+    .main-banner {
+        + .popular-category {
+            margin-top: 85px;
+        }
+    }
+    
+    .main-button--banners {
+        position: absolute;
+        left: 0px;
+        top: calc(100% + 20px);
+        margin-top: 0px;
+        max-width: 100%;
+        width: 100%;
+        transform: translateX(-200px);
+    }
+}
+
 /* //Banner */

@@ -173,6 +173,28 @@ document.addEventListener("DOMContentLoaded", function(){
     
     // /Main slider
     
+    // Cookie 
+    
+    // setTimeout(() => {
+    //     document.querySelector('.js-cookie').classList.add('active');
+    // },2500);
+    
+    // //Cookie
+    
+    // Show reviews photo
+    
+    document.addEventListener('click', function(e){
+        let item = e.target;
+        
+        if(item.closest('.js-reviews-photo')) {
+            let reviewsWrapper = document.querySelector('.js-popup-reviews-photo');
+            let imgSrc = item.closest('.js-reviews-photo').getAttribute('style');
+            reviewsWrapper.setAttribute('style', imgSrc);
+        }
+    });
+    
+    // Show reviews photo
+    
     // Mask tel
     
     [].forEach.call( document.querySelectorAll('input[type="tel"]'), function(input) {

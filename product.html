@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template-shop</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div v-if="windowWidth > 767">
+                <div class="header__top">
+                    <div class="header__top__wrapper container">
+                        <div class="header__contact-info">
+                            <div class="header__contact-info__phones header-drop general-drop-wrapper js-drop-item">
+                                <button class="general-drop-wrapper__button js-drop-button">
+                                    <span class="text">+38 (097) 234 54 65</span>
+                                    <span class="icon-drop-arrow"></span>
+                                </button>
+                                <div class="general-drop-content__wrapper">
+                                    <ul class="general-drop__list">
+                                        <li class="general-drop__item">
+                                            <a href="tel: +38 (097) 234 54 65" class="general-drop__link">+38 (097) 234 54 65</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <a href="tel: +38 (097) 234 54 65" class="general-drop__link">+38 (097) 234 54 65</a>
+                                        </li>
+                                        <li class="general-drop__item">
+                                            <button class="general-drop__link js-button" data-target="help">Перезвоните мне</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="js-button" data-target="help">Нужна помощь?</button>
+                        </div>
+                        <div class="header__top__main-info">
+                            <ul class="header__top__list">
+                                <li class="header__top__item general-drop-wrapper header-drop js-drop-item">
+                                    <button class="general-drop-wrapper__button js-drop-button">
+                                        <span class="text">Инфо</span>
+                                        <span class="icon-drop-arrow"></span>
+                                    </button>
+                                    <div class="general-drop-content__wrapper">
+                                        <ul class="general-drop__list">
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Доставка и оплата</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Возврат и обмен</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Контакты</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">FAQ</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Условия использования сайта</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Промокоды на сентябрь 2020</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header__top__item general-drop-wrapper header-drop js-drop-item">
+                                    <button class="general-drop-wrapper__button js-drop-button">
+                                        <span class="text">Магазины</span>
+                                        <span class="icon-drop-arrow"></span>
+                                    </button>
+                                    <div class="general-drop-content__wrapper">
+                                        <ul class="general-drop__list">
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Доставка и оплата</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Возврат и обмен</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Контакты</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header__top__item">
+                                    <a href="#" class="header__top__link">О компании</a>
+                                </li>
+                                <li class="header__top__item">
+                                    <a href="#" class="header__top__link">Блог</a>
+                                </li>
+                            </ul>
+                            <div class="change-lang">
+                                <label class="change-lang__wrapper">
+                                    <input type="checkbox" class='hidden-input'>
+                                    <span class="change-lang-decor-elem"></span>
+                                    <span class="change-lang__item">Ru</span>
+                                    <span class="change-lang__item">En</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__main">
+                    <div class="container">
+                        <div class="header__main__wrapper js-drop-item">
+                            <a href="/" class="header-logo">
+                                <img v-lazy="'/img/logo.png'" alt="Logo">
+                            </a>
+                            <button class="general-batton-more general-batton-more--header js-drop-button">
+                                <span class="text">категории товаров</span>
+                                <span class="icon-drop-arrow"></span>
+                            </button>
+                            <div class="header-category-wrapper" v-if="category">
+                                <div class="header-category__buttons">
+                                    <button type="button" class="header-category__button" :class="{active: filterHeaderCategory == index}" v-for="(item, index) in category" @click="filterHeaderCategory = index">{{item.name}}</button>
+                                </div>
+                                <div class="header-category__content">
+                                    <ul class="header-category__list">
+                                        <li class="header-category__item" v-for="item in category[filterHeaderCategory].info">
+                                            <a :href="item.slug" class="header-category__link">{{item.name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header-search" :class="{active: searchInput}">
+                                <label class="input_wrapper">
+                                    <input type="text" class="main_input" placeholder="Поиск" v-model="searchInput">
+                                </label>
+                                <button class="clear-search-input" v-if="searchInput" @click="searchInput = ''">
+                                    <span class="icon-close"></span>
+                                </button>
+                                <span class="icon-search input-search-icon" v-else></span>
+                                <div class="header-search__live">
+                                    <div class="header-search__live__wrapper">
+                                         <ul class="header-search__live__list">
+                                            <li class="header-search__live__item">
+                                                <a href="#" class="header-search__live__link">Распродажа / Lenovo</a>
+                                            </li>
+                                            <li class="header-search__live__item">
+                                                <a href="#" class="header-search__live__link">Новинки/Компьютеры / Lenovo</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-search__live__wrapper">
+                                        <p class="header-search__live__caption">Категории</p>
+                                        <ul class="header-search__live__list">
+                                            <li class="header-search__live__item">
+                                                <a href="#" class="header-search__live__link"><span>Расп</span>родажа / Lenovo</a>
+                                            </li>
+                                            <li class="header-search__live__item">
+                                                <a href="#" class="header-search__live__link">Новинки/Компьютеры / Lenovo</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header__buttons">
+                                <!-- active когда только один єлемент в сравнении. По клику сообщение, что нужно еще добавить элементы. -->
+                                <!-- more когда больше одного -->
+                                <a href="#" class="header__buttons__item header__buttons__item--comparison active">
+                                    <span class="icon-comparison"></span>
+                                    <span class="noty-comparison">1</span>
+                                </a>
+                                <button class="header__buttons__item js-button" data-target="push-noty">
+                                    <span class="icon-noty"></span>
+                                </button>
+                                <div class="general-drop-wrapper js-drop-item">
+                                    <button class="header__buttons__item js-drop-button">
+                                        <!-- <span class="icon-profile"></span> -->
+                                        <span class="header__buttons__item__profile-img" v-lazy:background-image="'./img/reviews-photo.png'"></span>
+                                    </button>
+                                    <div class="general-drop-content__wrapper">
+                                        <ul class="general-drop__list">
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Мои заказы</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Мои возвраты</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Мой профиль</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Мои отзывы</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Избранное</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Просмотренное</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Мои промокоды</a>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <a href="#" class="general-drop__link">Настройки о рассылке</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="#" class="header__buttons__item active">
+                                    <span class="icon-cart"></span>
+                                    <span class="noty"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-mobile js-header-wrapper" v-else>
+                <div class="header-mobile__wrapper js-header-container">
+                    <div class="container">
+                        <div class="header-mobile__top">
+                            <button class="header-mobile__burger-button js-button" data-target="burger">
+                                <span class="decor"></span>
+                            </button>
+                            <a href="/" class="header-logo">
+                                <img v-lazy="'/img/logo.png'" alt="Logo">
+                            </a>
+                            <a href="#" class="header__buttons__item active">
+                                <span class="icon-cart"></span>
+                                <span class="noty"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="header__burger-wrapper js-popup" data-target="burger" v-if="windowWidth < 768">
+            <div class="header__burger-top">
+                <div class="change-lang">
+                    <label class="change-lang__wrapper">
+                        <input type="checkbox" class='hidden-input'>
+                        <span class="change-lang-decor-elem"></span>
+                        <span class="change-lang__item">Ru</span>
+                        <span class="change-lang__item">En</span>
+                    </label>
+                </div>
+                <button class="close__popup close__popup--header js-close">
+                    <span class="icon-close"></span>
+                </button>
+            </div>
+            <button class="header__burger-search">
+                <span class="text">Поиск</span>
+                <span class="icon-search input-search-icon"></span>
+            </button>
+            <div class="header__burger-catalog">
+                <button class="header__burger-catalog__button">
+                    <span class="text">Каталог</span>
+                    <span class="icon-drop-arrow"></span>
+                </button>
+            </div>
+            <div class="header__burger-items__wrapper">
+                <div class="header__burger-item">
+                    <ul class="header__burger-item__list">
+                        <li class="header__burger-item__item">
+                            <a href="#">Доставка и оплата</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Возврат и обмен</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Сравнение <span>(1)</span></a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Контакты</a>
+                        </li>
+                        <li class="header__burger-item__item active">
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Условия использования сайта</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">О компании</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Блог</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Промокоды на сентябрь 2020</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__burger-item">
+                    <ul class="header__burger-item__list">
+                        <li class="header__burger-item__item">
+                            <a href="#">Мой заказы</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Мои возвраты</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Мой профиль</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Мои отзывы</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Избранное</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Просмотренное</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Мои промокоды</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">Настройки о рассылке</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__burger-item">
+                    <p class="header__burger-item__caption">Нужна помощь?</p>
+                    <ul class="header__burger-item__list">
+                        <li class="header__burger-item__item">
+                            <a href="#">+38 (097) 234 54 65</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <a href="#">+38 (097) 234 54 65</a>
+                        </li>
+                        <li class="header__burger-item__item">
+                            <button class="js-button" data-target="help">Перезвоните мне</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__burger-item">
+                    <p class="header__burger-item__caption">Магазины</p>
+                    <ul class="header__burger-item__list">
+                        <li class="header__burger-item__item">
+                            <a href="#">г. Харьков, ул. Пушкинская, 45 </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="push-notifications">
+            <ul class="push_notification__list">
+                <!-- <li class="noty_theme__push_notification__item">
+                    <p>Добавьте в список сравнения еще товары</p>
+                    <span class="icon-close"></span>
+                </li> -->
+                <!-- <li class="noty_theme__push_notification__item noty_type__offers">
+                    <div class="push-notifications__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                    <div class="push-notifications__info">
+                        <p class="push-notifications__caption">Зима близко! ⛄️</p>
+                        <p class="push-notifications__text"> <span class="sale">-70%</span> на теплые вещи </p>
+                        <a href="#" class="main-button main-button--small">
+                            <span class="text">в каталог</span>
+                        </a>
+                    </div>
+                    <span class="icon-close"></span>
+                </li> -->
+            </ul>
+        </section>
+        <section class="main-push-notification js-popup" data-target="push-noty">
+            <button class="main-push-notification__clear">Отметить все как прочитанные</button>
+            <div class="main-push-notification__wrapper">
+                <p class="main-push-notification__caption">Новое</p>
+                <ul class="main-push-notification__list">
+                    <li class="main-push-notification__item">
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="push-notifications__info">
+                            <div class="push-notifications__info__header">
+                                <p class="push-notifications__caption">Зима близко! ⛄️</p>
+                                <p class="push-notifications__date">12.12.2020</p>
+                            </div>
+                            <p class="push-notifications__text"> <span class="sale">-70%</span> на теплые вещи </p>
+                            <a href="#" class="push-notifications__button">
+                                <span class="text">В каталог</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="main-push-notification__item">
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="push-notifications__info">
+                            <div class="push-notifications__info__header">
+                                <p class="push-notifications__caption">Зима близко! ⛄️</p>
+                                <p class="push-notifications__date">12.12.2020</p>
+                            </div>
+                            <p class="push-notifications__text"> <span class="sale">-70%</span> на теплые вещи </p>
+                            <a href="#" class="push-notifications__button">
+                                <span class="text">В каталог</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-push-notification__wrapper">
+                <p class="main-push-notification__caption">Раннее</p>
+                <ul class="main-push-notification__list">
+                    <li class="main-push-notification__item">
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="push-notifications__info">
+                            <div class="push-notifications__info__header">
+                                <p class="push-notifications__caption">Зима близко! ⛄️</p>
+                                <p class="push-notifications__date">12.12.2020</p>
+                            </div>
+                            <p class="push-notifications__text"> <span class="sale">-70%</span> на теплые вещи </p>
+                            <a href="#" class="push-notifications__button">
+                                <span class="text">В каталог</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="main-push-notification__item">
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="push-notifications__info">
+                            <div class="push-notifications__info__header">
+                                <p class="push-notifications__caption">Зима близко! ⛄️</p>
+                                <p class="push-notifications__date">12.12.2020</p>
+                            </div>
+                            <p class="push-notifications__text"> <span class="sale">-70%</span> на теплые вещи </p>
+                            <a href="#" class="push-notifications__button">
+                                <span class="text">В каталог</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <main>
+            <section class="breadcrumbs">
+                <div class="breadcrumbs__wrapper container">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                        <a href="#" class="breadcrumbs__link">Компьютеры</a>
+                        <a href="#" class="breadcrumbs__link">Ноутбук Lenovo</a>
+                    </ul>
+                </div>
+            </section>
+            <section class="product-page">
+                <div class="product-page__wrapper container">
+                    <h1 class="product__caption main-caption-m">Ноутбук Lenovo</h1>
+                    <div class="product__user-info">
+                        <ul class="star__list star__list-checked">
+                            <li class="star__item">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item active">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item">
+                                <span class="icon-star"></span>
+                            </li>
+                        </ul>
+                        <p class="product-user-info__calc-reviews">12 отзывов</p>
+                        <p class="product-user-info__code">Артикул: <span>25678</span></p>
+                    </div>
+                    <div class="general-tabs">
+                        <div class="general-tabs__list">
+                            <button class="general-tabs__button" @click="currentTab = 1" :class="{active: currentTab == 1}">описание</button>
+                            <button class="general-tabs__button" @click="currentTab = 2" :class="{active: currentTab == 2}">характеристики</button>
+                            <button class="general-tabs__button" @click="currentTab = 3" :class="{active: currentTab == 3}">отзывы (5)</button>
+                            <button class="general-tabs__button" @click="currentTab = 4" :class="{active: currentTab == 4}">доставка</button>
+                            <button class="general-tabs__button" @click="currentTab = 5" :class="{active: currentTab == 5}">оплата</button>
+                            <button class="general-tabs__button" @click="currentTab = 6" :class="{active: currentTab == 6}">гарантия</button>
+                        </div>
+                    </div>
+                    <div class="product__main-info">
+                        <div class="product__img product-info" v-show="currentTab == 1">
+                            <ul class="product__main-img-list">
+                                <li class="product__main-img-item js-general-image">
+                                    <img class="js-zoom-img" v-lazy="'/img/product-img.png'" alt="title">
+                                    <div class="show-area js-show-area"></div>
+                                </li>
+                                <li class="product__main-img-item js-general-image">
+                                    <img class="js-zoom-img" v-lazy="'/img/product-img.png'" alt="title">
+                                    <div class="show-area js-show-area"></div>
+                                </li>
+                            </ul>
+                            <div class="product__img__wrapper">
+                                <button class="arrow-button disabled js-image-button-prev">
+                                    <span class="icon-arrow-left"></span>
+                                </button>
+                                <ul class="product__img-list js-image-list">
+                                    <li class="product__img-item active js-image" data-index="1">
+                                        <img v-lazy="'/img/product-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="2">
+                                        <img v-lazy="'/img/product-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="3">
+                                        <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="4">
+                                        <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="5">
+                                        <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="6">
+                                        <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="7">
+                                        <img v-lazy="'/img/product-img.png'" alt="title">
+                                    </li>
+                                     <li class="product__img-item js-image" data-index="8">
+                                        <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="9">
+                                        <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    </li>
+                                    <li class="product__img-item js-image" data-index="10">
+                                        <img v-lazy="'/img/product-img.png'" alt="title">
+                                    </li>
+                                </ul>
+                                <button class="arrow-button js-image-button-next">
+                                    <span class="icon-arrow-right"></span>
+                                </button>
+                            </div>
+                            <div class="product-info__short-description" v-if="windowWidth > 1024">
+                                <div class="text">
+                                    <p>Экран 15.6" IPS (1920x1080) Full HD, матовый / AMD Ryzen 7 3700U (2.3 - 4.0 ГГц) / RAM 8 ГБ / SSD 512 ГБ / AMD Radeon RX Vega 10 Graphics / без ОД / Wi-Fi / Bluetooth / веб-камера / без ОС / 1.8 кг / серый</p>
+                                </div>
+                                <button class="text-button">Подробнее о товаре</button>
+                            </div>
+                        </div>
+                        <div class="product-info product-info--characteristic" v-if="currentTab == 2">
+                            <p class="main-caption-m">Основные характеристики</p>
+                            <ul class="characteristic__list">
+                                <li class="characteristic__item">
+                                    <p class="characteristic__type">
+                                        <span class="text">Процессор</span>
+                                    </p>
+                                    <p class="characteristic__description">
+                                        <a href="#">Четырехъядерный AMD Ryzen 7 3700U (2.3 - 4.0 ГГц)</a>
+                                    </p>
+                                </li>
+                                <li class="characteristic__item">
+                                    <p class="characteristic__type">
+                                        <span class="text">Объем оперативной памяти</span>
+                                    </p>
+                                    <p class="characteristic__description">
+                                        <a href="#">8 ГБ</a>
+                                    </p>
+                                </li>
+                                <li class="characteristic__item">
+                                    <p class="characteristic__type">
+                                        <span class="text">Диагональ экрана</span>
+                                    </p>
+                                    <p class="characteristic__description">
+                                        <a href="#">10</a>
+                                    </p>
+                                </li>
+                                <li class="characteristic__item">
+                                    <p class="characteristic__type">
+                                        <span class="text">Объем оперативной памяти</span>
+                                    </p>
+                                    <p class="characteristic__description">
+                                        <a href="#">8 ГБ</a>
+                                    </p>
+                                </li>
+                                <li class="characteristic__item">
+                                    <p class="characteristic__type">
+                                        <span class="text">Процессор</span>
+                                    </p>
+                                    <p class="characteristic__description">
+                                        <a href="#">Четырехъядерный AMD Ryzen 7 3700U (2.3 - 4.0 ГГц)</a>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div class="product__text">
+                                <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной</p>
+                                <h5>Список</h5>
+                                <ul>
+                                    <li>первая строка списка</li>
+                                    <li>функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры</li>
+                                    <li>первая строка списка</li>
+                                    <li>первая строка списка</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-info product-info--reviews" v-if="currentTab == 3">
+                            <button class="main-button main-button--product-reviews js-button" data-target="add-reviews-product">
+                                <span class="text">оставить отзыв</span>
+                            </button>
+                            <div class="product-reviews-photo">
+                                <p class="product-reviews-photo__caption">Фото покупателей</p>
+                                <div class="product-reviews-photo__list">
+                                    <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'/img/reviews-photo-full.png'"></button>
+                                    <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'/img/reviews-photo-full.png'"></button>
+                                    <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'/img/reviews-photo-full.png'"></button>
+                                </div>
+                            </div>
+                            <div class="product-reviews__sort">
+                                <p class="product-reviews__sort__caption">Отзывы покупателей</p>
+                                <div class="general__sort">
+                                    <p class="general__sort-text">Сортировка по:</p>
+                                    <ul class="general__sort-list">
+                                        <li class="general__sort-item">
+                                            <button>Дате</button>
+                                        </li>
+                                        <li class="general__sort-item active">
+                                            <button>Полезности</button>
+                                        </li>
+                                        <li class="general__sort-item">
+                                            <button>Оценке</button>
+                                        </li>
+                                        <li class="general__sort-item general__sort-item--check">
+                                            <label class="checkbox__wrapper">
+                                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                                <span class="custome-check">
+                                                    <span class="icon-active"></span>
+                                                </span>
+                                                <span class="text">С фото</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-reviews__wrapper">
+                                <ul class="product-reviews__list">
+                                    <li class="product-reviews__item">
+                                        <div class="product-reviews__header">
+                                            <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <p class="product-reviews__name">Марина</p>
+                                            <p class="product-reviews__date">11 июня 2020 в 23:30</p>
+                                        </div>
+                                        <div class="product-reviews__info">
+                                            <ul class="star__list star__list-checked">
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item active">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                            </ul>
+                                            <p class="product-reviews__info__status">Товар понравился</p>
+                                        </div>
+                                        <div class="product-reviews__text">
+                                            <p>Спасибо за товар</p>
+                                        </div>
+                                        <div class="product-reviews__footer js-drop-item">
+                                            <div class="product-reviews__footer__wrapper">
+                                                <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                <ul class="product__parameters__list">
+                                                    <li class="product__parameters__item">да<span>(5)</span></li>
+                                                    <li class="product__parameters__item">нет<span>(5)</span></li>
+                                                </ul>
+                                                <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
+                                            </div>
+                                            <div class="product-reviews__add-comment">
+                                                <form action="product-reviews__add-comment__form">
+                                                    <div class="product-reviews__header">
+                                                        <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                        <p class="product-reviews__name">Марина</p>
+                                                    </div>
+                                                    <label class="input_wrapper input_wrapper--margin-bottom">
+                                                        <input type="text" class="main_input" placeholder="Ваш ответ">
+                                                    </label>
+                                                    <div class="product-reviews__add-comment__buttons">
+                                                        <button type="button" class="text-button js-drop-button">отмена</button>
+                                                        <button class="main-button main-button--small">
+                                                            <span class="text">ответить</span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product-reviews__item">
+                                        <div class="product-reviews__header">
+                                            <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <p class="product-reviews__name">Марина</p>
+                                            <p class="product-reviews__date">11 июня 2020 в 23:30</p>
+                                        </div>
+                                        <div class="product-reviews__info">
+                                            <ul class="star__list star__list-checked">
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item active">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                            </ul>
+                                            <p class="product-reviews__info__status bad">Товар не понравился</p>
+                                        </div>
+                                        <div class="product-reviews__text">
+                                            <p>Спасибо за товар</p>
+                                        </div>
+                                        <div class="product-reviews__footer js-drop-item">
+                                            <div class="product-reviews__footer__wrapper">
+                                                <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                <ul class="product__parameters__list">
+                                                    <li class="product__parameters__item">да<span>(5)</span></li>
+                                                    <li class="product__parameters__item">нет<span>(5)</span></li>
+                                                </ul>
+                                                <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
+                                            </div>
+                                            <div class="product-reviews__add-comment">
+                                                <form action="product-reviews__add-comment__form">
+                                                    <div class="product-reviews__header">
+                                                        <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                        <p class="product-reviews__name">Марина</p>
+                                                    </div>
+                                                    <label class="input_wrapper input_wrapper--margin-bottom">
+                                                        <input type="text" class="main_input" placeholder="Ваш ответ">
+                                                    </label>
+                                                    <div class="product-reviews__add-comment__buttons">
+                                                        <button type="button" class="text-button js-drop-button">отмена</button>
+                                                        <button class="main-button main-button--small">
+                                                            <span class="text">ответить</span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <ul class="product-reviews__list">
+                                            <li class="product-reviews__item">
+                                                <div class="product-reviews__header">
+                                                    <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                    <p class="product-reviews__name">Марина</p>
+                                                    <p class="product-reviews__date">11 июня 2020 в 23:30</p>
+                                                </div>
+                                                <div class="product-reviews__info">
+                                                    <ul class="star__list star__list-checked">
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item active">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                    </ul>
+                                                    <p class="product-reviews__info__status">Товар понравился</p>
+                                                </div>
+                                                <div class="product-reviews__text">
+                                                    <p>Спасибо за товар</p>
+                                                </div>
+                                                <div class="product-reviews__footer js-drop-item">
+                                                    <div class="product-reviews__footer__wrapper">
+                                                        <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                        <ul class="product__parameters__list">
+                                                            <li class="product__parameters__item">да<span>(5)</span></li>
+                                                            <li class="product__parameters__item">нет<span>(5)</span></li>
+                                                        </ul>
+                                                        <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
+                                                    </div>
+                                                    <div class="product-reviews__add-comment">
+                                                        <form action="product-reviews__add-comment__form">
+                                                            <div class="product-reviews__header">
+                                                                <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                                <p class="product-reviews__name">Марина</p>
+                                                            </div>
+                                                            <label class="input_wrapper input_wrapper--margin-bottom">
+                                                                <input type="text" class="main_input" placeholder="Ваш ответ">
+                                                            </label>
+                                                            <div class="product-reviews__add-comment__buttons">
+                                                                <button type="button" class="text-button js-drop-button">отмена</button>
+                                                                <button class="main-button main-button--small">
+                                                                    <span class="text">ответить</span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="product-reviews__item">
+                                                <div class="product-reviews__header">
+                                                    <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                    <p class="product-reviews__name">Марина</p>
+                                                    <p class="product-reviews__date">11 июня 2020 в 23:30</p>
+                                                </div>
+                                                <div class="product-reviews__info">
+                                                    <ul class="star__list star__list-checked">
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item active">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                        <li class="star__item">
+                                                            <span class="icon-star"></span>
+                                                        </li>
+                                                    </ul>
+                                                    <p class="product-reviews__info__status">Товар понравился</p>
+                                                </div>
+                                                <div class="product-reviews__text">
+                                                    <p>Спасибо за товар</p>
+                                                </div>
+                                                <div class="product-reviews__footer js-drop-item">
+                                                    <div class="product-reviews__footer__wrapper">
+                                                        <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                        <ul class="product__parameters__list">
+                                                            <li class="product__parameters__item">да<span>(5)</span></li>
+                                                            <li class="product__parameters__item">нет<span>(5)</span></li>
+                                                        </ul>
+                                                        <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
+                                                    </div>
+                                                    <div class="product-reviews__add-comment">
+                                                        <form action="product-reviews__add-comment__form">
+                                                            <div class="product-reviews__header">
+                                                                <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                                <p class="product-reviews__name">Марина</p>
+                                                            </div>
+                                                            <label class="input_wrapper input_wrapper--margin-bottom">
+                                                                <input type="text" class="main_input" placeholder="Ваш ответ">
+                                                            </label>
+                                                            <div class="product-reviews__add-comment__buttons">
+                                                                <button type="button" class="text-button js-drop-button">отмена</button>
+                                                                <button class="main-button main-button--small">
+                                                                    <span class="text">ответить</span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="product-reviews__item">
+                                        <div class="product-reviews__header js-drop-item">
+                                            <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <p class="product-reviews__name">Мое имя</p>
+                                            <p class="product-reviews__date">11 июня 2020 в 23:30</p>
+                                            <div class="general-drop-wrapper js-drop-item">
+                                                <button class="product-reviews___button-edit js-drop-button">
+                                                    <span class="decor"></span>
+                                                </button>
+                                                <div class="general-drop-content__wrapper">
+                                                    <ul class="general-drop__list">
+                                                        <li class="general-drop__item">
+                                                            <button class="general-drop__link general-drop__link--change-reviews js-change-reviews">
+                                                                <span class="edit">Редактировать отзыв</span>
+                                                                <span class="save">Сохранить</span>
+                                                            </button>
+                                                        </li>
+                                                        <li class="general-drop__item">
+                                                            <button class="general-drop__link">Удалить отзыв</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-reviews__info">
+                                            <ul class="star__list star__list-checked">
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item active">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                                <li class="star__item">
+                                                    <span class="icon-star"></span>
+                                                </li>
+                                            </ul>
+                                            <p class="product-reviews__info__status">Товар понравился</p>
+                                        </div>
+                                        <div class="product-reviews-photo">
+                                            <div class="product-reviews-photo__list">
+                                                <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'/img/reviews-photo-full.png'"></button>
+                                                <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'/img/reviews-photo-full.png'"></button>
+                                                <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'/img/reviews-photo-full.png'"></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-reviews__text">
+                                            <div class="hide-block-for-text js-change-text">
+                                                <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</p>
+                                            </div>
+                                            <textarea class="change-reviews js-change-textarea" readonly >Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</textarea>
+                                        </div>
+                                        <div class="product-reviews__footer js-drop-item">
+                                            <div class="product-reviews__footer__wrapper">
+                                                <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                <ul class="product__parameters__list">
+                                                    <li class="product__parameters__item">да<span>(5)</span></li>
+                                                    <li class="product__parameters__item">нет<span>(5)</span></li>
+                                                </ul>
+                                                <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
+                                            </div>
+                                            <div class="product-reviews__add-comment">
+                                                <form action="product-reviews__add-comment__form">
+                                                    <div class="product-reviews__header">
+                                                        <div class="product-reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                                        <p class="product-reviews__name">Марина</p>
+                                                    </div>
+                                                    <label class="input_wrapper input_wrapper--margin-bottom">
+                                                        <input type="text" class="main_input" placeholder="Ваш ответ">
+                                                    </label>
+                                                    <div class="product-reviews__add-comment__buttons">
+                                                        <button type="button" class="text-button js-drop-button">отмена</button>
+                                                        <button class="main-button main-button--small">
+                                                            <span class="text">ответить</span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-info product-info--text" v-if="currentTab == 4">
+                            <div class="product__text">
+                                <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной</p>
+                                <h5>Список</h5>
+                                <ul>
+                                    <li>первая строка списка</li>
+                                    <li>функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры</li>
+                                    <li>первая строка списка</li>
+                                    <li>первая строка списка</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-info product-info--text" v-if="currentTab == 5">
+                            <div class="product__text">
+                                <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной</p>
+                                <h5>Список</h5>
+                                <ul>
+                                    <li>первая строка списка</li>
+                                    <li>функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры</li>
+                                    <li>первая строка списка</li>
+                                    <li>первая строка списка</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-info product-info--text" v-if="currentTab == 6">
+                            <div class="product__text">
+                                <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной</p>
+                                <h5>Список</h5>
+                                <ul>
+                                    <li>первая строка списка</li>
+                                    <li>функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры</li>
+                                    <li>первая строка списка</li>
+                                    <li>первая строка списка</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product__description">
+                            <div class="product__description__header">
+                                <p class="product_status">Есть в наличии</p>
+                                <button class="add-to-comparison">
+                                    <span class="icon-comparison"></span>
+                                </button>
+                            </div>
+                            <div class="product__parameters">
+                                <div class="product__prompt js-drop-item">
+                                    <button class="product__prompt__button js-drop-button">Подсказка</button>
+                                    <div class="product__prompt__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, odio!</div>
+                                </div>
+                                <div class="product__parameters__wrapper">
+                                    <p class="product__parameters__caption">Наименование параметра:</p>
+                                    <ul class="product__parameters__list">
+                                        <li class="product__parameters__item">в1</li>
+                                        <li class="product__parameters__item">в2</li>
+                                        <li class="product__parameters__item active">в3</li>
+                                        <li class="product__parameters__item">в4</li>
+                                    </ul>
+                                </div>
+                                <div class="product__parameters__wrapper">
+                                    <p class="product__parameters__caption">Наименование параметра:</p>
+                                    <ul class="product__parameters__list">
+                                        <li class="product__parameters__item">в1</li>
+                                        <li class="product__parameters__item">в2</li>
+                                        <li class="product__parameters__item">в3</li>
+                                        <li class="product__parameters__item">в4</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <p class="product__old-price">300грн</p>
+                                <p class="product__price">280грн</p>
+                            </div>
+                            <div class="product__button">
+                                <button class="main-button main-button--width">
+                                    <span class="icon-cart"></span>
+                                    <span class="text">в корзину</span>
+                                </button>
+                                <button class="general-button-more-info">
+                                    <span class="icon-add-favorite"></span>
+                                    <span class="text">в избранное</span>
+                                </button>
+                                <button class="text-button js-button" data-target="buy-one-click">купить в один клик</button>
+                            </div>
+                            <div class="product-sub-info" v-if="windowWidth > 1024">
+                                <ul class="product-sub-info__list">
+                                    <li class="product-sub-info__item">
+                                        <div class="product-sub-info__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                                        <p class="product-sub-info__text">14 дней гарантия возврата</p>
+                                    </li>
+                                    <li class="product-sub-info__item">
+                                        <div class="product-sub-info__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                                        <p class="product-sub-info__text">Бесплатная доставка</p>
+                                    </li>
+                                    <li class="product-sub-info__item">
+                                        <div class="product-sub-info__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                                        <p class="product-sub-info__text">Бесплатная доставка</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="myresult" class="show-photo__wrapper"></div>
+                    </div>
+                    <div class="product-general-info" v-if="windowWidth < 1025">
+                        <div class="product-sub-info">
+                            <ul class="product-sub-info__list">
+                                <li class="product-sub-info__item">
+                                    <div class="product-sub-info__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                                    <p class="product-sub-info__text">14 дней гарантия возврата</p>
+                                </li>
+                                <li class="product-sub-info__item">
+                                    <div class="product-sub-info__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                                    <p class="product-sub-info__text">Бесплатная доставка</p>
+                                </li>
+                                <li class="product-sub-info__item">
+                                    <div class="product-sub-info__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                                    <p class="product-sub-info__text">Бесплатная доставка</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-info__short-description">
+                            <div class="text">
+                                <p>Экран 15.6" IPS (1920x1080) Full HD, матовый / AMD Ryzen 7 3700U (2.3 - 4.0 ГГц) / RAM 8 ГБ / SSD 512 ГБ / AMD Radeon RX Vega 10 Graphics / без ОД / Wi-Fi / Bluetooth / веб-камера / без ОС / 1.8 кг / серый</p>
+                            </div>
+                            <button class="text-button">Подробнее о товаре</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="products-block">
+                <div class="products-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m"> С этим товаром покупают</p>
+                    </div>
+                    <div class="position-wrapper">
+                        <ul class="products-list position-wrapper__list">
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="general-navigation">
+                        <button class="general-button-more-info general-button-more-info--navigation">
+                            <span class="text">смотреть еще</span>
+                        </button>
+                        <div class="general-pagination">
+                            <button class="arrow-button arrow-button--pagination disabled">
+                                <span class="icon-arrow-left"></span>
+                            </button>
+                            <ul class="pagination__list">
+                                <li class="pagination__item active">1</li>
+                                <li class="pagination__item">2</li>
+                                <li class="pagination__item">3</li>
+                                <li class="pagination__item pagination__item--dots">...</li>
+                                <li class="pagination__item">12</li>
+                            </ul>
+                            <button class="arrow-button arrow-button--pagination">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="products-block">
+                <div class="products-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Похожие товары</p>
+                    </div>
+                    <div class="position-wrapper">
+                        <ul class="products-list position-wrapper__list">
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="general-navigation">
+                        <button class="general-button-more-info general-button-more-info--navigation">
+                            <span class="text">смотреть еще</span>
+                        </button>
+                        <div class="general-pagination">
+                            <button class="arrow-button arrow-button--pagination disabled">
+                                <span class="icon-arrow-left"></span>
+                            </button>
+                            <ul class="pagination__list">
+                                <li class="pagination__item active">1</li>
+                                <li class="pagination__item">2</li>
+                                <li class="pagination__item">3</li>
+                                <li class="pagination__item pagination__item--dots">...</li>
+                                <li class="pagination__item">12</li>
+                            </ul>
+                            <button class="arrow-button arrow-button--pagination">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="products-block">
+                <div class="products-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Просмотреннные товары</p>
+                    </div>
+                    <div class="position-wrapper">
+                        <ul class="products-list position-wrapper__list">
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="general-navigation">
+                        <button class="general-button-more-info general-button-more-info--navigation">
+                            <span class="text">смотреть еще</span>
+                        </button>
+                        <div class="general-pagination">
+                            <button class="arrow-button arrow-button--pagination disabled">
+                                <span class="icon-arrow-left"></span>
+                            </button>
+                            <ul class="pagination__list">
+                                <li class="pagination__item active">1</li>
+                                <li class="pagination__item">2</li>
+                                <li class="pagination__item">3</li>
+                                <li class="pagination__item pagination__item--dots">...</li>
+                                <li class="pagination__item">12</li>
+                            </ul>
+                            <button class="arrow-button arrow-button--pagination">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper container">
+                <div class="footer__main-info">
+                    <div class="footer__content">
+                        <a href="/" class="footer__logo">
+                            <img v-lazy="'/img/logo.png'" alt="Logo">
+                        </a>
+                        <div class="footer__text">
+                            <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</p>
+                        </div>
+                    </div>
+                    <div class="footer__navigation">
+                        <div class="footer__navigation__item js-drop-item">
+                            <button class="footer__navigation__item__caption js-drop-button">Информация</button>
+                            <ul class="footer__navigation__item__list">
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст1</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст2</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст3</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__navigation__item js-drop-item">
+                            <button class="footer__navigation__item__caption js-drop-button">Клиентам</button>
+                            <ul class="footer__navigation__item__list">
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст1</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст2</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст3</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__navigation__item js-drop-item">
+                            <button class="footer__navigation__item__caption js-drop-button">Нужна помощь?</button>
+                            <ul class="footer__navigation__item__list">
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст1</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст2</a>
+                                </li>
+                                <li class="footer__navigation__item__item">
+                                    <a href="#" class="footer__navigation__item__link">Текст3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__down">
+                    <a href="#" class="footer__link">Политика конфиденциальности</a>
+                    <p class="footer__copyright">2020 LOGO</p>
+                    <a href="#" class="footer__link">Все права защищены</a>
+                </div>
+            </div>
+        </footer>
+         <section class="popup popup-reviews-photo js-popup" data-target="reviews-photo">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <div class="reviews-photo js-popup-reviews-photo"></div>
+            </div>
+        </section>
+        <section class="cookie js-popup js-cookie">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <p class="cookie-caption">Мы используем файлы cookie</p>
+            <div class="cookie-text">
+                <p>Наш сайт использует cookies, чтобы обеспечить вам комфорт во время покупок. <a href="#">Подробнее</a></p>
+            </div>
+        </section>
+        <section class="popup popup-form js-popup" data-target="help">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Нужна помощь?</p>
+                <p class="popup__sub">Оставьте нам заявку и мы вам перезвоним</p>
+                <form action="#" class="popup__form-wrapper">
+                    <label class="input_wrapper input_wrapper--margin-bottom">
+                        <span class="input-caption">Ваше имя</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper input_wrapper--margin-bottom">
+                        <span class="input-caption">Телефон</span>
+                        <input type="tel" class="main_input" placeholder="+38">
+                    </label>
+                    <label class="input_wrapper input_wrapper--margin-bottom error">
+                        <span class="input-caption">Email*</span>
+                        <input type="email" class="main_input" placeholder="Email" required>
+                        <span class="input-text-error">Ошибка</span>
+                    </label>
+                    <button class="main-button">
+                        <span class="text">отправить</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="popup popup-form popup-add-product-reviews js-popup" data-target="add-reviews-product">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Оставить отзыв</p>
+                <form action="#" class="popup__form-wrapper">
+                    <div class="popup-add-product-reviews__item">
+                        <p class="popup-sub-caption">Оцените товар</p>
+                        <input type="hidden" name="stars" class="js-stars-input">
+                        <ul class="star__list star__list--form js-star-list">
+                            <li class="star__item star__item--form js-star-item" data-target="1">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item star__item--form js-star-item" data-target="2">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item star__item--form js-star-item" data-target="3">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item star__item--form js-star-item" data-target="4">
+                                <span class="icon-star"></span>
+                            </li>
+                            <li class="star__item star__item--form js-star-item" data-target="5">
+                                <span class="icon-star"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="popup-add-product-reviews__item">
+                        <p class="popup-sub-caption">Понравился ли вам товар?</p>
+                        <div class="popup-radio__wrapper">
+                            <label class="radio__wrapper">
+                                <input type="radio" class="input-radio" name="likes" value="Yes" checked>
+                                <span class="custome-radio"></span>
+                                <span class="text">Да</span>
+                            </label>
+                            <label class="checkbox__wrapper">
+                                <input type="radio" class="input-radio" name="likes" value="No">
+                                <span class="custome-radio"></span>
+                                <span class="text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="popup-add-product-reviews__item">
+                        <p class="popup-sub-caption">Понравился ли вам товар?</p>
+                        <p class="popup-add-review-text">Это будет очень полезно для других покупателей</p>
+                        <div class="add-reviews__list">
+                            <label class="add-reviews__item">
+                                <span class="icon-add-photo"></span>
+                                <input type="file" class="add-reviews__input" name="text_review_file" accept=".jpg, .jpeg, .png, .svg">
+                                <img src="#" alt="Фото" class="add-reviews__img">
+                                <button type="button" class="add-reviews__delete-img"><span class="icon-close"></span></button>
+                            </label>
+                            <label class="add-reviews__item">
+                                <span class="icon-add-photo"></span>
+                                <input type="file" class="add-reviews__input" name="text_review_file" accept=".jpg, .jpeg, .png, .svg">
+                                <img src="" alt="Фото" class="add-reviews__img">
+                                <button type="button" class="add-reviews__delete-img"><span class="icon-close"></span></button>
+                            </label>
+                            <label class="add-reviews__item">
+                                <span class="icon-add-photo"></span>
+                                <input type="file" class="add-reviews__input" name="text_review_file" accept=".jpg, .jpeg, .png, .svg">
+                                <img src="" alt="Фото" class="add-reviews__img">
+                                <button type="button" class="add-reviews__delete-img"><span class="icon-close"></span></button>
+                            </label>
+                        </div>
+                    </div>
+                    <label class="input_wrapper input_wrapper--margin-bottom">
+                        <span class="input-caption">Email*</span>
+                        <textarea class="main_textarea"></textarea>
+                    </label>
+                    <button class="main-button">
+                        <span class="text">отправить</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="popup popup-product js-popup" data-target="product">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="product__caption main-caption-m">Ноутбук Lenovo</p>
+                <div class="product__user-info">
+                    <ul class="star__list star__list-checked">
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item active">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                    </ul>
+                    <p class="product-user-info__calc-reviews">12 отзывов</p>
+                    <p class="product-user-info__code">Артикул: <span>25678</span></p>
+                </div>
+                <div class="product__main-info">
+                    <div class="product__popup__img js-oneMove-wrapper">
+                        <button class="product-popup__arrow-button product-popup__arrow-button--left arrow-button js-oneMove-arrow-prev">
+                            <span class="icon-arrow-left"></span>
+                        </button>
+                        <button class="product-popup__arrow-button product-popup__arrow-button--right arrow-button js-oneMove-arrow-next">
+                            <span class="icon-arrow-right"></span>
+                        </button>
+                        <ul class="product-popup__img-list">
+                            <li class="product-popup__img-item show js-oneMove-item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                            <li class="product-popup__img-item js-oneMove-item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        </ul>
+                    </div>
+                    <div class="product__description product__description--popup">
+                        <div class="product__description__header">
+                            <p class="product_status">Есть в наличии</p>
+                            <button class="add-to-comparison">
+                                <span class="icon-comparison"></span>
+                            </button>
+                        </div>
+                        <div class="product__parameters">
+                            <div class="product__prompt js-drop-item">
+                                <button class="product__prompt__button js-drop-button">Подсказка</button>
+                                <div class="product__prompt__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, odio!</div>
+                            </div>
+                            <div class="product__parameters__wrapper">
+                                <p class="product__parameters__caption">Наименование параметра:</p>
+                                <ul class="product__parameters__list">
+                                    <li class="product__parameters__item">в1</li>
+                                    <li class="product__parameters__item">в2</li>
+                                    <li class="product__parameters__item active">в3</li>
+                                    <li class="product__parameters__item">в4</li>
+                                </ul>
+                            </div>
+                            <div class="product__parameters__wrapper">
+                                <p class="product__parameters__caption">Наименование параметра:</p>
+                                <ul class="product__parameters__list">
+                                    <li class="product__parameters__item">в1</li>
+                                    <li class="product__parameters__item">в2</li>
+                                    <li class="product__parameters__item">в3</li>
+                                    <li class="product__parameters__item">в4</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <p class="product__old-price">300грн</p>
+                            <p class="product__price">280грн</p>
+                        </div>
+                        <div class="product__button">
+                            <button class="main-button main-button--width">
+                                <span class="icon-cart"></span>
+                                <span class="text">в корзину</span>
+                            </button>
+                            <button class="general-button-more-info">
+                                <span class="icon-add-favorite"></span>
+                                <span class="text">в избранное</span>
+                            </button>
+                            <button class="text-button js-button" data-target="buy-one-click">купить в один клик</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="general-batton-more general-batton-more--product-popup">
+                    <span class="text">подробнее о товаре</span>
+                </a>
+            </div>
+        </section>
+        <section class="popup popup-form js-popup" data-target="buy-one-click">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Купить в 1 клик</p>
+                <form action="#" class="popup__form-wrapper">
+                    <label class="input_wrapper input_wrapper--margin-bottom">
+                        <span class="input-caption">Ваше имя</span>
+                        <input type="text" class="main_input" placeholder="Имя">
+                    </label>
+                    <label class="input_wrapper input_wrapper--margin-bottom">
+                        <span class="input-caption">Телефон</span>
+                        <input type="tel" class="main_input" placeholder="+38">
+                    </label>
+                    <label class="input_wrapper input_wrapper--margin-bottom">
+                        <span class="input-caption">Подтвердите ваш номер телефона</span>
+                        <input type="tel" class="main_input" placeholder="+38">
+                    </label>
+                    <button class="main-button">
+                        <span class="text">отправить</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="popup popup-thanks js-popup" data-target="thanks">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Ваш заказ отправлен</p>
+                <p class="popup__sub">Наш менеджер свяжется с вами в ближайшее время</p>
+                <button class="main-button popup-thanks__button js-close">
+                    <span class="text">продолжить покупки</span>
+                </button>
+            </div>
+        </section>
+        <div class="overlay"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
+    <script src="./node_modules/vue-slider-component/dist-css/vue-slider-component.umd.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/product/product.js"></script>
+</body>
+</html>

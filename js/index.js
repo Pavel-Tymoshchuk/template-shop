@@ -7,7 +7,9 @@ const app = new Vue({
         filterHeaderCategory: 0,
         banner: null,
         bannersAmount: 2,
-        currentIndex: 0
+        currentIndex: 0,
+        windowWidth: 0,
+        searchInput: ""
     },
     methods: {
         prevSlide: function(){
@@ -58,37 +60,49 @@ const app = new Vue({
             }
         ]
         
+        // Slider banner
         var sliderAutoStart;
         const component = this;
         setTimeout(function(){
             let slider = document.querySelector('.main-banner');
-            if(window.innerWidth > 1160){
-                slider.addEventListener('mouseover', function(){
-                    clearInterval(sliderAutoStart);
-                });
-                
+            if(slider) {
+                if(window.innerWidth > 1160){
+                    slider.addEventListener('mouseover', function(){
+                        clearInterval(sliderAutoStart);
+                    });
                     
-                slider.addEventListener('mouseleave', () => {
+                        
+                    slider.addEventListener('mouseleave', () => {
+                        sliderAutoStart = setInterval(component.nextSlide, 5000);
+                    });
+                    
                     sliderAutoStart = setInterval(component.nextSlide, 5000);
-                });
-                
-                sliderAutoStart = setInterval(component.nextSlide, 5000);
-            }
-            
-            var startPointX;
-            slider.addEventListener("touchstart", function(event) {
-                startPointX = event.changedTouches[0].screenX;
-                clearInterval(sliderAutoStart);
-            }, {passive: true});
-            slider.addEventListener("touchend", function(event){
-                var endPointX = event.changedTouches[0].screenX;
-                
-                if(startPointX - endPointX > 40) {
-                    component.nextSlide();
-                } else if(endPointX - startPointX > 40) {
-                    component.prevSlide();
                 }
-            }, {passive: true});
+                
+                var startPointX;
+                slider.addEventListener("touchstart", function(event) {
+                    startPointX = event.changedTouches[0].screenX;
+                    clearInterval(sliderAutoStart);
+                }, {passive: true});
+                slider.addEventListener("touchend", function(event){
+                    var endPointX = event.changedTouches[0].screenX;
+                    
+                    if(startPointX - endPointX > 40) {
+                        component.nextSlide();
+                    } else if(endPointX - startPointX > 40) {
+                        component.prevSlide();
+                    }
+                }, {passive: true});
+            }
         },0)
+        
+        // slider banner
+        
+        // Set window width
+        
+        this.windowWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            this.windowWidth = window.innerWidth;
+        });
     }
 });

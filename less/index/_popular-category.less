@@ -69,4 +69,24 @@
     }
 }
 
+@media screen and (max-width: 767px) {
+    .popular-category__item {
+        width: calc(50% - 10px);
+    }
+    
+    .popular-category__item--big {
+        width: calc(100% - 10px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .popular-category__item {
+        width: calc(100% - 10px);
+        
+        &:nth-child(n + 4) {
+            display: none;
+        }
+    }
+}
+
 /* //Popular category */

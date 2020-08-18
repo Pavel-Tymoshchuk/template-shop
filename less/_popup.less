@@ -119,6 +119,14 @@
     margin-bottom: 20px;
 }
 
+.popup-sub-caption {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
 .popup__sub {
     font-size: 14px;
     line-height: 17px;
@@ -145,7 +153,7 @@
 .product__popup__img {
     position: relative;
     width: calc(45% - 15px);
-    height: 343px;
+    height: 345px;
 }
 
 .product-popup__img-list {
@@ -194,7 +202,184 @@
     margin: 30px auto 0px;
 }
 
+.product__prompt {
+    &.product__prompt--popup {
+        position: relative;
+        margin-top: 20px;
+        
+        .product__prompt__text {
+            width: 100%;
+            
+        }
+    }
+}
+
 /* //Popup product */
+
+/* Popup thanks */
+
+.popup-thanks {
+    max-width: 365px;
+}
+
+.popup-thanks__button {
+    margin: 20px auto 0px;
+}
+
+/* //Popup thanks */
+
+/* Popup show reviews photo */
+
+.popup-reviews-photo {
+    max-width: 375px;
+    
+    .close__popup {
+        color: #ffffff;
+    }
+    
+    .popup__wrapper {
+        padding: 0px;
+    }
+    
+    .reviews-photo  {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 501px;
+    }
+}
+
+/* //Popup show reviews photo */
+
+/* Popup add reviews product */
+
+.popup-add-product-reviews__item {
+    margin-bottom: 30px;
+}
+
+.add-reviews__list {
+    display: flex;
+    margin: 10px 0px 0px;
+}
+
+.add-reviews__item {
+    position: relative;
+    width: 50px;
+    height: 70px;
+    border: 1px solid #EEEEEE;
+    transition: border-color .4s, opacity .4s;
+    cursor: pointer;
+    margin-right: 10px;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 2px;
+    
+    &:first-child {
+        opacity: 1;
+        z-index: 2;
+    }
+    
+    &.active {
+        opacity: 1;
+        z-index: 2;
+        
+        + .add-reviews__item {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+    
+    &:last-child {
+        margin-right: 0px;
+    }
+    
+    .icon-add-photo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 15px;
+        transform: translate(-50%, -50%);
+        transition: color .4s;
+    }
+    
+    &.active {
+        .add-reviews__img {
+            opacity: 1;
+            z-index: 2;
+        }
+        
+        .icon-add-photo {
+            opacity: 0;
+        }
+        
+        .add-reviews__delete-img {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+}
+
+.add-reviews__delete-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 0px 2px 0px 0px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .4s;
+    
+    .icon-close {
+        font-size: 7px;
+    }
+}
+
+.add-reviews__input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+}
+
+.add-reviews__img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    object-fit: cover;
+    object-position: top;
+    transition: opacity .4s;
+}
+
+.popup-radio__wrapper {
+    display: flex;
+    
+    .radio__wrapper {
+        margin-right: 50px;
+        
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+.popup-add-review-text {
+    color: #333333;
+    font-size: 14px;
+    line-height: 140%;
+}
 
 @media screen and (min-width: 1201px) {
     .close__popup {
@@ -202,5 +387,25 @@
             color: #000000;
             transform: rotate(90deg);
         }
+    }
+    
+    .add-reviews__item {
+        &:hover {
+            .icon-add-photo {
+                color: #2F80ED;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* Popup product */
+    
+    .product__popup__img {
+        width: calc(45% - 10px);
+    }
+    
+    .product__description--popup {
+        width: calc(55% - 10px);
     }
 }
