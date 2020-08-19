@@ -84,20 +84,30 @@ const app = new Vue({
             let generalImg = document.querySelectorAll('.js-general-image');
             let buttonPrev = document.querySelector('.js-image-button-prev');
             let buttonNext = document.querySelector('.js-image-button-next');
-            let generalList = document.querySelector('.js-image-list'); 
+            let generalList = document.querySelector('.js-image-list');
+            
+            if(this.windowWidth < 768) {
+                generalImg.forEach((item) => {
+                    item.addEventListener('click', function() {
+                        item.classList.add('show');
+                    });
+                });
+            }
             
             function scrollListNext(activeItem) {
+                var style = window.getComputedStyle(activeItem);
                 let counterElem = activeItem.getAttribute('data-index');
                 let itemWidth = activeItem.offsetWidth;
                 
-                generalList.scrollLeft = (itemWidth + 10) * counterElem;
+                generalList.scrollLeft = (itemWidth + +style.getPropertyValue("margin-right").match(/\d/)[0]) * counterElem;
             }
             
             function scrollListPrev(activeItem) {
+                var style = window.getComputedStyle(activeItem);
                 let counterElem = activeItem.getAttribute('data-index');
                 let itemWidth = activeItem.offsetWidth;
                 
-                generalList.scrollLeft = (itemWidth + 10) * (counterElem - 1);
+                generalList.scrollLeft = (itemWidth + +style.getPropertyValue("margin-right").match(/\d/)[0]) * (counterElem - 1);
             }
             
             function changeImg(item) {
@@ -242,6 +252,14 @@ const app = new Vue({
                     document.querySelector(".js-general-image").addEventListener("touchend", function(event){
                         var endPointX = event.changedTouches[0].screenX;
                         var endPointY = event.changedTouches[0].screenY;
+                        
+                        if((startPointY > endPointY && (startPointY - endPointY) > 80) || (startPointY < endPointY && (startPointY - endPointY) < -80)) {
+                            if(component.windowWidth < 768) {
+                                generalImg.forEach((item) => {
+                                    item.classList.remove('show');
+                                });
+                            }
+                        }
                         
                         if(startPointX - endPointX > 40) {
                             buttonNext.click();
