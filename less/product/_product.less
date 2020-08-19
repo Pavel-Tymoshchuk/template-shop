@@ -56,7 +56,7 @@
 
 .product__img-list {
     display: flex;
-    max-width: 615px;
+    max-width: 605px;
     margin: 0px 20px;
     overflow: auto;
     scroll-behavior: smooth;
@@ -241,6 +241,10 @@
     }
 }
 
+.add-to-favorite--product-mobile {
+    display: none;
+}
+
 
 @media screen and (min-width: 1201px) {
     .characteristic__description {
@@ -332,6 +336,15 @@
 }
 
 @media screen and (max-width: 767px) {
+    .product-user-info__calc-reviews {
+        margin-left: 10px;
+    }
+    
+    .product__user-info {
+        font-size: 12px;
+        line-height: 12px;
+    }
+    
     .product__main-info {
         flex-direction: column;
     }
@@ -389,12 +402,26 @@
     }
     
     .product__description {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         margin-top: 30px;
+        
+        .product-price {
+            order: 2;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .product__description__header {
+        order: 1;
+        margin-bottom: 10px;
     }
     
     .product__button {
         justify-content: center;
+        order: 4;
+        margin-top: 0px;
         
         .general-button-more-info {
             display: none;
@@ -404,6 +431,56 @@
             margin-bottom: 20px;
         }
     }
+    
+    .product__parameters {
+        display: flex;
+        flex-direction: column;
+        order: 3;
+    }
+    
+    .product__prompt {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .product__prompt__text {
+        width: 100%;
+    }
+    
+    .product__parameters__wrapper {
+        &:nth-child(2) {
+            order: -1;
+        }
+    }
+    
+    .add-to-favorite--product-mobile {
+        display: flex;
+        font-size: 18px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    
+    /* Characteristic */
+    
+    .characteristic__item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .characteristic__type {
+        margin-bottom: 10px;
+        
+        &::before {
+            display: none;
+        }
+    }
+    
+    .characteristic__description {
+        padding-left: 0px;
+    }
+
+    /* //Characteristic */
 }
 
 /* //Product */

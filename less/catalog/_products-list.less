@@ -157,6 +157,7 @@
     line-height: 12px;
     letter-spacing: 0.012em;
     color: #FFFFFF;
+    font-weight: 700;
     padding: 8px 20px;
     background: #EB5757;
 }
@@ -307,6 +308,12 @@
     .product__old-price--item {
         font-size: 10px;
         line-height: 12px
+    }
+    
+    .product__old-price {
+        + .product__price {
+            margin-right: 10px;
+        }
     }
 }
 

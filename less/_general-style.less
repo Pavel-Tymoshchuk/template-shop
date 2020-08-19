@@ -459,7 +459,7 @@ main {
     text-transform: uppercase;
     color: #FFFFFF;
     padding: 0px 30px;
-    max-width: 250px;
+    max-width: 300px;
     height: 45px;
     background: #2F80ED;
     border-radius: 2px;
@@ -1013,6 +1013,9 @@ main {
     }
 }
 
+.breadcrumbs-mobile {
+    display: none;
+}
 /* //Breadcrumbs */
 
 /* Seo block */
@@ -1184,6 +1187,26 @@ main {
     margin-left: 20px;
 }
 
+ .mobile-button-sort {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-left: 10px;
+    
+    .icon-decor-sort {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
 /* //General sort */
 
 @media screen and (min-width: 1201px ) {
@@ -1268,9 +1291,7 @@ main {
     
     .general-tabs__button {
         &:hover {
-            &::before {
-                width: 100%;
-            }
+            color: #2F80ED;
         }
     }
     
@@ -1433,6 +1454,25 @@ main {
         display: none;
     }
     
+    .breadcrumbs-mobile {
+        display: block;
+        margin: 30px 0px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: @general-color;
+    }
+    
+    .breadcrumbs-mobile__wrapper {
+        display: flex;
+        align-items: center;
+        
+        .icon-arrow-left {
+            font-size: 14px;
+            padding-right: 20px;
+        }
+    }
+    
     /* //Breadcrumbs */
 
     /* Position */
@@ -1449,22 +1489,6 @@ main {
     
     .mobile-button-sort {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 45px;
-        height: 45px;
-        border: 1px solid #EEEEEE;
-        border-radius: 2px;
-        flex-shrink: 0;
-        margin-left: 10px;
-        
-        .icon-decor-sort {
-            width: 24px;
-            height: 24px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
     }
     
     /* Position */
@@ -1506,6 +1530,14 @@ main {
     }
     
     /* //General tabs */
+    
+    /* Star */
+    
+    .star__list {
+        font-size: 14px;
+    }
+    
+     /* //Star */
 }
 
 @media screen and (max-width: 576px) {

@@ -424,8 +424,18 @@
                 <div class="breadcrumbs__wrapper container">
                         <a href="#" class="breadcrumbs__link">Главная</a>
                         <a href="#" class="breadcrumbs__link">Компьютеры</a>
-                        <a href="#" class="breadcrumbs__link">Ноутбук Lenovo</a>
+                        <a href="#" class="breadcrumbs__link">
+                            <span>Ноутбук Lenovo</span>
+                        </a>
                     </ul>
+                </div>
+            </section>
+            <section class="breadcrumbs-mobile">
+                <div class="breadcrumbs-mobile__wrapper container">
+                    <a href="#">
+                        <span class="icon-arrow-left"></span>
+                        <span>Ноутбук Lenovo</span>
+                    </a>
                 </div>
             </section>
             <section class="product-page">
@@ -473,6 +483,9 @@
                                     <img class="js-zoom-img" v-lazy="'./img/product-img.png'" alt="title">
                                     <div class="show-area js-show-area"></div>
                                 </li>
+                                <button class="add-to-favorite add-to-favorite--product-mobile">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
                             </ul>
                             <div class="product__img__wrapper">
                                 <button class="arrow-button disabled js-image-button-prev">
@@ -586,11 +599,14 @@
                                     <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'./img/reviews-photo-full.png'"></button>
                                     <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'./img/reviews-photo-full.png'"></button>
                                     <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'./img/reviews-photo-full.png'"></button>
+                                    <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'./img/reviews-photo-full.png'"></button>
+                                    <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'./img/reviews-photo-full.png'"></button>
+                                    <button class="product-reviews-photo__item js-button js-reviews-photo" data-target="reviews-photo" v-lazy:background-image="'./img/reviews-photo-full.png'"></button>
                                 </div>
                             </div>
                             <div class="product-reviews__sort">
                                 <p class="product-reviews__sort__caption">Отзывы покупателей</p>
-                                <div class="general__sort">
+                                <div class="general__sort" v-if="windowWidth > 1024">
                                     <p class="general__sort-text">Сортировка по:</p>
                                     <ul class="general__sort-list">
                                         <li class="general__sort-item">
@@ -613,6 +629,31 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="general-drop-wrapper js-drop-item" v-else>
+                                    <button class="mobile-button-sort js-drop-button">
+                                        <span class="icon-decor-sort" v-lazy:background-image="'/img/icon-sort.svg'"></span>
+                                    </button>
+                                    <div class="general-drop-content__wrapper">
+                                        <ul class="general-drop__list">
+                                            <li class="general-drop__item">
+                                                <button>Дате</button>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <button>Полезности</button>
+                                            </li>
+                                            <li class="general-drop__item">
+                                                <button>Оценке</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <label class="checkbox__wrapper checkbox__wrapper--reviews-sort" v-if="windowWidth < 1025">
+                                    <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                    <span class="custome-check">
+                                        <span class="icon-active"></span>
+                                    </span>
+                                    <span class="text">С фото</span>
+                                </label>
                             </div>
                             <div class="product-reviews__wrapper">
                                 <ul class="product-reviews__list">
@@ -1173,15 +1214,14 @@
                             <span class="text">смотреть еще</span>
                         </button>
                         <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination disabled">
+                            <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-left"></span>
                             </button>
                             <ul class="pagination__list">
                                 <li class="pagination__item active">1</li>
                                 <li class="pagination__item">2</li>
                                 <li class="pagination__item">3</li>
-                                <li class="pagination__item pagination__item--dots">...</li>
-                                <li class="pagination__item">12</li>
+                                <li class="pagination__item">4</li>
                             </ul>
                             <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-right"></span>
@@ -1302,15 +1342,14 @@
                             <span class="text">смотреть еще</span>
                         </button>
                         <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination disabled">
+                            <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-left"></span>
                             </button>
                             <ul class="pagination__list">
                                 <li class="pagination__item active">1</li>
                                 <li class="pagination__item">2</li>
                                 <li class="pagination__item">3</li>
-                                <li class="pagination__item pagination__item--dots">...</li>
-                                <li class="pagination__item">12</li>
+                                <li class="pagination__item">4</li>
                             </ul>
                             <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-right"></span>
@@ -1431,15 +1470,14 @@
                             <span class="text">смотреть еще</span>
                         </button>
                         <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination disabled">
+                            <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-left"></span>
                             </button>
                             <ul class="pagination__list">
                                 <li class="pagination__item active">1</li>
                                 <li class="pagination__item">2</li>
                                 <li class="pagination__item">3</li>
-                                <li class="pagination__item pagination__item--dots">...</li>
-                                <li class="pagination__item">12</li>
+                                <li class="pagination__item">4</li>
                             </ul>
                             <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-right"></span>
@@ -1637,7 +1675,7 @@
                         <textarea class="main_textarea"></textarea>
                     </label>
                     <button class="main-button">
-                        <span class="text">отправить</span>
+                        <span class="text">опубликовать отзыв</span>
                     </button>
                 </form>
             </div>
