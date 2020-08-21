@@ -420,464 +420,356 @@
             </div>
         </section>
         <main>
-            <section class="breadcrumbs">
-                <div class="breadcrumbs__wrapper container">
-                        <a href="#" class="breadcrumbs__link">Главная</a>
-                        <a href="#" class="breadcrumbs__link">Оформление заказа</a>
+            <section class="checkout">
+                <div class="checkout__wrapper container">
+                    <h1 class="main-caption-l checkout-page__caption">Оформление заказа</h1>
+                    <ul class="registration-order__list">
+                        <li class="registration-order__item" :class="{active: checkoutMobileTab >= 1}">
+                            <span class="decor">1</span>
+                            <p class="text">Получатель</p>
+                        </li>
+                        <li class="registration-order__item" :class="{active: checkoutMobileTab >= 2}">
+                            <span class="decor">2</span>
+                            <p class="text">Доставка</p>
+                        </li>
+                        <li class="registration-order__item" :class="{active: checkoutMobileTab >= 3}">
+                            <span class="decor">3</span>
+                            <p class="text">Оплата</p>
+                        </li>
                     </ul>
-                </div>
-            </section>
-            <section class="blog-page">
-                <div class="blog-page__wrapper container">
-                    <h1 class="main-caption-l blog-page--caption">Блог</h1>
-                    <div class="general-tabs js-general-tabs-wrapper">
-                        <button class="arrow-button general-tabs__scroll-button general-tabs__scroll-button--left js-general-tans-button-prev hidden">
-                            <span class="icon-arrow-left"></span>
-                        </button>
-                        <div class="general-tabs__list js-general-tabs-list">
-                            <button class="general-tabs__button active">все</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">тренды</button>
-                            <button class="general-tabs__button">советы</button>
-                            <button class="general-tabs__button">для вдохновения</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">все</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">тренды</button>
-                            <button class="general-tabs__button">советы</button>
-                            <button class="general-tabs__button">для вдохновения</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">все</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">тренды</button>
-                            <button class="general-tabs__button">советы</button>
-                            <button class="general-tabs__button">для вдохновения</button>
-                            <button class="general-tabs__button">новости</button>
-                        </div>
-                        <button class="arrow-button general-tabs__scroll-button general-tabs__scroll-button--right js-general-tans-button-next">
-                            <span class="icon-arrow-right"></span>
-                        </button>
-                    </div>
-                    <div class="position-wrapper">
-                        <ul class="blog__list position-wrapper__list">
-                            <li class="blog__item blog__item--big">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                    <div class="checkout__container">
+                        <div class="checkout__main-info">
+                            <div class="checkout__main-info__item" v-if="checkoutMobileTab == 1">
+                                <p class="checkout__main-info__caption">Получатель заказа</p>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout">
+                                        <span class="input-caption">Фамилия</span>
+                                        <input type="text" class="main_input" placeholder="Фамилия">
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--checkout">
+                                        <span class="input-caption">Имя</span>
+                                        <input type="text" class="main_input" placeholder="Имя">
+                                    </label>
                                 </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout">
+                                        <span class="input-caption">Телефон</span>
+                                        <input type="tel" class="main_input" placeholder="+38">
+                                    </label>
                                 </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="checkbox__wrapper input_wrapper--checkout">
+                                        <input type="checkbox" value="Создать аккаунт в нашем магазине" class="input-checkbox"> 
+                                        <span class="custome-check">
+                                            <span class="icon-active"></span></span> 
+                                            <span class="text">Создать аккаунт в нашем магазине</span>
+                                    </label>
                                 </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout">
+                                        <span class="input-caption">Email</span>
+                                        <input type="email" class="main_input" placeholder="Email">
+                                    </label>
                                 </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
+                                <button class="text-button">Добавить комментарий к заказу</button>
+                            </div>
+                            <!-- Доставка почта -->
+                            <!-- <div class="checkout__main-info__item">
+                                <p class="checkout__main-info__caption">Доставка</p>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Способ доставки</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Способ доставки" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Выберите город</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Выберите город" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Выберите отделение</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Выберите отделение" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">№24, пр. Победы,76</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">№23, пр. Победы,76</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">№22, пр. Победы,76</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                <p class="checkout__main-info__item__sub-text">Мы сохраним эти данные для того, чтобы в следующий раз вы смогли выбрать адрес доставки в 1 клик</p>
+                            </div> -->
+                            <!-- //Доставка почта -->
+                            <!-- Доставка самовывоз -->
+                            <div class="checkout__main-info__item" v-if="checkoutMobileTab == 2">
+                                <p class="checkout__main-info__caption">Доставка</p>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Способ доставки</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Способ доставки" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Выберите город</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Выберите город" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Выберите магазин</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Выберите магазин" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">№24, пр. Победы,76</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">№23, пр. Победы,76</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">№22, пр. Победы,76</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
+                                <p class="checkout__main-info__item__sub-text">Мы сохраним эти данные для того, чтобы в следующий раз вы смогли выбрать адрес доставки в 1 клик</p>
+                            </div>
+                            <!-- //Доставка самовывоз -->
+                            <!-- Доставка курьером  -->
+                            <!-- <div class="checkout__main-info__item">
+                                <p class="checkout__main-info__caption">Доставка</p>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Способ доставки</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Способ доставки" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Новая почта2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Выберите город</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Выберите город" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Харьков2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
+                                <div class="checkout__inputs__wrapper">
+                                    <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                        <span class="input-caption">Улица</span>
+                                        <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                            <input type="text" class="main_input js-drop-input" placeholder="Улица" readonly>
+                                            <span class="icon-drop-arrow"></span>
+                                        </button>
+                                        <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                            <span class="general-drop__list">
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Улица</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Улица1</span>
+                                                </span>
+                                                <span class="general-drop__item js-drop-contains">
+                                                    <span class="text">Улица2</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--house">
+                                        <span class="input-caption">Дом</span>
+                                        <input type="text" class="main_input" placeholder="Дом">
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--house">
+                                        <span class="input-caption">Подъезд</span>
+                                        <input type="text" class="main_input" placeholder="Подъезд">
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--house">
+                                        <span class="input-caption">Этаж</span>
+                                        <input type="text" class="main_input" placeholder="Этаж">
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--house">
+                                        <span class="input-caption">Кв</span>
+                                        <input type="text" class="main_input" placeholder="Кв">
+                                    </label>
                                 </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
+                                <p class="checkout__main-info__item__sub-text">Мы сохраним эти данные для того, чтобы в следующий раз вы смогли выбрать адрес доставки в 1 клик</p>
+                            </div> -->
+                            <!-- //Доставка курьером  -->
+                            <div class="checkout__main-info__item" v-if="checkoutMobileTab == 3">
+                                <p class="checkout__main-info__caption">Оплата</p>
+                                <p class="input-caption input-caption--margin-bottom">Способ оплаты</p>
+                                <div class="checkout__inputs__wrapper checkout__inputs__wrapper--radio">
+                                    <label class="radio__wrapper radio__wrapper--checkout">
+                                        <input type="radio" class="input-radio" name="paysystem" value="Банковской картой" checked>
+                                        <span class="custome-radio"></span>
+                                        <span class="text">Банковской картой</span>
+                                    </label>
+                                    <label class="radio__wrapper radio__wrapper--checkout">
+                                        <input type="radio" class="input-radio" name="payyistem" value="Наложенным платежом">
+                                        <span class="custome-radio"></span>
+                                        <span class="text">Наложенным платежом</span>
+                                    </label>
                                 </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                <div class="checkout__inputs__wrapper checkout__inputs__wrapper--cart">
+                                    <label class="input_wrapper input_wrapper--cart">
+                                        <span class="input-caption">Номер карты</span>
+                                        <input type="number" class="main_input" placeholder="2345 7654 7654 9876" maxlength="16">
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--cart-date">
+                                        <span class="input-caption">Срок действия</span>
+                                        <input type="text" class="main_input" placeholder="ММ/ГГ">
+                                    </label>
+                                    <label class="input_wrapper input_wrapper--cart-cvv js-drop-item">
+                                        <span class="input-caption">CVV-код</span>
+                                        <input type="password" class="main_input" placeholder="***" maxlength="3">
+                                        <button class="show-cvv-button js-drop-button">
+                                            <span>i</span>
+                                        </button>
+                                        <span class="checkout__placeholder-cvv">
+                                            <span class="img" v-lazy:background-image="'./img/CVV-code.png'"></span>
+                                        </span>
+                                    </label>
                                 </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="general-navigation">
-                        <button class="general-button-more-info general-button-more-info--navigation">
-                            <span class="text">перейти в блог</span>
-                        </button>
-                        <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination">
-                                <span class="icon-arrow-left"></span>
+                            </div>
+                            <!-- Другой способ оплаты -->
+                            <!-- <div class="checkout__main-info__item">
+                                <p class="checkout__main-info__caption">Оплата</p>
+                                <label class="input_wrapper input_wrapper--checkout js-drop-item general-drop-wrapper">
+                                    <span class="input-caption">Способ оплаты</span>
+                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                        <input type="text" class="main_input js-drop-input" placeholder="Способ оплаты" readonly>
+                                        <span class="icon-drop-arrow"></span>
+                                    </button>
+                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                        <span class="general-drop__list">
+                                            <span class="general-drop__item js-drop-contains">
+                                                <span class="text">Опалат</span>
+                                            </span>
+                                            <span class="general-drop__item js-drop-contains">
+                                                <span class="text">Опалат1</span>
+                                            </span>
+                                            <span class="general-drop__item js-drop-contains">
+                                                <span class="text">Опалат2</span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div> -->
+                            <!-- Другой способ оплаты -->
+                            <button class="main-button main-button--checkout" v-if="checkoutMobileTab < 3" @click="checkoutMobileTab++">
+                                <span class="text">далее</span>
                             </button>
-                            <ul class="pagination__list">
-                                <li class="pagination__item active">1</li>
-                                <li class="pagination__item">2</li>
-                                <li class="pagination__item">3</li>
-                                <li class="pagination__item">4</li>
-                            </ul>
-                            <button class="arrow-button arrow-button--pagination">
-                                <span class="icon-arrow-right"></span>
+                            <button class="main-button main-button--checkout" v-if="checkoutMobileTab == 3">
+                                <span class="text">оформить заказ</span>
                             </button>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="seo-blog">
-                <div class="seo-blog__wrapper container">
-                    <p class="main-caption-m">SEO уникальный для каждой категории</p>
-                    <div class="seo-text">
-                        <h5>Подзаголовок</h5>
-                        <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения систем массового участия.</p>
-                         <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения систем массового участия.</p>
-                    </div>
-                </div>
-            </section>
-            <section class="social-block">
-                <div class="social-block__wrapper container">
-                    <div class="general-header-block general-header-block--social">
-                        <p class="general-header-block__caption main-caption-m">Мы в социальных сетях</p>
-                        <p class="general-header-block__sub">Дополнительный текст</p>
-                    </div>
-                    <ul class="social__list">
-                        <li class="social__item">
-                            <a href="#" class="social__link">
-                                <span class="icon-fb"></span>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__link">
-                                <span class="icon-inst"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="subscription">
-                <div class="subscription__wrapper container">
-                    <p class="main-caption-s subscription__caption">Призыв на подписку о рассылке</p>
-                    <form class="subscription__form">
-                        <label class="input_wrapper input_wrapper--subscription">
-                            <span class="input-caption">Email</span>
-                            <input type="email" class="main_input" placeholder="Email">
-                        </label>
-                        <div class="checkbox__container checkbox__container--subscription">
-                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
-                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
-                                <span class="custome-check">
-                                    <span class="icon-active"></span>
-                                </span>
-                                <span class="text">Тема для рассылки</span>
-                            </label>
-                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
-                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
-                                <span class="custome-check">
-                                    <span class="icon-active"></span>
-                                </span>
-                                <span class="text">Тема для рассылки</span>
-                            </label>
-                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
-                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
-                                <span class="custome-check">
-                                    <span class="icon-active"></span>
-                                </span>
-                                <span class="text">Тема для рассылки</span>
-                            </label>
-                        </div>
-                        <button class="main-button main-button--subscription">
-                            <span class="text">отправить</span>
-                        </button>
-                    </form>
                 </div>
             </section>
         </main>
@@ -1045,6 +937,6 @@
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="./node_modules/vue-slider-component/dist-css/vue-slider-component.umd.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/blog.js"></script>
+    <script src="./js/checkout.js"></script>
 </body>
 </html>

@@ -9,6 +9,8 @@ gulp.task('serve', ['less'], function() {
     gulp.watch("less/index/*.less", ['less']);
     gulp.watch("less/catalog/*.less", ['less']);
     gulp.watch("less/product/*.less", ['less']);
+    gulp.watch("less/checkout/*.less", ['less']);
+    gulp.watch("less/cart/*.less", ['less']);
     // gulp.watch("less/*.less").on('change', browserSync.reload);
     // gulp.watch("less/index/*.less").on('change', browserSync.reload);
     gulp.watch("*.html").on('change', browserSync.reload);

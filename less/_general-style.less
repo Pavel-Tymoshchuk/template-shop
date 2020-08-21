@@ -227,9 +227,11 @@ main {
     line-height: 16px;
     
     &.active {
+        z-index: 1;
         .general-drop-content__wrapper {
             visibility: visible;
             opacity: 1;
+            z-index: 5;
             transition: visibility 0s 0s, opacity .4s;
         }
         
@@ -253,6 +255,22 @@ main {
     }
 }
 
+.general-drop-wrapper__button--inputs {
+    width: 100%;
+    position: relative;
+    
+    .icon-drop-arrow {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .main_input {
+        cursor: pointer;
+    }
+}
+
 .general-drop-content__wrapper {
     position: absolute;
     top: calc(100% + 10px);
@@ -269,7 +287,13 @@ main {
     transition: visibility 0s .4s, opacity .4s;
 }
 
+.general-drop-content__wrapper--input {
+    width: 100%;
+}
+
 .general-drop__list {
+    display: flex;
+    flex-direction: column;
     max-height: 285px;
     padding: 20px 15px 20px 20px;
     overflow: auto;
@@ -289,9 +313,14 @@ main {
 
 .general-drop__item {
     margin-bottom: 20px;
+    cursor: pointer;
     
     &:last-child {
         margin-bottom: 0px;
+    }
+    
+    &.active {
+        color: #000000;
     }
 }
 
@@ -339,6 +368,7 @@ main {
 .input_wrapper {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     position: relative;
     
@@ -1107,12 +1137,58 @@ main {
 
 .general-tabs {
     margin-bottom: 30px;
+    position: relative;
+    
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: -6px;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(270deg, #FFFFFF 58.75%, rgba(255, 255, 255, 0) 100%);
+        z-index: 1;
+    }
+    
+    &::after {
+        right: auto;
+        left: 0px;
+        background: linear-gradient(90deg, #FFFFFF 58.75%, rgba(255, 255, 255, 0) 100%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity .4s;
+    }
+    
+    &.active {
+        &::after {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
 }
 
 .general-tabs__list {
     display: flex;
     align-items: center;
     margin-right: -30px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    scroll-behavior: smooth;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    &::after {
+        content: ".";
+        width: 1px;
+        height: 1px;
+        color: transparent;
+        font-size: 1px;
+    }
 }
 
 .general-tabs__button {
@@ -1126,6 +1202,7 @@ main {
     padding-bottom: 15px;
     transition: color .4s;
     margin-right: 30px;
+    white-space: nowrap;
     
     &.active {
         color: #2F80ED;
@@ -1146,6 +1223,34 @@ main {
         transition: width .4s;
     }
 }
+
+.general-tabs__scroll-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    background-color: #ffffff;
+    font-size: 8px;
+    width: 10px;
+    height: 10px;
+    color: #333333;
+    z-index: 3;
+    transition: opacity .4s, visibility 0s 0s;
+    
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s, visibility 0s .4s;
+    }
+}
+
+.general-tabs__scroll-button--right {
+    left: auto;
+    right: 0px;
+}
+
 
 /* //General tabs */
 
@@ -1503,21 +1608,6 @@ main {
         width: calc(100% + 32px);
         margin-left: -16px;
         padding-left: 16px;
-        overflow: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        
-        &::-webkit-scrollbar {
-            display: none;
-        }
-        
-        &::after {
-            content: ".";
-            width: 1px;
-            height: 1px;
-            color: transparent;
-            font-size: 1px;
-        }
     }
     
     .general-tabs__button {
@@ -1525,7 +1615,6 @@ main {
     }
     
     .general-tabs__button {
-        white-space: nowrap;
         padding-bottom: 10px;
     }
     

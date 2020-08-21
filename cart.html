@@ -423,461 +423,141 @@
             <section class="breadcrumbs">
                 <div class="breadcrumbs__wrapper container">
                         <a href="#" class="breadcrumbs__link">Главная</a>
-                        <a href="#" class="breadcrumbs__link">Оформление заказа</a>
+                        <a href="#" class="breadcrumbs__link">Корзина</a>
                     </ul>
                 </div>
             </section>
-            <section class="blog-page">
-                <div class="blog-page__wrapper container">
-                    <h1 class="main-caption-l blog-page--caption">Блог</h1>
-                    <div class="general-tabs js-general-tabs-wrapper">
-                        <button class="arrow-button general-tabs__scroll-button general-tabs__scroll-button--left js-general-tans-button-prev hidden">
-                            <span class="icon-arrow-left"></span>
-                        </button>
-                        <div class="general-tabs__list js-general-tabs-list">
-                            <button class="general-tabs__button active">все</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">тренды</button>
-                            <button class="general-tabs__button">советы</button>
-                            <button class="general-tabs__button">для вдохновения</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">все</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">тренды</button>
-                            <button class="general-tabs__button">советы</button>
-                            <button class="general-tabs__button">для вдохновения</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">все</button>
-                            <button class="general-tabs__button">новости</button>
-                            <button class="general-tabs__button">тренды</button>
-                            <button class="general-tabs__button">советы</button>
-                            <button class="general-tabs__button">для вдохновения</button>
-                            <button class="general-tabs__button">новости</button>
-                        </div>
-                        <button class="arrow-button general-tabs__scroll-button general-tabs__scroll-button--right js-general-tans-button-next">
-                            <span class="icon-arrow-right"></span>
-                        </button>
-                    </div>
-                    <div class="position-wrapper">
-                        <ul class="blog__list position-wrapper__list">
-                            <li class="blog__item blog__item--big">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+            <section class="cart">
+                <div class="cart__wrapper container">
+                    <h1 class="main-caption-l cart__caption">Оформление заказа</h1>
+                    <div class="cart__container">
+                        <div class="cart__info">
+                            <div class="cart__info__header">
+                                <p class="cart__info__header__item cart-position-product">Товар</p>
+                                <div class="wrapper cart-position-description">
+                                    <p class="cart__info__header__item cart-position-price">Цена</p>
+                                    <p class="cart__info__header__item cart-position-calc">Кол-во</p>
+                                    <p class="cart__info__header__item cart-position-total">Сумма</p>
+                                    <p class="cart-position-delete"></p>
                                 </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                            <li class="blog__item">
-                                <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                </div>
-                                <div class="blog__item__header">
-                                    <p class="blog__item__category">Категория блога</p>
-                                    <ul class="star__list star__list-checked">
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item active">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                        <li class="star__item">
-                                            <span class="icon-star"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="blog__item__link">Консультация с широким форматом аудитории и ее участников</a>
-                                <div class="blog__item__footer">
-                                    <p class="blog__item__time">6 мин чтения</p>
-                                    <p class="blog__item__comment">2 комментария</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="general-navigation">
-                        <button class="general-button-more-info general-button-more-info--navigation">
-                            <span class="text">перейти в блог</span>
-                        </button>
-                        <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination">
-                                <span class="icon-arrow-left"></span>
-                            </button>
-                            <ul class="pagination__list">
-                                <li class="pagination__item active">1</li>
-                                <li class="pagination__item">2</li>
-                                <li class="pagination__item">3</li>
-                                <li class="pagination__item">4</li>
+                                
+                            </div>
+                            <ul class="cart__info__list">
+                                <li class="cart__info__item js-delete-item">
+                                    <div class="cart__info__item-product cart-position-product">
+                                        <div class="cart__info__item-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                        <div class="cart__info__item-product__info">
+                                            <p class="cart__info__item-product__category">Категория</p>
+                                            <a href="#" class="cart__info__item-product__name js-delete-item-name">Название товара12 название товара</a>
+                                            <p class="cart__info__item-product__parm">
+                                                <span class="type">Параметр:</span>
+                                                <span class="description">значение параметра</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="cart__info__item-description cart-position-description">
+                                        <div class="cart__info__item-description__price cart-position-price">
+                                            <p class="product__old-price-cart">300грн</p>
+                                            <p class="product__price-cart">280грн</p>
+                                        </div>
+                                        <div class="cart__change-amount cart-position-calc">
+                                            <button class="cart__change-amount__button">-</button>
+                                            <label class="input_wrapper">
+                                                <input type="text" class="main_input" value="0">
+                                            </label>
+                                            <button class="cart__change-amount__button">+</button>
+                                        </div>
+                                        <div class="cart__info__item-description-total cart-position-total">300грн</div>
+                                        <button class="cart__delete__button cart-position-delete js-button js-delete-item-button" data-target="delete-elem">
+                                            <span class="icon-close"></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="cart__info__item js-delete-item">
+                                    <div class="cart__info__item-product cart-position-product">
+                                        <div class="cart__info__item-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                        <div class="cart__info__item-product__info">
+                                            <p class="cart__info__item-product__category">Категория</p>
+                                            <a href="#" class="cart__info__item-product__name js-delete-item-name">Название товара название товара</a>
+                                            <p class="cart__info__item-product__parm">
+                                                <span class="type">Параметр:</span>
+                                                <span class="description">значение параметра</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="cart__info__item-description cart-position-description">
+                                        <div class="cart__info__item-description__price cart-position-price">
+                                            <p class="product__old-price-cart">300грн</p>
+                                            <p class="product__price-cart">280грн</p>
+                                        </div>
+                                        <div class="cart__change-amount cart-position-calc">
+                                            <button class="cart__change-amount__button">-</button>
+                                            <label class="input_wrapper">
+                                                <input type="text" class="main_input" value="0">
+                                            </label>
+                                            <button class="cart__change-amount__button">+</button>
+                                        </div>
+                                        <div class="cart__info__item-description-total cart-position-total">300грн</div>
+                                        <button class="cart__delete__button cart-position-delete js-button js-delete-item-button" data-target="delete-elem">
+                                            <span class="icon-close"></span>
+                                        </button>
+                                    </div>
+                                </li>
                             </ul>
-                            <button class="arrow-button arrow-button--pagination">
-                                <span class="icon-arrow-right"></span>
+                            <div class="cart__final-price">
+                                <span>Итого:</span>
+                                <strong class="price">600 грн</strong>
+                            </div>
+                        </div>
+                        <div class="cart__sitebar" v-if="windowWidth > 767">
+                            <p class="cart__main-info__caption">Ваш заказ</p>
+                            <ul class="cart__total-list">
+                                <li class="cart__total-item">
+                                    <p class="cart__total-type">Кол-во товаров в корзине</p>
+                                    <p class="cart__total-description">2</p>
+                                </li>
+                                <li class="cart__total-item">
+                                    <p class="cart__total-type">Стоимость товаров</p>
+                                    <p class="cart__total-description">950 грн</p>
+                                </li>
+                                <li class="cart__total-item cart__total-item--promo-code">
+                                    <p class="cart__total-type">Посмотреть доступные промокоды</p>
+                                    <a href="#" class="cart__promo-code-button">Применить промокод</a>
+                                </li>
+                                <li class="cart__total-item cart__total-item--finish-price">
+                                    <p class="cart__total-type">Всего</p>
+                                    <p class="cart__total-description"> 900 грн</p>
+                                </li>
+                            </ul>
+                            <button class="main-button main-button--cart">
+                                <span class="text">оформить заказ</span>
+                            </button>
+                            <p class="cart__info-text">Текст например о бесплатной доставке от определенной суммы</p>
+                            
+                        </div>
+                        <div class="cart__sitebar" v-else>
+                            <div class="cart__sitebar__mobile-total">
+                                <p class="info">4 товара на сумму</p>
+                                <p class="price"><strong>600 грн</strong></p>
+                            </div>
+                            <ul class="cart__total-list">
+                                <li class="cart__total-item cart__total-item--promo-code">
+                                    <p class="cart__total-type">Посмотреть доступные промокоды</p>
+                                    <a href="#" class="cart__promo-code-button">Применить промокод</a>
+                                </li>
+                            </ul>
+                            <button class="main-button main-button--cart">
+                                <span class="text">оформить заказ</span>
+                            </button>
+                             <button class="general-button-more-info general-button-more-info--cart">
+                                <span class="text">вернуться к покупкам</span>
                             </button>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="seo-blog">
-                <div class="seo-blog__wrapper container">
-                    <p class="main-caption-m">SEO уникальный для каждой категории</p>
-                    <div class="seo-text">
-                        <h5>Подзаголовок</h5>
-                        <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения систем массового участия.</p>
-                         <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения систем массового участия.</p>
+                    <div class="cart__buttons">
+                        <a href="#" class="text-button">вернуться к покупкам</a>
+                        <button class="text-button js-button" data-target="help">нужна помощь?</button>
                     </div>
-                </div>
-            </section>
-            <section class="social-block">
-                <div class="social-block__wrapper container">
-                    <div class="general-header-block general-header-block--social">
-                        <p class="general-header-block__caption main-caption-m">Мы в социальных сетях</p>
-                        <p class="general-header-block__sub">Дополнительный текст</p>
-                    </div>
-                    <ul class="social__list">
-                        <li class="social__item">
-                            <a href="#" class="social__link">
-                                <span class="icon-fb"></span>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__link">
-                                <span class="icon-inst"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="subscription">
-                <div class="subscription__wrapper container">
-                    <p class="main-caption-s subscription__caption">Призыв на подписку о рассылке</p>
-                    <form class="subscription__form">
-                        <label class="input_wrapper input_wrapper--subscription">
-                            <span class="input-caption">Email</span>
-                            <input type="email" class="main_input" placeholder="Email">
-                        </label>
-                        <div class="checkbox__container checkbox__container--subscription">
-                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
-                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
-                                <span class="custome-check">
-                                    <span class="icon-active"></span>
-                                </span>
-                                <span class="text">Тема для рассылки</span>
-                            </label>
-                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
-                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
-                                <span class="custome-check">
-                                    <span class="icon-active"></span>
-                                </span>
-                                <span class="text">Тема для рассылки</span>
-                            </label>
-                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
-                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
-                                <span class="custome-check">
-                                    <span class="icon-active"></span>
-                                </span>
-                                <span class="text">Тема для рассылки</span>
-                            </label>
-                        </div>
-                        <button class="main-button main-button--subscription">
-                            <span class="text">отправить</span>
-                        </button>
-                    </form>
                 </div>
             </section>
         </main>
@@ -953,6 +633,20 @@
                 </div>
             </div>
         </footer>
+        <section class="popup popup-form js-popup" data-target="delete-elem">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption--delete-item">Удалить из корзины <span class="name js-popup-name">LENOVO IDEA PAD?</span></p>
+                <button class="general-button-more-info general-button-more-info--delete-item js-close">
+                    <span class="text">удалить</span>
+                </button>
+                <button class="main-button main-button--delete-item js-close">
+                    <span class="text">отмена</span>
+                </button>
+            </div>
+        </section>
         <section class="cookie js-popup js-cookie">
             <button class="close__popup js-close">
                 <span class="icon-close"></span>
@@ -989,44 +683,6 @@
                 </form>
             </div>
         </section>
-        <section class="popup popup-form js-popup" data-target="add-reviews">
-            <button class="close__popup js-close">
-                <span class="icon-close"></span>
-            </button>
-            <div class="popup__wrapper">
-                <p class="popup__caption">Оставить отзыв</p>
-                <form action="#" class="popup__form-wrapper">
-                    <div class="popup-add-product-reviews__item">
-                        <p class="popup-sub-caption">Оцените товар</p>
-                        <input type="hidden" name="stars" class="js-stars-input">
-                        <ul class="star__list star__list--form js-star-list">
-                            <li class="star__item star__item--form js-star-item" data-target="1">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="2">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="3">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="4">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="5">
-                                <span class="icon-star"></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <label class="input_wrapper input_wrapper--margin-bottom">
-                        <span class="input-caption">Email*</span>
-                        <textarea class="main_textarea"></textarea>
-                    </label>
-                    <button class="main-button">
-                        <span class="text">опубликовать отзыв</span>
-                    </button>
-                </form>
-            </div>
-        </section>
         <section class="popup popup-thanks js-popup" data-target="thanks">
             <button class="close__popup js-close">
                 <span class="icon-close"></span>
@@ -1045,6 +701,6 @@
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="./node_modules/vue-slider-component/dist-css/vue-slider-component.umd.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/blog.js"></script>
+    <script src="./js/cart.js"></script>
 </body>
 </html>
