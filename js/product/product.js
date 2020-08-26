@@ -98,8 +98,7 @@ const app = new Vue({
                 var style = window.getComputedStyle(activeItem);
                 let counterElem = activeItem.getAttribute('data-index');
                 let itemWidth = activeItem.offsetWidth;
-                
-                generalList.scrollLeft = (itemWidth + +style.getPropertyValue("margin-right").match(/\d/)[0]) * counterElem;
+                generalList.scrollLeft = (itemWidth + +style.getPropertyValue("margin-right").match(/\d/g).join('')) * counterElem;
             }
             
             function scrollListPrev(activeItem) {
@@ -107,7 +106,7 @@ const app = new Vue({
                 let counterElem = activeItem.getAttribute('data-index');
                 let itemWidth = activeItem.offsetWidth;
                 
-                generalList.scrollLeft = (itemWidth + +style.getPropertyValue("margin-right").match(/\d/)[0]) * (counterElem - 1);
+                generalList.scrollLeft = (itemWidth + +style.getPropertyValue("margin-right").match(/\d/g).join('')) * (counterElem - 1);
             }
             
             function changeImg(item) {
