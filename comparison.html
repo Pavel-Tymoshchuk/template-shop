@@ -156,12 +156,86 @@
                                 </div>
                             </div>
                             <div class="header__buttons">
-                                <!-- active когда только один єлемент в сравнении. По клику сообщение, что нужно еще добавить элементы. -->
-                                <!-- more когда больше одного -->
-                                <a href="#" class="header__buttons__item header__buttons__item--comparison active">
-                                    <span class="icon-comparison"></span>
-                                    <span class="noty-comparison">1</span>
-                                </a>
+                                <div class="general-drop-wrapper js-drop-item">
+                                    <!-- active когда только один єлемент в сравнении. По клику сообщение, что нужно еще добавить элементы. -->
+                                    <!-- active+more когда больше одного -->
+                                    <button class="header__buttons__item header__buttons__item--comparison active js-drop-button">
+                                        <span class="icon-comparison"></span>
+                                        <span class="noty-comparison">1</span>
+                                    </button>
+                                    <div class="general-drop-content__wrapper general-drop-content__wrapper--comparison">
+                                        <ul class="general-drop__list general-drop__list--comparison">
+                                            <li class="general-drop__item general-drop__item--comparison">
+                                                <div class="comparison-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                                <div class="comparison-product__info">
+                                                    <a href="#" class="comparison-product__link">Название товара и, конечно же, место для второй строки</a>
+                                                    <div class="comparison-product__price-wrapper">
+                                                        <p class="comparison-product__old-price">300грн</p>
+                                                         <p class="comparison-product__price">280грн</p>
+                                                    </div>
+                                                </div>
+                                                <button class="comparison-product__delete">
+                                                    <span class="icon-close"></span>
+                                                </button>
+                                            </li>
+                                            <li class="general-drop__item general-drop__item--comparison">
+                                                <div class="comparison-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                                <div class="comparison-product__info">
+                                                    <a href="#" class="comparison-product__link">Название товара и, конечно же, место для второй строки</a>
+                                                    <div class="comparison-product__price-wrapper">
+                                                        <p class="comparison-product__old-price">300грн</p>
+                                                         <p class="comparison-product__price">280грн</p>
+                                                    </div>
+                                                </div>
+                                                <button class="comparison-product__delete">
+                                                    <span class="icon-close"></span>
+                                                </button>
+                                            </li>
+                                            <li class="general-drop__item general-drop__item--comparison">
+                                                <div class="comparison-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                                <div class="comparison-product__info">
+                                                    <a href="#" class="comparison-product__link">Название товара и, конечно же, место для второй строки</a>
+                                                    <div class="comparison-product__price-wrapper">
+                                                        <p class="comparison-product__old-price">300грн</p>
+                                                         <p class="comparison-product__price">280грн</p>
+                                                    </div>
+                                                </div>
+                                                <button class="comparison-product__delete">
+                                                    <span class="icon-close"></span>
+                                                </button>
+                                            </li>
+                                            <li class="general-drop__item general-drop__item--comparison">
+                                                <div class="comparison-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                                <div class="comparison-product__info">
+                                                    <a href="#" class="comparison-product__link">Название товара и, конечно же, место для второй строки</a>
+                                                    <div class="comparison-product__price-wrapper">
+                                                        <p class="comparison-product__old-price">300грн</p>
+                                                         <p class="comparison-product__price">280грн</p>
+                                                    </div>
+                                                </div>
+                                                <button class="comparison-product__delete">
+                                                    <span class="icon-close"></span>
+                                                </button>
+                                            </li>
+                                            <li class="general-drop__item general-drop__item--comparison">
+                                                <div class="comparison-product__img" v-lazy:background-image="'./img/banner-img.png'"></div>
+                                                <div class="comparison-product__info">
+                                                    <a href="#" class="comparison-product__link">Название товара и, конечно же, место для второй строки</a>
+                                                    <div class="comparison-product__price-wrapper">
+                                                        <p class="comparison-product__old-price">300грн</p>
+                                                         <p class="comparison-product__price">280грн</p>
+                                                    </div>
+                                                </div>
+                                                <button class="comparison-product__delete">
+                                                    <span class="icon-close"></span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <button class="main-button main-button--small main-button--width">
+                                            <span class="text">сравнить товары</span>
+                                        </button>
+                                    </div>
+                                </div>
                                 <button class="header__buttons__item js-button" data-target="push-noty">
                                     <span class="icon-noty"></span>
                                 </button>
@@ -437,8 +511,8 @@
                         </button>
                     </div>
                     <div class="comparison__header">
-                        <div class="comparison__param comparison-param-position">
-                            <label class="input_wrapper js-drop-item general-drop-wrapper">
+                        <div class="comparison__param comparison-param-position js-comparison-param">
+                            <div class="input_wrapper js-drop-item general-drop-wrapper">
                                 <span class="input-caption">Для категории</span>
                                 <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
                                     <input type="text" class="main_input js-drop-input" placeholder="Для категории" readonly>
@@ -457,7 +531,7 @@
                                         </span>
                                     </span>
                                 </span>
-                            </label>
+                            </div>
                             <div class="comparison__radio-filter">
                                 <label class="radio__wrapper radio__wrapper--comparison">
                                     <input type="radio" class="input-radio" name="param" value="Все параметры" checked>
@@ -471,134 +545,150 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="comparison__product comparison-param-product">
-                            <div class="comparison__product__container">
-                                <div class="comparison__product__button">
-                                    <button class="arrow-button js-comparison-button-prev disabled">
-                                        <span class="icon-arrow-left"></span>
-                                    </button>
-                                    <button class="arrow-button js-comparison-button-next">
-                                        <span class="icon-arrow-right"></span>
-                                    </button>
+                        <div class="comparison__product comparison-param-product js-comparison-wrapper-product">
+                            <div class="comparison__product__sticky-wrapper js-comparison-sticky-product">
+                                <div class="hidden-block js-hidden-comparison-block"></div>
+                                <div class="comparison__product__container js-comparison-container-product">
+                                    <div class="comparison__product__button">
+                                        <button class="arrow-button js-comparison-button-prev disabled">
+                                            <span class="icon-arrow-left"></span>
+                                        </button>
+                                        <button class="arrow-button js-comparison-button-next">
+                                            <span class="icon-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                    <ul class="comparison__product__list js-comparison-product-list">
+                                        <li class="comparison__product__item js-comparison-product-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                        <li class="comparison__product__item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                        <li class="comparison__product__item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                        <li class="comparison__product__item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                        <li class="comparison__product__item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                        <li class="comparison__product__item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                        <li class="comparison__product__item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                                <button class="main-button main-button--small main-button--width">
+                                                    <span class="text">в корзину</span>
+                                                </button>
+                                            </div>
+                                            <button class="comparison__product__delete">
+                                                <span class="icon-close"></span>
+                                            </button>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="comparison__product__list js-comparison-product-list">
-                                    <li class="comparison__product__item js-comparison-product-item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                    <li class="comparison__product__item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                    <li class="comparison__product__item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                    <li class="comparison__product__item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                    <li class="comparison__product__item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                    <li class="comparison__product__item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                    <li class="comparison__product__item">
-                                        <div class="comparison__product__img">
-                                            <img v-lazy="'/img/product-img.png'" alt="title">
-                                        </div>
-                                        <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
-                                        <div class="comparison__product-price">
-                                            <p class="comparison__product__old-price">300грн</p>
-                                            <p class="comparison__product__price">280грн</p>
-                                        </div>
-                                        <button class="main-button main-button--small main-button--width">
-                                            <span class="text">в корзину</span>
-                                        </button>
-                                        <button class="comparison__product__delete">
-                                            <span class="icon-close"></span>
-                                        </button>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="comparison__info">
+                    <div class="comparison__info js-comparison-body" v-if="windowWidth > 767">
                         <div class="comparison__info-param comparison-param-position">
                             <div class="comparison__info__item">
                                 <p class="comparison__info-param__caption js-comparison-info">Акции и специальные предложения</p>
@@ -907,6 +997,125 @@
                                             </li>
                                         </ul>
                                     </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="comparison__info js-comparison-body" v-else>
+                        <div class="comparison__info-param comparison-param-position">
+                            <ul class="comparison__info-param__list">
+                                <li class="comparison__info-param__item">
+                                    <div class="comparison__info-param__wrapper js-drop-item">
+                                        <span>Диапазоны GSM</span>
+                                        <button class="comparison__placeholder__button js-drop-button">?</button>
+                                        <div class="comparison__placeholder__text">
+                                            <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                        </div>
+                                    </div>
+                                    <ul class="comparison__product__mobile-list">
+                                        <li class="comparison__product__mobile-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                            </div>
+                                            <div class="comparison__info-param-mobile">
+                                                <p>800, 900, 1800, 1900</p>
+                                            </div>
+                                        </li>
+                                        <li class="comparison__product__mobile-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                            </div>
+                                            <div class="comparison__info-param-mobile">
+                                                <p>800, 900, 1800, 1900</p>
+                                            </div>
+                                        </li>
+                                        <li class="comparison__product__mobile-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                            </div>
+                                            <div class="comparison__info-param-mobile">
+                                                <p>800, 900, 1800, 1900</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="comparison__info-param__item">
+                                    <div class="comparison__info-param__wrapper js-drop-item">
+                                        <span>Диагональ дисплея (дюйм)</span>
+                                        <button class="comparison__placeholder__button js-drop-button">?</button>
+                                        <div class="comparison__placeholder__text">
+                                            <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                        </div>
+                                    </div>
+                                    <ul class="comparison__product__mobile-list">
+                                        <li class="comparison__product__mobile-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                            </div>
+                                            <!-- same когда одинаковы параметры -->
+                                            <div class="comparison__info-param-mobile same">
+                                                <p>6.1</p>
+                                            </div>
+                                        </li>
+                                        <li class="comparison__product__mobile-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                            </div>
+                                            <div class="comparison__info-param-mobile">
+                                                <p>6.1</p>
+                                            </div>
+                                        </li>
+                                        <li class="comparison__product__mobile-item">
+                                            <div class="comparison__product__img">
+                                                <img v-lazy="'/img/product-img.png'" alt="title">
+                                            </div>
+                                            <div class="comparison__product__info">
+                                                <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                                <div class="comparison__product-price">
+                                                    <p class="comparison__product__old-price">300грн</p>
+                                                    <p class="comparison__product__price">280грн</p>
+                                                </div>
+                                            </div>
+                                            <div class="comparison__info-param-mobile">
+                                                <p>6.1</p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>

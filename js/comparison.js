@@ -15,10 +15,12 @@ const app = new Vue({
             let allInfoItems = document.querySelectorAll('.js-comparison-info');
             let allInfoProductItems = document.querySelectorAll('.js-comparison-info-product');
             let arrayHeights = [];
-                
+            
+            
             for(let i = 0; allInfoItems.length > i; i++) {
                 arrayHeights.push(allInfoItems[i].offsetHeight);
             }
+            
             let counter = 0;
             allInfoProductItems.forEach((item,index) => {
                 item.setAttribute('style', `height: ${arrayHeights[counter]}px;`);
@@ -40,7 +42,6 @@ const app = new Vue({
             let styleProductItem = window.getComputedStyle(productItem);
             let productItemWidth = productItem.offsetWidth + +styleProductItem['margin-right'].match(/\d/g).join('');
             
-            console.log(productItemWidth);
             function movePrev() {
                 currenScrollValue = productList.scrollLeft;
                 productInfoList.scrollLeft -= productItemWidth;
@@ -67,6 +68,47 @@ const app = new Vue({
                     this.classList.add('disabled');
                 }
             }
+        },
+        showProductList() {
+            function move(){
+                let comparisonWrapper = document.querySelector('.js-comparison-wrapper-product');
+                let comparisonContainer = document.querySelector('.js-comparison-container-product');
+                let stikyBlock = document.querySelector('.js-comparison-sticky-product');
+                let comparisonParam = document.querySelector('.js-comparison-param');
+                let comparisonHiddenblock = document.querySelector('.js-hidden-comparison-block');
+                
+                let comparisonBodyBottom = document.querySelector('.js-comparison-body').getBoundingClientRect().bottom;
+                
+                if(comparisonBodyBottom < stikyBlock.offsetHeight) {
+                    stikyBlock.classList.add('hide');
+                }else {
+                    stikyBlock.classList.remove('hide');
+                }
+                
+                comparisonHiddenblock.style.width = comparisonParam.offsetWidth + 'px';
+            
+                if((comparisonWrapper.getBoundingClientRect().top + pageYOffset - 30) < window.scrollY) {
+                    stikyBlock.setAttribute('style', `position: fixed;`);
+                    stikyBlock.classList.add("fixed");
+                    comparisonContainer.setAttribute('style', `width:${comparisonWrapper.offsetWidth}px;`);
+                    
+                }else {
+                    stikyBlock.setAttribute('style', `position: absolute;`);
+                    stikyBlock.classList.remove("fixed");
+                    comparisonContainer.setAttribute('style', `width:${comparisonWrapper.offsetWidth}px;`);
+                }
+            }
+        
+        
+            window.addEventListener("resize",function(){
+                move();
+            });
+            
+            move()
+            
+            document.addEventListener("scroll",function(){
+                move();
+            });
         }
     },
     mounted() {
@@ -94,8 +136,13 @@ const app = new Vue({
             this.windowWidth = window.innerWidth;
         });
         
-        this.setHeightProp();
         
-        this.moveProductItem();
+        if(this.windowWidth > 767) {
+            this.showProductList();
+            setTimeout(() => {
+                this.moveProductItem();
+                this.setHeightProp();
+            },100)
+        }
     }
 });

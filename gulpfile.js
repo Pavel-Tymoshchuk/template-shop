@@ -14,6 +14,7 @@ gulp.task('serve', ['less'], function() {
     gulp.watch("less/blog-page/*.less", ['less']);
     gulp.watch("less/article/*.less", ['less']);
     gulp.watch("less/comparison/*.less", ['less']);
+    gulp.watch("less/profile/*.less", ['less']);
     // gulp.watch("less/*.less").on('change', browserSync.reload);
     // gulp.watch("less/index/*.less").on('change', browserSync.reload);
     gulp.watch("*.html").on('change', browserSync.reload);

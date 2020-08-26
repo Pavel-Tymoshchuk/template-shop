@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function(){
             else
                 element.closest('.js-drop-item').classList.add('active');
                 
-            console.log('active');
         }
         
         if(element.closest('.js-drop-contains')){

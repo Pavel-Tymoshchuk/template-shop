@@ -164,7 +164,6 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
@@ -425,6 +424,7 @@ main {
     
     .general-drop-content__wrapper {
         top: 100%;
+        padding-right: 0px;
     }
     
     .general-drop__list {
@@ -922,6 +922,7 @@ main {
     max-width: 405px;
     width: 100%;
     max-height: 500px;
+    height: 100%;
     padding: 20px;
     background-color: #ffffff;
     overflow: auto;
@@ -1566,6 +1567,18 @@ main {
     .general-tabs__scroll-button {
         display: none;
     }
+    
+    /* //General tabs */
+    
+    /* Push noty */
+    
+    .main-push-notification {
+        top: 20px;
+        right: 20px;
+        max-height: 250px;
+    }
+    
+    /* //Push noty */
 }
 
 @media screen and (max-width: 767px) {

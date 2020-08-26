@@ -1,0 +1,117 @@
+/* Profile */
+
+.profile__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile__main-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile__main-info__image {
+    width: 36px;
+    height: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile__main-info__email {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: #828282;
+    margin-right: 20px;
+}
+
+.profile__main-info__edit {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    
+    .decor {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 4px;
+        height: 4px;
+        background-color: #333333;
+        border-radius: 50%;
+        
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 3px);
+            left: 0px;
+            width: 4px;
+            height: 4px;
+            background-color: #333333;
+            border-radius: 50%;
+        }
+        
+        &::after {
+            top: auto;
+            bottom: calc(100% + 3px);
+        }
+    }
+}
+
+.profile__content__caption {
+    margin-bottom: 30px;
+}
+
+.profile__main-info__change-photo {
+    position: relative;
+    font-size: 12px;
+    line-height: 150%;
+    cursor: pointer;
+    transition: color .4s;
+    
+    .input {
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+.profile__information {
+    margin-top: 20px;
+    max-width: 630px;
+    width: 100%;
+}
+
+.profile__caption {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.profile__information__item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+    
+    &:last-of-type {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .profile__main-info__change-photo {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+}
+
+/* Profile */

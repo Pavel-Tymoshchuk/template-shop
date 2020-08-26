@@ -256,7 +256,7 @@
     color: #828282;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .4s, visibility 0s .4s;
+    transition: opacity .4s, visibility 0s .4s, color .4s;
     
     .noty-comparison {
         position: absolute;
@@ -270,13 +270,84 @@
     &.active {
         opacity: 1;
         visibility: visible;
-        transition: opacity .4s, visibility 0s 0s;
+        transition: opacity .4s, visibility 0s 0s, color .4s;
     }
     
     &.more {
         color: #2F80ED;
     }
 }
+
+.general-drop-content__wrapper--comparison {
+    min-width: 385px;
+    
+    .main-button {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.general-drop__item--comparison {
+    display: flex;
+    position: relative;
+}
+
+.comparison-product__img {
+    width: 53px;
+    height: 53px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.comparison-product__link {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    height: 30px;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    padding-right: 20px;
+    transition: color .4s;
+}
+
+.comparison-product__price-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comparison-product__old-price {
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: line-through;
+    color: #333333;
+    
+    + .comparison-product__price {
+        order: -1;
+        color: #EB5757;
+        margin-right: 10px;
+    }
+}
+
+.comparison-product__price {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.comparison-product__delete {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 10px;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
 
 .header-info-block {
     background: #2F80ED;
@@ -375,11 +446,31 @@
             color: #2F80ED;
         }
     }
+    
+    .comparison-product__link {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+    
+    .general-drop__item--comparison {
+        &:hover {
+            .comparison-product__delete {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 /* //Header hover */
 
 /* header media */
+
+@media screen and (max-width: 1200px) {
+    .comparison-product__delete {
+        opacity: 1;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .header-search {

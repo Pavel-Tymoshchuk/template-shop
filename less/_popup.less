@@ -4,7 +4,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0) translateZ(0);
     z-index: 10;
     background-color: #fff;
     max-height: 100%;
@@ -40,7 +40,7 @@
 }
 
 .popup.active {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1) translateZ(0);
     transition: transform 0.4s;
 }
 
@@ -107,7 +107,7 @@
 /* Popup form */
 
 .popup-form {
-    max-width: 365px;
+    max-width: 366px;
 }
 
 .popup__caption {
@@ -409,6 +409,29 @@
     max-width: 100%;
 }
 
+/* //Popup delete item */
+
+/* Popup change pass */
+
+.resest-password {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    transition: color .4s;
+}
+
+.resest-password--change-pass {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-button--change-pass {
+    margin-bottom: 20px;
+}
+
+/* //Popup change pass */
+
 @media screen and (min-width: 1201px) {
     .close__popup {
         &:hover {
@@ -422,6 +445,12 @@
             .icon-add-photo {
                 color: #2F80ED;
             }
+        }
+    }
+    
+    .resest-password {
+        &:hover {
+            color: #2F80ED;
         }
     }
 }
