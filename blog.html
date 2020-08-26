@@ -423,7 +423,7 @@
             <section class="breadcrumbs">
                 <div class="breadcrumbs__wrapper container">
                         <a href="#" class="breadcrumbs__link">Главная</a>
-                        <a href="#" class="breadcrumbs__link">Оформление заказа</a>
+                        <a href="#" class="breadcrumbs__link">Блог</a>
                     </ul>
                 </div>
             </section>
@@ -457,6 +457,31 @@
                         <button class="arrow-button general-tabs__scroll-button general-tabs__scroll-button--right js-general-tans-button-next">
                             <span class="icon-arrow-right"></span>
                         </button>
+                    </div>
+                    <div class="blog__header">
+                        <p class="blog__caption">24 статьи</p>
+                        <div class="general__sort" v-if="windowWidth > 767">
+                            <p class="general__sort-text">Сортировка по:</p>
+                            <ul class="general__sort-list">
+                                <li class="general__sort-item">
+                                    <button>Дате</button>
+                                </li>
+                                <li class="general__sort-item active">
+                                    <button>Рейтингу</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="general-drop-wrapper js-drop-item" v-else>
+                            <button class="mobile-button-sort js-drop-button">
+                                <span class="icon-decor-sort" v-lazy:background-image="'/img/icon-sort.svg'"></span>
+                            </button>
+                            <div class="general-drop-content__wrapper">
+                                <ul class="general-drop__list">
+                                    <li class="general-drop__item">Дате</li>
+                                    <li class="general-drop__item">Рейтингу</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="position-wrapper">
                         <ul class="blog__list position-wrapper__list">
@@ -794,7 +819,7 @@
                     </div>
                     <div class="general-navigation">
                         <button class="general-button-more-info general-button-more-info--navigation">
-                            <span class="text">перейти в блог</span>
+                            <span class="text">смотреть еще</span>
                         </button>
                         <div class="general-pagination">
                             <button class="arrow-button arrow-button--pagination">
@@ -985,44 +1010,6 @@
                     </label>
                     <button class="main-button">
                         <span class="text">отправить</span>
-                    </button>
-                </form>
-            </div>
-        </section>
-        <section class="popup popup-form js-popup" data-target="add-reviews">
-            <button class="close__popup js-close">
-                <span class="icon-close"></span>
-            </button>
-            <div class="popup__wrapper">
-                <p class="popup__caption">Оставить отзыв</p>
-                <form action="#" class="popup__form-wrapper">
-                    <div class="popup-add-product-reviews__item">
-                        <p class="popup-sub-caption">Оцените товар</p>
-                        <input type="hidden" name="stars" class="js-stars-input">
-                        <ul class="star__list star__list--form js-star-list">
-                            <li class="star__item star__item--form js-star-item" data-target="1">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="2">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="3">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="4">
-                                <span class="icon-star"></span>
-                            </li>
-                            <li class="star__item star__item--form js-star-item" data-target="5">
-                                <span class="icon-star"></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <label class="input_wrapper input_wrapper--margin-bottom">
-                        <span class="input-caption">Email*</span>
-                        <textarea class="main_textarea"></textarea>
-                    </label>
-                    <button class="main-button">
-                        <span class="text">опубликовать отзыв</span>
                     </button>
                 </form>
             </div>

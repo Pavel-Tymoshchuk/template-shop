@@ -11,41 +11,13 @@ const app = new Vue({
     components: {
     },
     methods: {
-         scrollTabs() {
-            let tabsWrapper = document.querySelector('.js-general-tabs-wrapper');
-            let tabsList = document.querySelector('.js-general-tabs-list');
-            let buttonMoveNext = document.querySelector('.js-general-tans-button-next');
-            let buttonMovePrev = document.querySelector('.js-general-tans-button-prev');
-            let maxScrollLeft = tabsList.scrollWidth - tabsList.clientWidth;
-            let currenScrollValue = tabsList.scrollLeft;
-            buttonMoveNext.addEventListener('click',moveNext);
-            buttonMovePrev.addEventListener('click',movePrev);
-            
-            function movePrev() {
-                currenScrollValue = tabsList.scrollLeft;
-                tabsList.scrollLeft -= 100;
-                currenScrollValue -= 100;
-                buttonMoveNext.classList.remove('hidden');
-                
-                if(currenScrollValue < 40) {
-                    this.classList.add('hidden');
-                    tabsWrapper.classList.remove('active');
-                }
-            }
-            
-            function moveNext() {
-                currenScrollValue = tabsList.scrollLeft;
-                tabsList.scrollLeft += 100;
-                currenScrollValue += 100;
-
-                if(currenScrollValue >= 0) {
-                    buttonMovePrev.classList.remove('hidden');
-                    tabsWrapper.classList.add('active');
-                }
-                
-                if(currenScrollValue >= maxScrollLeft) {
-                    this.classList.add('hidden');
-                }
+        setHeightProp() {
+            let allInfoItems = document.querySelectorAll('.js-comparison-info');
+            let allInfoProductItems = document.querySelectorAll('.js-comparison-info-product');
+            console.log('asd');
+            for(let i = 0; allInfoItems.length > i; i++) {
+                console.log(allInfoProductItems[i]);
+                allInfoProductItems[i].setAttribute('style', `height=${allInfoItems[i].offsetHeight}px;`);
             }
         }
     },
@@ -74,6 +46,6 @@ const app = new Vue({
             this.windowWidth = window.innerWidth;
         });
         
-        this.scrollTabs();
+        this.setHeightProp();
     }
 });

@@ -423,372 +423,320 @@
             <section class="breadcrumbs">
                 <div class="breadcrumbs__wrapper container">
                         <a href="#" class="breadcrumbs__link">Главная</a>
-                        <a href="#" class="breadcrumbs__link">Отзывы покупателей</a>
+                        <a href="#" class="breadcrumbs__link">Сравнение товаров</a>
                     </ul>
                 </div>
             </section>
-            <section class="reviews-page">
-                <div class="reviews-page__wrapper container">
-                    <h1 class="main-caption-l reviews-page--caption">Отзывы покупателей о нашем магазине</h1>
-                    <div class="reviews-page__container">
-                        <div class="product-reviews__sort">
-                            <button class="main-button js-button" data-target="add-reviews">
-                                <span class="text">оставить отзыв магазину</span>
-                            </button>
-                            <div class="general__sort" v-if="windowWidth > 1024">
-                                <p class="general__sort-text">Сортировка по:</p>
-                                <ul class="general__sort-list">
-                                    <li class="general__sort-item">
-                                        <button>Дате</button>
+            <section class="comparison">
+                <div class="comparison__wrapper container">
+                    <div class="comparison__top">
+                        <h1 class="main-caption-l">Сравнение товаров</h1>
+                         <button class="general-batton-more general-batton-more--comparison-add-product js-drop-button">
+                             <span class="plus">+</span>
+                            <span class="text">добавить товары</span>
+                        </button>
+                    </div>
+                    <div class="comparison__header">
+                        <div class="comparison__param comparison-param-position">
+                            <label class="input_wrapper js-drop-item general-drop-wrapper">
+                                <span class="input-caption">Для категории</span>
+                                <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
+                                    <input type="text" class="main_input js-drop-input" placeholder="Для категории" readonly>
+                                    <span class="icon-drop-arrow"></span>
+                                </button>
+                                <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
+                                    <span class="general-drop__list">
+                                        <span class="general-drop__item js-drop-contains">
+                                            <span class="text">Смартфоны и мобильные телефоны </span>
+                                        </span>
+                                        <span class="general-drop__item js-drop-contains">
+                                            <span class="text">Смартфоны и мобильные телефоны 1</span>
+                                        </span>
+                                        <span class="general-drop__item js-drop-contains">
+                                            <span class="text">Смартфоны и мобильные телефоны 2</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </label>
+                            <div class="comparison__radio-filter">
+                                <label class="radio__wrapper radio__wrapper--comparison">
+                                    <input type="radio" class="input-radio" name="param" value="Все параметры" checked>
+                                    <span class="custome-radio"></span>
+                                    <span class="text">Все параметры</span>
+                                </label>
+                                <label class="radio__wrapper radio__wrapper--comparison">
+                                    <input type="radio" class="input-radio" name="param" value="Различающиеся">
+                                    <span class="custome-radio"></span>
+                                    <span class="text">Различающиеся</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="comparison__product comparison-param-product">
+                            <ul class="comparison__product__list">
+                                <li class="comparison__product__item">
+                                    <div class="comparison__product__img">
+                                        <img v-lazy="'/img/product-img.png'" alt="title">
+                                    </div>
+                                    <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                    <div class="comparison__product-price">
+                                        <p class="comparison__product__old-price">300грн</p>
+                                        <p class="comparison__product__price">280грн</p>
+                                    </div>
+                                    <button class="main-button main-button--small main-button--width">
+                                        <span class="text">в корзину</span>
+                                    </button>
+                                    <button class="comparison__product__delete">
+                                        <span class="icon-close"></span>
+                                    </button>
+                                </li>
+                                <li class="comparison__product__item">
+                                    <div class="comparison__product__img">
+                                        <img v-lazy="'/img/product-img.png'" alt="title">
+                                    </div>
+                                    <a href="#" class="comparison__product__name">Название товара и, конечно же, место для второй строки</a>
+                                    <div class="comparison__product-price">
+                                        <p class="comparison__product__old-price">300грн</p>
+                                        <p class="comparison__product__price">280грн</p>
+                                    </div>
+                                    <button class="main-button main-button--small main-button--width">
+                                        <span class="text">в корзину</span>
+                                    </button>
+                                    <button class="comparison__product__delete">
+                                        <span class="icon-close"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="comparison__info">
+                        <div class="comparison__info-param comparison-param-position">
+                            <div class="comparison__info__item">
+                                <p class="comparison__info-param__caption js-comparison-info">Акции и специальные предложения</p>
+                            </div>
+                            <div class="comparison__info__item">
+                                <p class="comparison__info-param__caption js-comparison-info">Связь</p>
+                                <ul class="comparison__info-param__list">
+                                    <li class="comparison__info-param__item js-comparison-info">
+                                        <div class="comparison__info-param__wrapper js-drop-item">
+                                            <span>Диапазоны GSM</span>
+                                            <button class="comparison__placeholder__button js-drop-button">?</button>
+                                            <div class="comparison__placeholder__text">
+                                                <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li class="general__sort-item active">
-                                        <button>Полезности</button>
+                                    <li class="comparison__info-param__item js-comparison-info">
+                                        <div class="comparison__info-param__wrapper js-drop-item">
+                                            <span>Диапазоны UMTS</span>
+                                            <button class="comparison__placeholder__button js-drop-button">?</button>
+                                            <div class="comparison__placeholder__text">
+                                                <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li class="general__sort-item">
-                                        <button>Оценке</button>
+                                    <li class="comparison__info-param__item js-comparison-info">
+                                        <div class="comparison__info-param__wrapper js-drop-item">
+                                            <span>Диапазоны LTE</span>
+                                            <button class="comparison__placeholder__button js-drop-button">?</button>
+                                            <div class="comparison__placeholder__text">
+                                                <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="general-drop-wrapper js-drop-item" v-else>
-                                <button class="mobile-button-sort js-drop-button">
-                                    <span class="icon-decor-sort" v-lazy:background-image="'/img/icon-sort.svg'"></span>
-                                </button>
-                                <div class="general-drop-content__wrapper">
-                                    <ul class="general-drop__list">
-                                        <li class="general-drop__item">
-                                            <button>Дате</button>
-                                        </li>
-                                        <li class="general-drop__item">
-                                            <button>Полезности</button>
-                                        </li>
-                                        <li class="general-drop__item">
-                                            <button>Оценке</button>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="comparison__info__item">
+                                <p class="comparison__info-param__caption js-comparison-info">Дисплей</p>
+                                <ul class="comparison__info-param__list">
+                                    <li class="comparison__info-param__item js-comparison-info">
+                                        <div class="comparison__info-param__wrapper js-drop-item">
+                                            <span>Тип дисплея</span>
+                                            <button class="comparison__placeholder__button js-drop-button">?</button>
+                                            <div class="comparison__placeholder__text">
+                                                <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="comparison__info-param__item js-comparison-info">
+                                        <div class="comparison__info-param__wrapper js-drop-item">
+                                            <span>Диагональ дисплея (дюйм)</span>
+                                            <button class="comparison__placeholder__button js-drop-button">?</button>
+                                            <div class="comparison__placeholder__text">
+                                                <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="comparison__info-param__item js-comparison-info">
+                                        <div class="comparison__info-param__wrapper js-drop-item">
+                                            <span>Разрешение дисплея (пикс)</span>
+                                            <button class="comparison__placeholder__button js-drop-button">?</button>
+                                            <div class="comparison__placeholder__text">
+                                                <p>Глобальный стандарт цифровой мобильной сотовой связи. Относится к сетям второго поколения.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="product-reviews__wrapper product-reviews__wrapper--reviews-page">
-                            <ul class="product-reviews__list">
-                                <li class="product-reviews__item">
-                                    <div class="product-reviews__header">
-                                        <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                        <p class="product-reviews__name">Марина</p>
-                                        <p class="product-reviews__date">11 июня 2020 в 23:30</p>
+                        <div class="comparison__info-product comparison-param-product">
+                            <ul class="comparison__info-product__list">
+                                <li class="comparison__info-product__item">
+                                    <div class="comparison__info__item js-comparison-info-product">
+                                        -
                                     </div>
-                                    <div class="product-reviews__info">
-                                        <ul class="star__list star__list-checked">
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
+                                    <div class="comparison__info__item">
+                                        <p class="comparison__info-param__caption"></p>
+                                        <ul class="comparison__info-param__list">
+                                            <li class="comparison__info-param__item js-comparison-info-product">
+                                                <p>800, 900, 1800, 1900</p>
                                             </li>
-                                            <li class="star__item active">
-                                                <span class="icon-star"></span>
+                                            <li class="comparison__info-param__item js-comparison-info-product">
+                                                <p>800, 900, 1800, 1900</p>
                                             </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
+                                            <li class="comparison__info-param__item js-comparison-info-product">
+                                                <p>1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11</p>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="product-reviews__text">
-                                        <p>Спасибо за товар</p>
-                                    </div>
-                                    <div class="product-reviews__footer js-drop-item">
-                                        <div class="product-reviews__footer__wrapper">
-                                            <p class="product-reviews__footer__caption">Ответ полезен?</p>
-                                            <ul class="product__parameters__list">
-                                                <li class="product__parameters__item">да<span>(5)</span></li>
-                                                <li class="product__parameters__item">нет<span>(5)</span></li>
-                                            </ul>
-                                            <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
-                                        </div>
-                                        <div class="product-reviews__add-comment">
-                                            <form action="product-reviews__add-comment__form">
-                                                <div class="product-reviews__header">
-                                                    <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                    <p class="product-reviews__name">Марина</p>
-                                                </div>
-                                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                                    <input type="text" class="main_input" placeholder="Ваш ответ">
-                                                </label>
-                                                <div class="product-reviews__add-comment__buttons">
-                                                    <button type="button" class="text-button js-drop-button">отмена</button>
-                                                    <button class="main-button main-button--small">
-                                                        <span class="text">ответить</span>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-reviews__item">
-                                    <div class="product-reviews__header">
-                                        <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                        <p class="product-reviews__name">Марина</p>
-                                        <p class="product-reviews__date">11 июня 2020 в 23:30</p>
-                                    </div>
-                                    <div class="product-reviews__info">
-                                        <ul class="star__list star__list-checked">
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
+                                    <div class="comparison__info__item">
+                                        <p class="comparison__info-param__caption js-comparison-info-product"></p>
+                                        <ul class="comparison__info-param__list">
+                                            <li class="comparison__info-param__item js-comparison-info-product">
+                                                <p>USB Type-C</p>
                                             </li>
-                                            <li class="star__item active">
-                                                <span class="icon-star"></span>
+                                            <li class="comparison__info-param__item js-comparison-info-product">
+                                                <p>6.1</p>
                                             </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
+                                            <li class="comparison__info-param__item js-comparison-info-product">
+                                                <p>3040×1440</p>
                                             </li>
                                         </ul>
-                                    </div>
-                                    <div class="product-reviews__text">
-                                        <p>Спасибо за товар</p>
-                                    </div>
-                                    <div class="product-reviews__footer js-drop-item">
-                                        <div class="product-reviews__footer__wrapper">
-                                            <p class="product-reviews__footer__caption">Ответ полезен?</p>
-                                            <ul class="product__parameters__list">
-                                                <li class="product__parameters__item">да<span>(5)</span></li>
-                                                <li class="product__parameters__item">нет<span>(5)</span></li>
-                                            </ul>
-                                            <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
-                                        </div>
-                                        <div class="product-reviews__add-comment">
-                                            <form action="product-reviews__add-comment__form">
-                                                <div class="product-reviews__header">
-                                                    <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                    <p class="product-reviews__name">Марина</p>
-                                                </div>
-                                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                                    <input type="text" class="main_input" placeholder="Ваш ответ">
-                                                </label>
-                                                <div class="product-reviews__add-comment__buttons">
-                                                    <button type="button" class="text-button js-drop-button">отмена</button>
-                                                    <button class="main-button main-button--small">
-                                                        <span class="text">ответить</span>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <ul class="product-reviews__list">
-                                        <li class="product-reviews__item">
-                                            <div class="product-reviews__header">
-                                                <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                <p class="product-reviews__name">Марина</p>
-                                                <p class="product-reviews__date">11 июня 2020 в 23:30</p>
-                                            </div>
-                                            <div class="product-reviews__info">
-                                                <ul class="star__list star__list-checked">
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item active">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-reviews__text">
-                                                <p>Спасибо за товар</p>
-                                            </div>
-                                            <div class="product-reviews__footer js-drop-item">
-                                                <div class="product-reviews__footer__wrapper">
-                                                    <p class="product-reviews__footer__caption">Ответ полезен?</p>
-                                                    <ul class="product__parameters__list">
-                                                        <li class="product__parameters__item">да<span>(5)</span></li>
-                                                        <li class="product__parameters__item">нет<span>(5)</span></li>
-                                                    </ul>
-                                                    <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
-                                                </div>
-                                                <div class="product-reviews__add-comment">
-                                                    <form action="product-reviews__add-comment__form">
-                                                        <div class="product-reviews__header">
-                                                            <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                            <p class="product-reviews__name">Марина</p>
-                                                        </div>
-                                                        <label class="input_wrapper input_wrapper--margin-bottom">
-                                                            <input type="text" class="main_input" placeholder="Ваш ответ">
-                                                        </label>
-                                                        <div class="product-reviews__add-comment__buttons">
-                                                            <button type="button" class="text-button js-drop-button">отмена</button>
-                                                            <button class="main-button main-button--small">
-                                                                <span class="text">ответить</span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="product-reviews__item">
-                                            <div class="product-reviews__header">
-                                                <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                <p class="product-reviews__name">Марина</p>
-                                                <p class="product-reviews__date">11 июня 2020 в 23:30</p>
-                                            </div>
-                                            <div class="product-reviews__info">
-                                                <ul class="star__list star__list-checked">
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item active">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-reviews__text">
-                                                <p>Спасибо за товар</p>
-                                            </div>
-                                            <div class="product-reviews__footer js-drop-item">
-                                                <div class="product-reviews__footer__wrapper">
-                                                    <p class="product-reviews__footer__caption">Ответ полезен?</p>
-                                                    <ul class="product__parameters__list">
-                                                        <li class="product__parameters__item">да<span>(5)</span></li>
-                                                        <li class="product__parameters__item">нет<span>(5)</span></li>
-                                                    </ul>
-                                                    <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
-                                                </div>
-                                                <div class="product-reviews__add-comment">
-                                                    <form action="product-reviews__add-comment__form">
-                                                        <div class="product-reviews__header">
-                                                            <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                            <p class="product-reviews__name">Марина</p>
-                                                        </div>
-                                                        <label class="input_wrapper input_wrapper--margin-bottom">
-                                                            <input type="text" class="main_input" placeholder="Ваш ответ">
-                                                        </label>
-                                                        <div class="product-reviews__add-comment__buttons">
-                                                            <button type="button" class="text-button js-drop-button">отмена</button>
-                                                            <button class="main-button main-button--small">
-                                                                <span class="text">ответить</span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="product-reviews__item">
-                                    <div class="product-reviews__header js-drop-item">
-                                        <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                        <p class="product-reviews__name">Мое имя</p>
-                                        <p class="product-reviews__date">11 июня 2020 в 23:30</p>
-                                        <div class="general-drop-wrapper general-drop-wrapper--edit-reviews js-drop-item">
-                                            <button class="product-reviews___button-edit js-drop-button">
-                                                <span class="decor"></span>
-                                            </button>
-                                            <div class="general-drop-content__wrapper">
-                                                <ul class="general-drop__list">
-                                                    <li class="general-drop__item">
-                                                        <button class="general-drop__link general-drop__link--change-reviews js-change-reviews">
-                                                            <span class="edit">Редактировать отзыв</span>
-                                                            <span class="save">Сохранить</span>
-                                                        </button>
-                                                    </li>
-                                                    <li class="general-drop__item">
-                                                        <button class="general-drop__link">Удалить отзыв</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-reviews__info">
-                                        <ul class="star__list star__list-checked">
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item active">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-reviews__text">
-                                        <div class="hide-block-for-text js-change-text">
-                                            <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</p>
-                                        </div>
-                                        <textarea class="change-reviews js-change-textarea" readonly >Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</textarea>
-                                    </div>
-                                    <div class="product-reviews__footer js-drop-item">
-                                        <div class="product-reviews__footer__wrapper">
-                                            <p class="product-reviews__footer__caption">Ответ полезен?</p>
-                                            <ul class="product__parameters__list">
-                                                <li class="product__parameters__item">да<span>(5)</span></li>
-                                                <li class="product__parameters__item">нет<span>(5)</span></li>
-                                            </ul>
-                                            <button class="text-button text-button--reviews-answer js-drop-button">ответить (0)</button>
-                                        </div>
-                                        <div class="product-reviews__add-comment">
-                                            <form action="product-reviews__add-comment__form">
-                                                <div class="product-reviews__header">
-                                                    <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                                                    <p class="product-reviews__name">Марина</p>
-                                                </div>
-                                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                                    <input type="text" class="main_input" placeholder="Ваш ответ">
-                                                </label>
-                                                <div class="product-reviews__add-comment__buttons">
-                                                    <button type="button" class="text-button js-drop-button">отмена</button>
-                                                    <button class="main-button main-button--small">
-                                                        <span class="text">ответить</span>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section class="products-block">
+                <div class="products-block__wrapper container">
+                    <div class="general-header-block">
+                        <p class="general-header-block__caption main-caption-m">Просмотренные товары</p>
+                    </div>
+                    <div class="position-wrapper">
+                        <ul class="products-list position-wrapper__list">
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item products-item--parameters position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                    <div class="products-item__parameters">
+                                        <ul class="product-category__color-list">
+                                            <li class="product-category__color-item" style="background-color: red"></li>
+                                            <li class="product-category__color-item" style="background-color: blue"></li>
+                                            <li class="product-category__color-item" style="background-color: blueviolet"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                            <li class="products-item position-wrapper__item">
+                                <button class="products-item__open-popup js-button" data-target="product"></button>
+                                <div class="products-item__img">
+                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                </div>
+                                <div class="products-item__container">
+                                    <div class="products-item__main-info">
+                                        <p class="products-item__category">Категория</p>
+                                        <a href="#" class="products-item__link">Название товара и, конечно же, место для второй строки</a>
+                                        <div class="product-item__price product-price">
+                                            <p class="product__old-price product__old-price--item">300грн</p>
+                                            <p class="product__price product__price--item">280грн</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="add-to-favorite">
+                                    <span class="icon-add-favorite"></span>
+                                </button>
+                                <div class="product-noty product-noty--products-item">SALE</div>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="general-navigation">
                         <button class="general-button-more-info general-button-more-info--navigation">
-                            <span class="text">загрузить еще</span>
+                            <span class="text">смотреть еще</span>
                         </button>
                         <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination disabled">
+                            <button class="arrow-button arrow-button--pagination">
                                 <span class="icon-arrow-left"></span>
                             </button>
                             <ul class="pagination__list">
                                 <li class="pagination__item active">1</li>
                                 <li class="pagination__item">2</li>
                                 <li class="pagination__item">3</li>
-                                <li class="pagination__item pagination__item--dots">...</li>
                                 <li class="pagination__item">12</li>
                             </ul>
                             <button class="arrow-button arrow-button--pagination">
@@ -796,26 +744,6 @@
                             </button>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="social-block">
-                <div class="social-block__wrapper container">
-                    <div class="general-header-block general-header-block--social">
-                        <p class="general-header-block__caption main-caption-m">Мы в социальных сетях</p>
-                        <p class="general-header-block__sub">Дополнительный текст</p>
-                    </div>
-                    <ul class="social__list">
-                        <li class="social__item">
-                            <a href="#" class="social__link">
-                                <span class="icon-fb"></span>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__link">
-                                <span class="icon-inst"></span>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </section>
         </main>
@@ -981,8 +909,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
-    <script src="./node_modules/vue-slider-component/dist-css/vue-slider-component.umd.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/reviews.js"></script>
+    <script src="./js/comparison.js"></script>
 </body>
 </html>

@@ -1,0 +1,560 @@
+/* Article */
+
+.article__caption {
+    margin-bottom: 20px;
+}
+
+.article__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.article__main-info {
+    width: calc(67% - 25px);
+}
+
+.article__main-info__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article__autor {
+    display: flex;
+}
+
+.article__autor__img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.article__autor__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 10px;
+}
+
+.article__autor__position {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.article__general-info {
+    font-size: 12px;
+    line-height: 150%;
+    color: #828282;
+}
+
+.social__list--inner-content {
+    margin-right: -10px;
+    
+    .social__item {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    
+    .social__link {
+        font-size: 14px;
+    }
+    
+    .social__link--telegram {
+        font-size: 10px;
+    }
+    
+    .social__link--fb {
+        font-size: 12px;
+    }
+}
+
+.article__main-info__content {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 150%;
+    
+    h1,h2,h3 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 20px;
+    }
+    
+    h4,h5,h6 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 20px;
+    }
+
+    > p {
+        margin-bottom: 40px;
+        
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    
+    > ul {
+        margin-bottom: 40px;
+    }
+    
+    blockquote {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        margin-bottom: 40px;
+        
+        &::before {
+            content: "";
+            display: block;
+            width: 23px;
+            height: 17px;
+            margin-bottom: 15px;
+            background: url(../img/reviews-decor.png) center / contain no-repeat
+        }
+    }
+    
+    img {
+        display: block;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 40px;
+    }
+    
+    .article__main-img {
+        height: 300px;
+    }
+}
+
+.article__table {
+    margin-top: 10px;
+}
+
+.article__table__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.article__table__header {
+    display: flex;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: #828282;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333333;
+}
+
+.article__table__item {
+    display: flex;
+    font-size: 14px;
+    line-height: 150%;
+    color: #3D3C38;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 20px;
+    
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    
+    .type {
+        display: none;
+    }
+}
+
+.article__table__item__info {
+    &:first-child {
+        color: #2F80ED;
+    }
+}
+
+.article__footer {
+    display: flex;
+    margin-top: 30px;
+    
+    .product__parameters__item {
+        padding: 10px;
+    }
+}
+
+.article__footer__like {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 50px;
+    
+    .product__parameters__item span {
+        color: #828282;
+        padding-left: 5px;
+    }
+}
+
+.article__footer__like__caption {
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+    margin-right: 20px;
+}
+
+.article__aside-wrapper {
+    width: calc(33% - 25px);
+    position: relative;
+}
+
+.article__aside-container {
+    background: #F6F6F6;
+    border-radius: 5px;
+    padding: 40px;
+    transition: opacity .6s, transform .6s;
+    
+    &.hide {
+        opacity: 0;
+        transform: translateY(-110%);
+    }
+}
+
+.article__aside__caption {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #828282;
+    margin-bottom: 30px;
+}
+
+.article__aside__item {
+    margin-bottom: 20px;
+}
+
+.article__aside__sub-list {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.article__aside__sub-item {
+    margin-bottom: 20px;
+}
+
+.article__aside__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    transition: color .4s;
+}
+
+.article__aside__sub-link {
+    font-size: 14px;
+    line-height: 120%;
+    color: #4F4F4F;
+    transition: color .4s;
+}
+
+.article__comments {
+    width: calc(67% - 25px);
+    margin-top: 70px;
+}
+
+.article__comments__caption {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.product-reviews__add-comment--article {
+    width: 100%;
+}
+
+.article__add-comments {
+    &.active {
+        .product-reviews__add-comment {
+            display: block;
+            animation: show-comment .6s;
+        }
+        
+        .general-batton-more {
+            .close {
+                display: block;
+            }
+            
+            .text {
+                display: none;
+            }
+        }
+    }
+    
+    .general-batton-more {
+        max-width: 190px;
+        width: 100%;
+        
+        .close {
+            display: none;
+        }
+    }
+}
+
+
+@keyframes show-comment {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .article__aside__link,
+    .article__aside__sub-link {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .article-main-position {
+        width: 19%;
+        margin-right: 20px;
+    }
+    
+    .article-description-position {
+        width: 34%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .article__main-info__header {
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .social__list--inner-content {
+            margin-top: 15px;
+        }
+    }
+    
+    .article__general-info {
+        margin-top: 15px;
+    }
+    
+    .article__footer {
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .text-button {
+            order: 3;
+            margin-top: 30px;
+        }
+    }
+    
+    .article__footer__like {
+        margin: 0px 0px 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .article__main-info {
+        width: 100%;
+    }
+    
+    .article__aside-wrapper {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    
+    .article__aside__item__wrapper {
+        .icon-drop-arrow {
+            display: none;
+        }
+    }
+    
+    .article__comments {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .article__caption {
+        margin-bottom: 10px;
+    }
+    
+    .article__container {
+        margin-top: 10px;
+    }
+    
+    .article__main-info__content {
+        img {
+            height: 76px;
+            width: calc(100% + 32px);
+            max-width: calc(100% + 32px);
+            margin-left: -16px;
+        }
+        
+        .article__main-img {
+            height: 115px;
+        }
+        
+        h1,h2,h3 {
+            font-size: 18px;
+            line-height: 120%;
+        }
+
+        > p {
+            margin-bottom: 20px;
+            
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        
+        > ul {
+            margin-bottom: 20px;
+        }
+        
+        blockquote {
+            font-size: 18px;
+            line-height: 150%;
+            margin-bottom: 20px;
+            
+            &::before {
+                content: "";
+                display: block;
+                width: 23px;
+                height: 17px;
+                margin-bottom: 10px;
+                background: url(../img/reviews-decor.png) center / contain no-repeat
+            }
+        }
+    }
+    
+    .article__aside-container {
+        padding: 0px;
+        background-color: transparent;
+    }
+    
+    .article__aside__caption {
+        margin-bottom: 20px;
+    }
+    
+    .article__aside__sub-list {
+        margin-left: 30px;
+    }
+    
+    .article__aside__item {
+        &.active {
+            .article__aside__sub-list {
+                display: block;
+                animation: show-sub-aside .6s;
+            }
+            
+            .article__aside__item__wrapper {
+                .icon-drop-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    
+    .article__aside__item__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        
+        .icon-drop-arrow {
+            display: flex;
+            font-size: 6px;
+            transition: transform .4s;
+        }
+    }
+    
+    .article__aside__sub-list {
+        display: none;
+    }
+    
+    @keyframes show-sub-aside {
+        0% {
+           opacity: 0;
+           transform: translateY(-50px);
+        }
+        
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    
+    .article__table {
+        margin-top: 20px;
+    }
+    
+    .article__table__name {
+        font-size: 12px;
+        line-height: 15px;
+        text-align: left;
+    }
+    
+    .article__table__header {
+        display: none;
+    }
+    
+    .article__table__item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        
+        .type {
+            display: block;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 150%;
+            color: #828282;
+            margin-bottom: 10px;
+        }
+    }
+    
+    .article__table__item__info {
+        margin-bottom: 15px;
+        
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    
+    .article__footer__like {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .article__footer__like__caption {
+        margin-bottom: 15px;
+    }
+    
+    .article__comments {
+        margin-top: 30px;
+    }
+    
+    .article__add-comments {
+        .general-batton-more {
+            max-width: 100%;
+        }
+    }
+    
+    .article__comments__caption {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}

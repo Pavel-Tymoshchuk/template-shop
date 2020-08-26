@@ -42,6 +42,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-telegram:before {
+  content: "\e90f";
+}
+.icon-viber:before {
+  content: "\e910";
+}
+.icon-whatsapp:before {
+  content: "\e911";
+}
 .icon-add-photo:before {
   content: "\e90e";
 }
@@ -112,6 +121,10 @@ ul[class] {
 ol:not([class]), 
 ul:not([class]) {
     padding-left: 17px;
+    
+    ul,ol {
+        margin-top: 10px;
+    }
 }
 
 ol:not([class]) li, 
@@ -242,7 +255,7 @@ main {
     
     .icon-drop-arrow {
         font-size: 4px;
-        transition: transform .4s;
+        transition: transform .4s, color .4s;
     }
 }
 
@@ -320,7 +333,8 @@ main {
     }
     
     &.active {
-        color: #000000;
+        color: #E0E0E0;
+        pointer-events: none;
     }
 }
 
@@ -392,6 +406,35 @@ main {
                 color: #EEEEEE;
             }
         }
+        
+        .icon-drop-arrow {
+            color: #EEEEEE;
+        }
+    }
+    
+    &.active {
+        .main_input {
+            
+            &:focus {
+                border-color: #E0E0E0;
+            }
+            
+            border-bottom-color: #2F80ED !important;
+        }
+    }
+    
+    .general-drop-content__wrapper {
+        top: 100%;
+    }
+    
+    .general-drop__list {
+        padding: 10px 0px;
+    }
+    
+    .general-drop__item {
+        padding: 10px 20px;
+        margin: 0px;
+        transition: color .4s, background-color .4s;
     }
 }
 
@@ -431,7 +474,7 @@ main {
     }
     
     &:focus {
-        border-color: #2F80ED !important;
+        border-color: #2F80ED;
     }
 }
 
@@ -1330,6 +1373,14 @@ main {
         }
     }
     
+    .main_input {
+        &:hover {
+            + .icon-drop-arrow {
+                color: #2F80ED;
+            }
+        }
+    }
+    
     .main-button {
         &:hover {
             background-color: #2A74D9;
@@ -1418,6 +1469,15 @@ main {
             }
         }
     }
+    
+    .input_wrapper {
+        .general-drop__item {
+            &:hover {
+                color: #2F80ED;
+                background-color: #F6F6F6;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1330px) {
@@ -1494,6 +1554,18 @@ main {
     }
     
     /* //Seo block */
+    
+    /* General tabs */
+    
+    .general-tabs {
+        &::before {
+            width: 30px;
+        }
+    }
+    
+    .general-tabs__scroll-button {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -1602,6 +1674,10 @@ main {
     
     .general-tabs {
         margin-bottom: 20px;
+        
+        &::before {
+            right: -16px;
+        }
     }
     
     .general-tabs__list {

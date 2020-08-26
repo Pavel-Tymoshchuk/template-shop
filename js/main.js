@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e){
         let element = e.target;
         
+        console.log(element);
+        
         if(element.closest('.js-drop-button')){
             let isActive = element.closest('.js-drop-item').classList.contains('active')? true: false;
             
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 element.closest('.js-drop-item').classList.remove('active');
             else
                 element.closest('.js-drop-item').classList.add('active');
+                
+            console.log('active');
         }
         
         if(element.closest('.js-drop-contains')){
@@ -33,24 +37,24 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
     
-    document.querySelector('body').addEventListener('click', function(event){
+    // document.querySelector('body').addEventListener('click', function(event){
         
-        let dropItem = event.target.closest('.js-drop-item');
+    //     let dropItem = event.target.closest('.js-drop-item');
         
-        if(!dropItem) {
-            document.querySelectorAll('.js-drop-item').forEach(function(item){
-                item.classList.remove('active');
-            }); 
-        }
-        if(dropItem) {
-            if(!dropItem.classList.contains("active")) {
-                document.querySelectorAll('.js-drop-item').forEach(function(item){
-                    item.classList.remove('active');
-                });
-            }
-        }
+    //     if(!dropItem) {
+    //         document.querySelectorAll('.js-drop-item').forEach(function(item){
+    //             item.classList.remove('active');
+    //         }); 
+    //     }
+    //     if(dropItem) {
+    //         if(!dropItem.classList.contains("active")) {
+    //             document.querySelectorAll('.js-drop-item').forEach(function(item){
+    //                 item.classList.remove('active');
+    //             });
+    //         }
+    //     }
         
-    });
+    // });
     
     // Popup
         

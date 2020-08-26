@@ -295,6 +295,18 @@
     .product-reviews__add-comment {
         width: 95%;
     }
+    
+        
+    .product-reviews__footer__wrapper {
+        flex-wrap: wrap;
+    }
+    
+    .text-button--reviews-answer {
+        width: 100%;
+        text-align: left;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -340,6 +352,13 @@
     
     .product-reviews__header {
         flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .general-drop-wrapper--edit-reviews {
+        top: 10px;
+        right: 0px;
+        position: absolute;
     }
     
     .product-reviews__img {
@@ -373,18 +392,18 @@
         margin-bottom: 15px;
     }
     
-    .product-reviews__footer__wrapper {
-        flex-wrap: wrap;
+    .product-reviews__footer__caption {
+        margin-right: 10px;
     }
-    
-    .text-button--reviews-answer {
-        width: 100%;
-        text-align: left;
-        margin-left: 0px;
-        margin-top: 10px;
+}
+
+@media screen and (max-width: 576px) {
+    .product-reviews__footer__wrapper {
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .product-reviews__footer__caption {
-        margin-right: 10px;
+        margin-bottom: 10px;
     }
 }

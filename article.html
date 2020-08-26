@@ -423,52 +423,285 @@
             <section class="breadcrumbs">
                 <div class="breadcrumbs__wrapper container">
                         <a href="#" class="breadcrumbs__link">Главная</a>
-                        <a href="#" class="breadcrumbs__link">Отзывы покупателей</a>
+                        <a href="#" class="breadcrumbs__link">Блог</a>
+                        <a href="#" class="breadcrumbs__link">Какой будет технологичная одежда через 10 лет?</a>
                     </ul>
                 </div>
             </section>
-            <section class="reviews-page">
-                <div class="reviews-page__wrapper container">
-                    <h1 class="main-caption-l reviews-page--caption">Отзывы покупателей о нашем магазине</h1>
-                    <div class="reviews-page__container">
-                        <div class="product-reviews__sort">
-                            <button class="main-button js-button" data-target="add-reviews">
-                                <span class="text">оставить отзыв магазину</span>
-                            </button>
-                            <div class="general__sort" v-if="windowWidth > 1024">
-                                <p class="general__sort-text">Сортировка по:</p>
-                                <ul class="general__sort-list">
-                                    <li class="general__sort-item">
-                                        <button>Дате</button>
+            <section class="article">
+                <div class="article__wrapper container">
+                    <h1 class="main-caption-l article__caption">Какой будет технологичная одежда через 10 лет?</h1>
+                    <ul class="star__list star__list-checked">
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item">
+                            <span class="icon-star"></span>
+                        </li>
+                        <li class="star__item active">
+                            <span class="icon-star"></span>
+                        </li>
+                    </ul>
+                    <div class="article__container">
+                        <div class="article__main-info js-main-content">
+                            <div class="article__main-info__header">
+                                <div class="article__autor">
+                                    <div class="article__autor__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
+                                    <div class="article__autor__info">
+                                        <p class="article__autor__name">Марина Зуб</p>
+                                        <p class="article__autor__position">стилист в MODA</p>
+                                    </div>
+                                </div>
+                                <div class="article__general-info">
+                                    <span class="time">11 июня 2020 в 23:30</span>
+                                    <span class="decor">|</span>
+                                    <span class="timer">6 мин чтения</span>
+                                </div>
+                                <ul class="social__list social__list--inner-content">
+                                    <li class="social__item">
+                                        <a href="#" class="social__link social__link--fb">
+                                            <span class="icon-fb"></span>
+                                        </a>
                                     </li>
-                                    <li class="general__sort-item active">
-                                        <button>Полезности</button>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link">
+                                            <span class="icon-whatsapp"></span>
+                                        </a>
                                     </li>
-                                    <li class="general__sort-item">
-                                        <button>Оценке</button>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link social__link--telegram">
+                                            <span class="icon-telegram"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link">
+                                            <span class="icon-viber"></span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="general-drop-wrapper js-drop-item" v-else>
-                                <button class="mobile-button-sort js-drop-button">
-                                    <span class="icon-decor-sort" v-lazy:background-image="'/img/icon-sort.svg'"></span>
-                                </button>
-                                <div class="general-drop-content__wrapper">
-                                    <ul class="general-drop__list">
-                                        <li class="general-drop__item">
-                                            <button>Дате</button>
+                            <article class="article__main-info__content">
+                                <img class="article__main-img" src="./img/banner-img.png" alt="title">
+                                <div class="article__aside-wrapper" v-if="windowWidth < 1025">
+                                    <aside class="article__aside-container">
+                                        <p class="article__aside__caption">Содержание</p>
+                                        <ul class="article__aside__list">
+                                            <li class="article__aside__item js-drop-item">
+                                                <button class="article__aside__item__wrapper js-drop-button">
+                                                    <a href="#" class="article__aside__link">Биография</a>
+                                                    <span class="icon-drop-arrow"></span>
+                                                </button>
+                                                <ul class="article__aside__sub-list">
+                                                    <li class="article__aside__sub-item">
+                                                        <a href="#" class="article__aside__sub-link">Происхождение</a>
+                                                    </li>
+                                                    <li class="article__aside__sub-item">
+                                                        <a href="#" class="article__aside__sub-link">Детство</a>
+                                                    </li>
+                                                    <li class="article__aside__sub-item">
+                                                        <a href="#" class="article__aside__sub-link">Юность</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="article__aside__item js-drop-item">
+                                                <button class="article__aside__item__wrapper js-drop-button">
+                                                    <a href="#" class="article__aside__link">Сумки</a>
+                                                    <span class="icon-drop-arrow"></span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </aside>
+                                </div>
+                                <h2>Полиэтиленовый пакет </h2>
+                                <p>Современные технологичные материалы впитывают свет, а затем «отдают» его в темноте и подстраиваются под температуру окружающей среды. Они легкие и тонкие, как хлопок, но при этом прочные, как сталь.</p>
+                                <p>Одежда из таких тканей создавалась для туристической и военной экипировки, а сейчас она — часть городского гардероба. Ей уже необязательно выдерживать сильные нагрузки, поэтому многие производители стали использовать легкие ткани, в которых надежность сочетается с малым весом — например, куртку из такого материала можно сложить в рюкзак или офисную сумку</p>
+                                <img src="./img/banner-img.png" alt="title">
+                                <p> Современный techwear — это не только материалы, но и функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры. А в будущем нас ждет развитие этого тренда: технологичная одежда поможет нам совершать покупки и следить за своим здоровьем</p>
+                                <blockquote>
+                                    <p>Современный techwear — это не только материалы, но и функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры </p>
+                                </blockquote>
+                                <ul>
+                                    <li>первая строка списка
+                                        <ul>
+                                            <li>первая строка списка</li>
+                                        </ul>
+                                    </li>
+                                    <li>первая строка списка</li>
+                                    <li>первая строка списка</li>
+                                </ul>
+                                <p> Современный techwear — это не только материалы, но и функциональный крой: продуманные системы хранения для гаджетов и документов, куртки, которые могут складываться в небольшой карман, и вещи-трансформеры. А в будущем нас ждет развитие этого тренда: технологичная одежда поможет нам совершать покупки и следить за своим здоровьем</p>
+                                <div class="article__table">
+                                    <div class="article__table__header">
+                                        <p class="article-main-position">Название</p>
+                                        <p class="article-main-position">Дополнительно</p>
+                                        <p class="article-main-position">Дополнительно</p>
+                                        <p class="article-main-position">Дополнительно</p>
+                                        <p class="article-description-position">Описание</p>
+                                    </div>
+                                    <ul class="article__table__list">
+                                        <li class="article__table__item">
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Название</p>
+                                                <p class="description">Финансовая</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-description-position">
+                                                <p class="type">Описание</p>
+                                                <p class="description">Равным образом дальнейшее развитие различных форм деятельности играет важную </p>
+                                            </div>
                                         </li>
-                                        <li class="general-drop__item">
-                                            <button>Полезности</button>
+                                        <li class="article__table__item">
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Название</p>
+                                                <p class="description">Финансовая</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-description-position">
+                                                <p class="type">Описание</p>
+                                                <p class="description">Равным образом дальнейшее развитие различных форм деятельности играет важную </p>
+                                            </div>
                                         </li>
-                                        <li class="general-drop__item">
-                                            <button>Оценке</button>
+                                        <li class="article__table__item">
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Название</p>
+                                                <p class="description">Финансовая</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-main-position">
+                                                <p class="type">Дополнительно</p>
+                                                <p class="description">Структрура</p>
+                                            </div>
+                                            <div class="article__table__item__info article-description-position">
+                                                <p class="type">Описание</p>
+                                                <p class="description">Равным образом дальнейшее развитие различных форм деятельности играет важную </p>
+                                            </div>
                                         </li>
                                     </ul>
+                                    <p class="article__table__name">Название таблицы</p>
                                 </div>
+                            </article>
+                            <div class="article__footer">
+                                <button class="text-button">вернуться к статьям</button>
+                                <div class="article__footer__like">
+                                    <p class="article__footer__like__caption">Понравилась статья?</p>
+                                    <ul class="product__parameters__list">
+                                        <li class="product__parameters__item">да<span>(5)</span></li>
+                                        <li class="product__parameters__item">нет<span>(5)</span></li>
+                                    </ul>
+                                </div>
+                                <ul class="social__list social__list--inner-content">
+                                    <li class="social__item">
+                                        <a href="#" class="social__link social__link--fb">
+                                            <span class="icon-fb"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link">
+                                            <span class="icon-whatsapp"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link social__link--telegram">
+                                            <span class="icon-telegram"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link">
+                                            <span class="icon-viber"></span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="product-reviews__wrapper product-reviews__wrapper--reviews-page">
+                        <div class="article__aside-wrapper js-sitebar-wrapper" v-if="windowWidth > 1024">
+                            <aside class="article__aside-container js-sitebar-container">
+                                <p class="article__aside__caption">Содержание</p>
+                                <ul class="article__aside__list">
+                                    <li class="article__aside__item">
+                                        <div class="article__aside__item__wrapper">
+                                            <a href="#" class="article__aside__link">Биография</a>
+                                        </div>
+                                        <ul class="article__aside__sub-list">
+                                            <li class="article__aside__sub-item">
+                                                <a href="#" class="article__aside__sub-link">Происхождение</a>
+                                            </li>
+                                            <li class="article__aside__sub-item">
+                                                <a href="#" class="article__aside__sub-link">Детство</a>
+                                            </li>
+                                            <li class="article__aside__sub-item">
+                                                <a href="#" class="article__aside__sub-link">Юность</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="article__aside__item">
+                                        <div class="article__aside__item__wrapper">
+                                            <a href="#" class="article__aside__link">Сумки</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                    <div class="article__comments">
+                        <div class="article__add-comments js-drop-item">
+                            <button class="general-batton-more js-drop-button">
+                                <span class="text">комментировать</span>
+                                <span class="close">отмена</span>
+                            </button>
+                            <div class="product-reviews__add-comment product-reviews__add-comment--article">
+                                <form action="product-reviews__add-comment__form">
+                                    <div class="product-reviews__header">
+                                        <div class="product-reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
+                                        <p class="product-reviews__name">Марина</p>
+                                    </div>
+                                    <label class="input_wrapper input_wrapper--margin-bottom">
+                                        <input type="text" class="main_input" placeholder="Ваш ответ">
+                                    </label>
+                                    <div class="product-reviews__add-comment__buttons">
+                                        <button class="main-button main-button--small">
+                                            <span class="text">комментировать</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <p class="article__comments__caption">2 комментария</p>
+                        <div class="product-reviews__wrapper">
                             <ul class="product-reviews__list">
                                 <li class="product-reviews__item">
                                     <div class="product-reviews__header">
@@ -476,31 +709,12 @@
                                         <p class="product-reviews__name">Марина</p>
                                         <p class="product-reviews__date">11 июня 2020 в 23:30</p>
                                     </div>
-                                    <div class="product-reviews__info">
-                                        <ul class="star__list star__list-checked">
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item active">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
                                     <div class="product-reviews__text">
                                         <p>Спасибо за товар</p>
                                     </div>
                                     <div class="product-reviews__footer js-drop-item">
                                         <div class="product-reviews__footer__wrapper">
-                                            <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                            <p class="product-reviews__footer__caption">Понравился комментарий?</p>
                                             <ul class="product__parameters__list">
                                                 <li class="product__parameters__item">да<span>(5)</span></li>
                                                 <li class="product__parameters__item">нет<span>(5)</span></li>
@@ -532,31 +746,12 @@
                                         <p class="product-reviews__name">Марина</p>
                                         <p class="product-reviews__date">11 июня 2020 в 23:30</p>
                                     </div>
-                                    <div class="product-reviews__info">
-                                        <ul class="star__list star__list-checked">
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item active">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
                                     <div class="product-reviews__text">
                                         <p>Спасибо за товар</p>
                                     </div>
                                     <div class="product-reviews__footer js-drop-item">
                                         <div class="product-reviews__footer__wrapper">
-                                            <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                            <p class="product-reviews__footer__caption">Понравился комментарий?</p>
                                             <ul class="product__parameters__list">
                                                 <li class="product__parameters__item">да<span>(5)</span></li>
                                                 <li class="product__parameters__item">нет<span>(5)</span></li>
@@ -588,31 +783,12 @@
                                                 <p class="product-reviews__name">Марина</p>
                                                 <p class="product-reviews__date">11 июня 2020 в 23:30</p>
                                             </div>
-                                            <div class="product-reviews__info">
-                                                <ul class="star__list star__list-checked">
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item active">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                             <div class="product-reviews__text">
                                                 <p>Спасибо за товар</p>
                                             </div>
                                             <div class="product-reviews__footer js-drop-item">
                                                 <div class="product-reviews__footer__wrapper">
-                                                    <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                    <p class="product-reviews__footer__caption">Понравился комментарий?</p>
                                                     <ul class="product__parameters__list">
                                                         <li class="product__parameters__item">да<span>(5)</span></li>
                                                         <li class="product__parameters__item">нет<span>(5)</span></li>
@@ -644,31 +820,12 @@
                                                 <p class="product-reviews__name">Марина</p>
                                                 <p class="product-reviews__date">11 июня 2020 в 23:30</p>
                                             </div>
-                                            <div class="product-reviews__info">
-                                                <ul class="star__list star__list-checked">
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item active">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                    <li class="star__item">
-                                                        <span class="icon-star"></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                             <div class="product-reviews__text">
                                                 <p>Спасибо за товар</p>
                                             </div>
                                             <div class="product-reviews__footer js-drop-item">
                                                 <div class="product-reviews__footer__wrapper">
-                                                    <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                                    <p class="product-reviews__footer__caption">Понравился комментарий?</p>
                                                     <ul class="product__parameters__list">
                                                         <li class="product__parameters__item">да<span>(5)</span></li>
                                                         <li class="product__parameters__item">нет<span>(5)</span></li>
@@ -720,25 +877,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-reviews__info">
-                                        <ul class="star__list star__list-checked">
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item active">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                            <li class="star__item">
-                                                <span class="icon-star"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
                                     <div class="product-reviews__text">
                                         <div class="hide-block-for-text js-change-text">
                                             <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</p>
@@ -747,7 +885,7 @@
                                     </div>
                                     <div class="product-reviews__footer js-drop-item">
                                         <div class="product-reviews__footer__wrapper">
-                                            <p class="product-reviews__footer__caption">Ответ полезен?</p>
+                                            <p class="product-reviews__footer__caption">Понравился комментарий?</p>
                                             <ul class="product__parameters__list">
                                                 <li class="product__parameters__item">да<span>(5)</span></li>
                                                 <li class="product__parameters__item">нет<span>(5)</span></li>
@@ -776,26 +914,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="general-navigation">
-                        <button class="general-button-more-info general-button-more-info--navigation">
-                            <span class="text">загрузить еще</span>
-                        </button>
-                        <div class="general-pagination">
-                            <button class="arrow-button arrow-button--pagination disabled">
-                                <span class="icon-arrow-left"></span>
-                            </button>
-                            <ul class="pagination__list">
-                                <li class="pagination__item active">1</li>
-                                <li class="pagination__item">2</li>
-                                <li class="pagination__item">3</li>
-                                <li class="pagination__item pagination__item--dots">...</li>
-                                <li class="pagination__item">12</li>
-                            </ul>
-                            <button class="arrow-button arrow-button--pagination">
-                                <span class="icon-arrow-right"></span>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </section>
             <section class="social-block">
@@ -816,6 +934,43 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </section>
+            <section class="subscription">
+                <div class="subscription__wrapper container">
+                    <p class="main-caption-s subscription__caption">Призыв на подписку о рассылке</p>
+                    <form class="subscription__form">
+                        <label class="input_wrapper input_wrapper--subscription">
+                            <span class="input-caption">Email</span>
+                            <input type="email" class="main_input" placeholder="Email">
+                        </label>
+                        <div class="checkbox__container checkbox__container--subscription">
+                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
+                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                <span class="custome-check">
+                                    <span class="icon-active"></span>
+                                </span>
+                                <span class="text">Тема для рассылки</span>
+                            </label>
+                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
+                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                <span class="custome-check">
+                                    <span class="icon-active"></span>
+                                </span>
+                                <span class="text">Тема для рассылки</span>
+                            </label>
+                            <label class="checkbox__wrapper checkbox__wrapper--subscription">
+                                <input type="checkbox" value="Тема для рассылки" class="input-checkbox">
+                                <span class="custome-check">
+                                    <span class="icon-active"></span>
+                                </span>
+                                <span class="text">Тема для рассылки</span>
+                            </label>
+                        </div>
+                        <button class="main-button main-button--subscription">
+                            <span class="text">отправить</span>
+                        </button>
+                    </form>
                 </div>
             </section>
         </main>
@@ -983,6 +1138,6 @@
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="./node_modules/vue-slider-component/dist-css/vue-slider-component.umd.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/reviews.js"></script>
+    <script src="./js/article.js"></script>
 </body>
 </html>
