@@ -105,7 +105,7 @@
                     <div class="container">
                         <div class="header__main__wrapper js-drop-item">
                             <a href="/" class="header-logo">
-                                <img v-lazy="'/img/logo.png'" alt="Logo">
+                                <img v-lazy="'./img/logo.png'" alt="Logo">
                             </a>
                             <button class="general-batton-more general-batton-more--header js-drop-button">
                                 <span class="text">категории товаров</span>
@@ -219,7 +219,7 @@
                                 <span class="decor"></span>
                             </button>
                             <a href="/" class="header-logo">
-                                <img v-lazy="'/img/logo.png'" alt="Logo">
+                                <img v-lazy="'./img/logo.png'" alt="Logo">
                             </a>
                             <a href="#" class="header__buttons__item active">
                                 <span class="icon-cart"></span>
@@ -350,7 +350,7 @@
                     <span class="icon-close"></span>
                 </li> -->
                 <!-- <li class="noty_theme__push_notification__item noty_type__offers">
-                    <div class="push-notifications__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                    <div class="push-notifications__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                     <div class="push-notifications__info">
                         <p class="push-notifications__caption">Зима близко! ⛄️</p>
                         <p class="push-notifications__text"> <span class="sale">-70%</span> на теплые вещи </p>
@@ -368,7 +368,7 @@
                 <p class="main-push-notification__caption">Новое</p>
                 <ul class="main-push-notification__list">
                     <li class="main-push-notification__item">
-                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                         <div class="push-notifications__info">
                             <div class="push-notifications__info__header">
                                 <p class="push-notifications__caption">Зима близко! ⛄️</p>
@@ -381,7 +381,7 @@
                         </div>
                     </li>
                     <li class="main-push-notification__item">
-                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                         <div class="push-notifications__info">
                             <div class="push-notifications__info__header">
                                 <p class="push-notifications__caption">Зима близко! ⛄️</p>
@@ -399,7 +399,7 @@
                 <p class="main-push-notification__caption">Раннее</p>
                 <ul class="main-push-notification__list">
                     <li class="main-push-notification__item">
-                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                         <div class="push-notifications__info">
                             <div class="push-notifications__info__header">
                                 <p class="push-notifications__caption">Зима близко! ⛄️</p>
@@ -412,7 +412,7 @@
                         </div>
                     </li>
                     <li class="main-push-notification__item">
-                        <div class="main-push-notification__item__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="main-push-notification__item__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                         <div class="push-notifications__info">
                             <div class="push-notifications__info__header">
                                 <p class="push-notifications__caption">Зима близко! ⛄️</p>
@@ -431,7 +431,7 @@
             <section class="main-banner">
                 <ul class="main-banner__list js-list">
                     <li class="main-banner__item" :class="{show: currentIndex == index}" v-for="(item,index) in banner">
-                        <div class="main-banner__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                        <div class="main-banner__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                         <div class="main-banner__info container">
                             <div class="main-banner__info-wrapper">
                                 <p class="main-banner__info__type">{{item.type}}</p>
@@ -459,49 +459,49 @@
             <section class="popular-category">
                 <div class="popular-category__wrapper container">
                     <ul class="popular-category__list">
-                        <li class="popular-category__item popular-category__item--big" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item popular-category__item--big" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Расспродажа</p>
                             <p class="popular-category__sub">действует до 5 сентября</p>
                             <a href="#" class="general-batton-more">
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
                                 <span class="text">в каталог</span>
                             </a>
                         </li>
-                        <li class="popular-category__item" v-lazy:background-image="'/img/popular-category-img.png'">
+                        <li class="popular-category__item" v-lazy:background-image="'./img/popular-category-img.png'">
                             <p class="popular-category__caption">Популярная категория</p>
                             <p class="popular-category__sub">Дополнительное описание</p>
                             <a href="#" class="general-batton-more">
@@ -522,8 +522,8 @@
                             <li class="products-item products-item--parameters position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
                                 <div class="products-item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
                                 <div class="products-item__container">
                                     <div class="products-item__main-info">
@@ -550,8 +550,8 @@
                             <li class="products-item products-item--parameters position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
                                 <div class="products-item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
                                 <div class="products-item__container">
                                     <div class="products-item__main-info">
@@ -578,8 +578,8 @@
                             <li class="products-item position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
                                 <div class="products-item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
                                 <div class="products-item__container">
                                     <div class="products-item__main-info">
@@ -599,8 +599,8 @@
                             <li class="products-item position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
                                 <div class="products-item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
-                                    <img v-lazy="'/img/product-hover-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
                                 <div class="products-item__container">
                                     <div class="products-item__main-info">
@@ -649,7 +649,7 @@
                             <span class="text">подробнее</span>
                         </button>
                     </div>
-                    <div class="about-company__img" v-lazy:background-image="'/img/banner-img.png'"></div>
+                    <div class="about-company__img" v-lazy:background-image="'./img/banner-img.png'"></div>
                 </div>
             </section>
             <section class="our-clients">
@@ -659,12 +659,12 @@
                         <p class="general-header-block__sub">Хороший текст о магазине или о его товарах</p>
                     </div>
                     <ul class="our-clients__list">
-                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="our-clients__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="our-clients__item" v-lazy:background-image="'./img/banner-img.png'"></li>
                     </ul>
                 </div>
             </section>
@@ -678,7 +678,7 @@
                         <ul class="reviews__list position-wrapper__list">
                             <li class="reviews__item js-item-more position-wrapper__item">
                                 <div class="reviews__item__container js-reviews-container">
-                                    <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                    <div class="reviews-decor-elem" v-lazy:background-image="'./img/reviews-decor.png'"></div>
                                     <div class="reviews__item__header">
                                         <ul class="star__list star__list-checked">
                                             <li class="star__item">
@@ -707,7 +707,7 @@
                                     <div class="reviews__item__footer">
                                         <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
                                         <div class="wrapper">
-                                            <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <div class="reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
                                             <p class="reviews__name">Иван Кротов</p>
                                         </div>
                                     </div>
@@ -715,7 +715,7 @@
                             </li>
                             <li class="reviews__item js-item-more position-wrapper__item">
                                 <div class="reviews__item__container js-reviews-container">
-                                    <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                    <div class="reviews-decor-elem" v-lazy:background-image="'./img/reviews-decor.png'"></div>
                                     <div class="reviews__item__header">
                                         <ul class="star__list star__list-checked">
                                             <li class="star__item">
@@ -744,7 +744,7 @@
                                     <div class="reviews__item__footer">
                                         <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
                                         <div class="wrapper">
-                                            <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <div class="reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
                                             <p class="reviews__name">Иван Кротов</p>
                                         </div>
                                     </div>
@@ -752,7 +752,7 @@
                             </li>
                             <li class="reviews__item js-item-more position-wrapper__item">
                                 <div class="reviews__item__container js-reviews-container">
-                                    <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                    <div class="reviews-decor-elem" v-lazy:background-image="'./img/reviews-decor.png'"></div>
                                     <div class="reviews__item__header">
                                         <ul class="star__list star__list-checked">
                                             <li class="star__item">
@@ -781,7 +781,7 @@
                                     <div class="reviews__item__footer">
                                         <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
                                         <div class="wrapper">
-                                            <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <div class="reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
                                             <p class="reviews__name">Иван Кротов</p>
                                         </div>
                                     </div>
@@ -789,7 +789,7 @@
                             </li>
                             <li class="reviews__item js-item-more position-wrapper__item">
                                 <div class="reviews__item__container js-reviews-container">
-                                    <div class="reviews-decor-elem" v-lazy:background-image="'/img/reviews-decor.png'"></div>
+                                    <div class="reviews-decor-elem" v-lazy:background-image="'./img/reviews-decor.png'"></div>
                                     <div class="reviews__item__header">
                                         <ul class="star__list star__list-checked">
                                             <li class="star__item">
@@ -818,7 +818,7 @@
                                     <div class="reviews__item__footer">
                                         <button class="js-more-info js-button text-button" data-target="more-review">Подробнее</button>
                                         <div class="wrapper">
-                                            <div class="reviews__img" v-lazy:background-image="'/img/reviews-photo.png'"></div>
+                                            <div class="reviews__img" v-lazy:background-image="'./img/reviews-photo.png'"></div>
                                             <p class="reviews__name">Иван Кротов</p>
                                         </div>
                                     </div>
@@ -854,9 +854,9 @@
                         <p class="general-header-block__sub">Дополнительный текст</p>
                     </div>
                     <ul class="advantages__list">
-                        <li class="advantages__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="advantages__item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                        <li class="advantages__item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                        <li class="advantages__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="advantages__item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                        <li class="advantages__item" v-lazy:background-image="'./img/banner-img.png'"></li>
                     </ul>
                 </div>
             </section>
@@ -870,7 +870,7 @@
                         <ul class="blog__list position-wrapper__list">
                             <li class="blog__item position-wrapper__item">
                                 <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
                                 </div>
                                 <div class="blog__item__header">
                                     <p class="blog__item__category">Категория блога</p>
@@ -900,7 +900,7 @@
                             </li>
                             <li class="blog__item position-wrapper__item">
                                 <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
                                 </div>
                                 <div class="blog__item__header">
                                     <p class="blog__item__category">Категория блога</p>
@@ -930,7 +930,7 @@
                             </li>
                             <li class="blog__item position-wrapper__item">
                                 <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
                                 </div>
                                 <div class="blog__item__header">
                                     <p class="blog__item__category">Категория блога</p>
@@ -960,7 +960,7 @@
                             </li>
                             <li class="blog__item position-wrapper__item">
                                 <div class="blog__item__img">
-                                    <img v-lazy="'/img/banner-img.png'" alt="title">
+                                    <img v-lazy="'./img/banner-img.png'" alt="title">
                                 </div>
                                 <div class="blog__item__header">
                                     <p class="blog__item__category">Категория блога</p>
@@ -1074,7 +1074,7 @@
                 <div class="footer__main-info">
                     <div class="footer__content">
                         <a href="/" class="footer__logo">
-                            <img v-lazy="'/img/logo.png'" alt="Logo">
+                            <img v-lazy="'./img/logo.png'" alt="Logo">
                         </a>
                         <div class="footer__text">
                             <p>Таким образом консультация с широким активом позволяет выполнять важные задания по разработке дальнейших направлений развития</p>
@@ -1210,8 +1210,8 @@
                             <span class="icon-arrow-right"></span>
                         </button>
                         <ul class="product-popup__img-list">
-                            <li class="product-popup__img-item show js-oneMove-item" v-lazy:background-image="'/img/banner-img.png'"></li>
-                            <li class="product-popup__img-item js-oneMove-item" v-lazy:background-image="'/img/banner-img.png'"></li>
+                            <li class="product-popup__img-item show js-oneMove-item" v-lazy:background-image="'./img/banner-img.png'"></li>
+                            <li class="product-popup__img-item js-oneMove-item" v-lazy:background-image="'./img/banner-img.png'"></li>
                         </ul>
                     </div>
                     <div class="product__description product__description--popup">
