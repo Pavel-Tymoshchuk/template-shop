@@ -81,7 +81,6 @@ const app = new Vue({
             }
             
             function fixedBlock() {
-               
                 mainContentBottomPosition = mainContent.offsetHeight + mainContent.getBoundingClientRect().top + pageYOffset;
                 if(mainContentBottomPosition < (window.scrollY + window.innerHeight - 100)) {
                     wrapper.classList.add("hide");
@@ -96,6 +95,7 @@ const app = new Vue({
                 }
                 
             }
+            
             setTimeout(() => {
                 if(wrapper) {
                     fixedBlock();
@@ -143,6 +143,8 @@ const app = new Vue({
         
         this.changeComents();
         this.setStar();
-        this.fixedSiteBar();
+        setTimeout(()=> {
+            this.fixedSiteBar();
+        },1000);
     }
 });
