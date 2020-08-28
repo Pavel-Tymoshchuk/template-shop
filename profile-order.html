@@ -527,9 +527,9 @@
                     </div>
                     <div class="general-tabs">
                         <div class="general-tabs__list">
-                            <a href="#" class="general-tabs__button">Мои заказы</a>
+                            <a href="#" class="general-tabs__button active">Мои заказы</a>
                             <a href="#" class="general-tabs__button">Мои возвраты</a>
-                            <a href="#" class="general-tabs__button active">Мой профиль</a>
+                            <a href="#" class="general-tabs__button">Мой профиль</a>
                             <a href="#" class="general-tabs__button">мои отзывы</a>
                             <a href="#" class="general-tabs__button">избранное</a>
                             <a href="#" class="general-tabs__button">просмотренное</a>
@@ -538,106 +538,119 @@
                         </div>
                     </div>
                     <div class="profile__content">
-                        <p class="main-caption-m profile__content__caption">Мой профиль</p>
-                        <div class="profile__main-info">
-                            <div class="profile__main-info__image" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                            <p class="profile__main-info__email">marina@gmail.com</p>
-                            <label class="profile__main-info__change-photo">
-                                <input class="input" type="file" accept=".jpg, .jpeg, .png, .svg">
-                                <span>Сменить фото</span>
-                            </label>
+                        <p class="main-caption-m profile__content__caption">Мои заказы</p>
+                        <div class="profile__order-table">
+                            <div class="profile__order-table__header">
+                                <p class="order-table-position-number">№</p>
+                                <p class="order-table-position-date">Дата оформления</p>
+                                <p class="order-table-position-name">Имя получателя</p>
+                                <p class="order-table-position-price">Общая сумма заказа</p>
+                                <p class="order-table-position-status">Статус</p>
+                                <p class="order-table-position-edit"></p>
+                            </div>
+                            <ul class="profile__order-table__list">
+                                <li class="profile__order-table__item">
+                                    <div class="profile__order-table__item-points order-table-position-number">
+                                        <p class="type">№</p>
+                                        <p class="description">123456</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-date">
+                                        <p class="type">Дата оформления</p>
+                                        <p class="description">12.09.2020</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-name">
+                                        <p class="type">Имя получателя</p>
+                                        <p class="description">Иванов Иван</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points profile__order-table__item-points--price order-table-position-price">
+                                        <p class="type">Общая сумма заказа</p>
+                                        <p class="description">300 грн</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points profile__order-table__item-points--status order-table-position-status">
+                                        <p class="type">Статус</p>
+                                        <p class="description">отправлен</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-edit">
+                                        <button class="profile__main-info__edit js-button" data-target="order-info">
+                                            <span class="decor"></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="profile__order-table__item">
+                                    <div class="profile__order-table__item-points order-table-position-number">
+                                        <p class="type">№</p>
+                                        <p class="description">123456</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-date">
+                                        <p class="type">Дата оформления</p>
+                                        <p class="description">12.09.2020</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-name">
+                                        <p class="type">Имя получателя</p>
+                                        <p class="description">Иванов Иван</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points profile__order-table__item-points--price order-table-position-price">
+                                        <p class="type">Общая сумма заказа</p>
+                                        <p class="description">300 грн</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points profile__order-table__item-points--status order-table-position-status">
+                                        <p class="type">Статус</p>
+                                        <p class="description delivery-product">доставлен</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-edit">
+                                        <button class="profile__main-info__edit js-button" data-target="order-info">
+                                            <span class="decor"></span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="profile__order-table__item">
+                                    <div class="profile__order-table__item-points order-table-position-number">
+                                        <p class="type">№</p>
+                                        <p class="description">123456</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-date">
+                                        <p class="type">Дата оформления</p>
+                                        <p class="description">12.09.2020</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-name">
+                                        <p class="type">Имя получателя</p>
+                                        <p class="description">Иванов Иван</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points profile__order-table__item-points--price order-table-position-price">
+                                        <p class="type">Общая сумма заказа</p>
+                                        <p class="description">300 грн</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points profile__order-table__item-points--status order-table-position-status">
+                                        <p class="type">Статус</p>
+                                        <p class="description delivery-product">доставлен</p>
+                                    </div>
+                                    <div class="profile__order-table__item-points order-table-position-edit">
+                                        <button class="profile__main-info__edit js-button" data-target="order-info">
+                                            <span class="decor"></span>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="profile__information">
-                            <div class="profile__information__item">
-                                <p class="profile__caption">Персональные данные</p>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Email</span>
-                                    <input type="email" class="main_input" placeholder="Email">
-                                </label>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Номер телефона</span>
-                                    <input type="tel" class="main_input" placeholder="+38">
-                                </label>
-                                <button class="text-button js-button" data-target="change-pass">Изменить пароль</button>
-                            </div>
-                            <div class="profile__information__item">
-                                <p class="profile__caption">Информация о доставке</p>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Фамилия получателя</span>
-                                    <input type="text" class="main_input" placeholder="Фамилия получателя">
-                                </label>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Имя получателя</span>
-                                    <input type="text" class="main_input" placeholder="Имя">
-                                </label>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Номер телефона</span>
-                                    <input type="tel" class="main_input" placeholder="+38">
-                                </label>
-                                <div class="input_wrapper js-drop-item general-drop-wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Способ доставки</span>
-                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
-                                        <input type="text" class="main_input js-drop-input" placeholder="Способ доставки" readonly>
-                                        <span class="icon-drop-arrow"></span>
-                                    </button>
-                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
-                                        <span class="general-drop__list">
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Способ доставки</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Способ доставки1</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Способ доставки2</span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </div>
-                                <div class="input_wrapper js-drop-item general-drop-wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Выберите город</span>
-                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
-                                        <input type="text" class="main_input js-drop-input" placeholder="Выберите город" readonly>
-                                        <span class="icon-drop-arrow"></span>
-                                    </button>
-                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
-                                        <span class="general-drop__list">
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Харьков</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Харьков1</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Харьков2</span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </div>
-                                <div class="input_wrapper js-drop-item general-drop-wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Выберите отделение</span>
-                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
-                                        <input type="text" class="main_input js-drop-input" placeholder="Выберите отделение" readonly>
-                                        <span class="icon-drop-arrow"></span>
-                                    </button>
-                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
-                                        <span class="general-drop__list">
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">№24, ул.Есенина,</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">№24, ул.Есенина,1</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">№24, ул.Есенина,2</span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <button class="main-button main-button--profile">
-                                <span class="text">сохранить изменения</span>
+                        <div class="general-navigation">
+                            <button class="general-button-more-info general-button-more-info--navigation">
+                                <span class="text">загрузить еще</span>
                             </button>
+                            <div class="general-pagination">
+                                <button class="arrow-button arrow-button--pagination disabled">
+                                    <span class="icon-arrow-left"></span>
+                                </button>
+                                <ul class="pagination__list">
+                                    <li class="pagination__item active">1</li>
+                                    <li class="pagination__item">2</li>
+                                    <li class="pagination__item">3</li>
+                                    <li class="pagination__item pagination__item--dots">...</li>
+                                    <li class="pagination__item">12</li>
+                                </ul>
+                                <button class="arrow-button arrow-button--pagination">
+                                    <span class="icon-arrow-right"></span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -853,6 +866,83 @@
                         <p>Нет аккаунта? <button class="popup-form__footer__button js-button" data-target="registration">Зарегистрироваться</button></p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="popup popup-form popup-order-info js-popup" data-target="order-info">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Заказ № 234543</p>
+                <ul class="popup-order-info__list">
+                    <li class="popup-order-info__item">
+                        <p class="type">Получатель:</p>
+                        <p class="description">Иванов Иван</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type">Номер телефона:</p>
+                        <p class="description">+380509876675</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type">Email:</p>
+                        <p class="description">email@mail.com</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type">Город:</p>
+                        <p class="description">Харьков</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type">Способ доставки:</p>
+                        <p class="description">Новая почта</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type">Отделение:</p>
+                        <p class="description">№25, ул. Пушкинская, 25</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type"> Способ оплаты:</p>
+                        <p class="description">Банковской картой</p>
+                    </li>
+                    <li class="popup-order-info__item">
+                        <p class="type">Комментарий к заказу:</p>
+                        <p class="description">Хорошо упаковать</p>
+                    </li>
+                </ul>
+                <ul class="popup-order__product-list">
+                    <li class="popup-order__product-item">
+                        <div class="popup-order__product__img" v-lazy:background-image="'./img/product-img.png'"></div>
+                        <div class="popup-order__product__info">
+                            <p class="popup-order__product__name">Название товара в две строки</p>
+                            <p class="popup-order__product__param">Параметр: <span>значение параметра</span></p>
+                            <div class="popup-order__product__footer">
+                                <p class="popup-order__product__param">Кол-во:<span>2×200 грн</span></p>
+                                <p class="popup-order__product__price">400 грн</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="popup-order__product-item">
+                        <div class="popup-order__product__img" v-lazy:background-image="'./img/product-img.png'"></div>
+                        <div class="popup-order__product__info">
+                            <p class="popup-order__product__name">Название товара</p>
+                            <p class="popup-order__product__param">Параметр: <span>значение параметра</span></p>
+                            <div class="popup-order__product__footer">
+                                <p class="popup-order__product__param">Кол-во:<span>2×200 грн</span></p>
+                                <p class="popup-order__product__price">400 грн</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="popup-order__total-price">
+                    <p class="popup-order__product__param">Общая сумма заказа: <strong>800 грн</strong></p>
+                </div>
+                <!-- Когда доставленно -->
+                <button class="main-button main-button--width">
+                    <span class="text">повторить заказ</span>
+                </button>
+                <!-- Когда отправленно -->
+                <!-- <button class="general-batton-more">
+                    <span class="text">отследить заказ</span>
+                </button> -->
             </div>
         </section>
         <section class="popup popup-form popup-change-pass js-popup" data-target="change-pass">

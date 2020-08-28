@@ -527,9 +527,9 @@
                     </div>
                     <div class="general-tabs">
                         <div class="general-tabs__list">
-                            <a href="#" class="general-tabs__button">Мои заказы</a>
+                            <a href="#" class="general-tabs__button active">Мои заказы</a>
                             <a href="#" class="general-tabs__button">Мои возвраты</a>
-                            <a href="#" class="general-tabs__button active">Мой профиль</a>
+                            <a href="#" class="general-tabs__button">Мой профиль</a>
                             <a href="#" class="general-tabs__button">мои отзывы</a>
                             <a href="#" class="general-tabs__button">избранное</a>
                             <a href="#" class="general-tabs__button">просмотренное</a>
@@ -538,107 +538,195 @@
                         </div>
                     </div>
                     <div class="profile__content">
-                        <p class="main-caption-m profile__content__caption">Мой профиль</p>
-                        <div class="profile__main-info">
-                            <div class="profile__main-info__image" v-lazy:background-image="'./img/reviews-photo.png'"></div>
-                            <p class="profile__main-info__email">marina@gmail.com</p>
-                            <label class="profile__main-info__change-photo">
-                                <input class="input" type="file" accept=".jpg, .jpeg, .png, .svg">
-                                <span>Сменить фото</span>
-                            </label>
-                        </div>
-                        <div class="profile__information">
-                            <div class="profile__information__item">
-                                <p class="profile__caption">Персональные данные</p>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Email</span>
-                                    <input type="email" class="main_input" placeholder="Email">
-                                </label>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Номер телефона</span>
-                                    <input type="tel" class="main_input" placeholder="+38">
-                                </label>
-                                <button class="text-button js-button" data-target="change-pass">Изменить пароль</button>
-                            </div>
-                            <div class="profile__information__item">
-                                <p class="profile__caption">Информация о доставке</p>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Фамилия получателя</span>
-                                    <input type="text" class="main_input" placeholder="Фамилия получателя">
-                                </label>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Имя получателя</span>
-                                    <input type="text" class="main_input" placeholder="Имя">
-                                </label>
-                                <label class="input_wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Номер телефона</span>
-                                    <input type="tel" class="main_input" placeholder="+38">
-                                </label>
-                                <div class="input_wrapper js-drop-item general-drop-wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Способ доставки</span>
-                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
-                                        <input type="text" class="main_input js-drop-input" placeholder="Способ доставки" readonly>
+                        <p class="main-caption-m profile__content__caption">Мои промокоды</p>
+                        <p class="promo-code-sub-caption">Доступные</p>
+                        <ul class="promo-code__list">
+                            <li class="promo-code__item">
+                                <div class="promo-code__img" v-lazy:background-image="'./img/promo-code-img.png'"></div>
+                                <div class="promo-code__info">
+                                    <p class="promo-code__time">Промокод активен до 18.09.2020</p>
+                                    <p class="promo-code__name">Выгода до 70% на женские коллекции!</p>
+                                    <p class="promo-code__text">Зайдите в раздел распродажи по ссылке и покупайте товары из женских коллекций с большой экономией</p>
+                                </div>
+                                <div class="promo-code__buttons">
+                                    <div class="general-drop-wrapper general-drop-wrapper--promo-code js-drop-item">
+                                         <button class="promo-code__social-button js-drop-button">
+                                            <span class="icon-social"></span>
+                                        </button>
+                                        <div class="general-drop-content__wrapper general-drop-content__wrapper--promo-code">
+                                            <ul class="social__list social__list--inner-content">
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--fb">
+                                                        <span class="icon-fb"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-whatsapp"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--telegram">
+                                                        <span class="icon-telegram"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-viber"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="main-button main-button--promo-code">
+                                        <span class="text">использовать промокод</span>
                                         <span class="icon-drop-arrow"></span>
                                     </button>
-                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
-                                        <span class="general-drop__list">
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Способ доставки</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Способ доставки1</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Способ доставки2</span>
-                                            </span>
-                                        </span>
-                                    </span>
                                 </div>
-                                <div class="input_wrapper js-drop-item general-drop-wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Выберите город</span>
-                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
-                                        <input type="text" class="main_input js-drop-input" placeholder="Выберите город" readonly>
+                            </li>
+                            <li class="promo-code__item">
+                                <div class="promo-code__img" v-lazy:background-image="'./img/promo-code-img.png'"></div>
+                                <div class="promo-code__info">
+                                    <p class="promo-code__time">Промокод активен до 18.09.2020</p>
+                                    <p class="promo-code__name">Выгода до 70% на женские коллекции!</p>
+                                    <p class="promo-code__text">Зайдите в раздел распродажи по ссылке и покупайте товары из женских коллекций с большой экономией</p>
+                                </div>
+                                <div class="promo-code__buttons">
+                                    <div class="general-drop-wrapper general-drop-wrapper--promo-code js-drop-item">
+                                         <button class="promo-code__social-button js-drop-button">
+                                            <span class="icon-social"></span>
+                                        </button>
+                                        <div class="general-drop-content__wrapper general-drop-content__wrapper--promo-code">
+                                            <ul class="social__list social__list--inner-content">
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--fb">
+                                                        <span class="icon-fb"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-whatsapp"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--telegram">
+                                                        <span class="icon-telegram"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-viber"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="main-button main-button--promo-code">
+                                        <span class="text">использовать промокод</span>
                                         <span class="icon-drop-arrow"></span>
                                     </button>
-                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
-                                        <span class="general-drop__list">
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Харьков</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Харьков1</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">Харьков2</span>
-                                            </span>
-                                        </span>
-                                    </span>
                                 </div>
-                                <div class="input_wrapper js-drop-item general-drop-wrapper input_wrapper--margin-bottom">
-                                    <span class="input-caption">Выберите отделение</span>
-                                    <button class="general-drop-wrapper__button general-drop-wrapper__button--inputs js-drop-button">
-                                        <input type="text" class="main_input js-drop-input" placeholder="Выберите отделение" readonly>
+                            </li>
+                        </ul>
+                        <p class="promo-code-sub-caption">Недействующие</p>
+                        <ul class="promo-code__list promo-code__list--disabled">
+                            <li class="promo-code__item">
+                                <div class="promo-code__img" v-lazy:background-image="'./img/promo-code-img.png'"></div>
+                                <div class="promo-code__info">
+                                    <p class="promo-code__time">Промокод активен до 18.09.2020</p>
+                                    <p class="promo-code__name">Выгода до 70% на женские коллекции!</p>
+                                    <p class="promo-code__text">Зайдите в раздел распродажи по ссылке и покупайте товары из женских коллекций с большой экономией</p>
+                                </div>
+                                <div class="promo-code__buttons">
+                                    <div class="general-drop-wrapper general-drop-wrapper--promo-code js-drop-item">
+                                         <button class="promo-code__social-button js-drop-button">
+                                            <span class="icon-social"></span>
+                                        </button>
+                                        <div class="general-drop-content__wrapper general-drop-content__wrapper--promo-code">
+                                            <ul class="social__list social__list--inner-content">
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--fb">
+                                                        <span class="icon-fb"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-whatsapp"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--telegram">
+                                                        <span class="icon-telegram"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-viber"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="main-button main-button--promo-code">
+                                        <span class="text">использовать промокод</span>
                                         <span class="icon-drop-arrow"></span>
                                     </button>
-                                    <span class="general-drop-content__wrapper general-drop-content__wrapper--input">
-                                        <span class="general-drop__list">
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">№24, ул.Есенина,</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">№24, ул.Есенина,1</span>
-                                            </span>
-                                            <span class="general-drop__item js-drop-contains">
-                                                <span class="text">№24, ул.Есенина,2</span>
-                                            </span>
-                                        </span>
-                                    </span>
                                 </div>
-                            </div>
-                            <button class="main-button main-button--profile">
-                                <span class="text">сохранить изменения</span>
-                            </button>
-                        </div>
+                            </li>
+                            <li class="promo-code__item">
+                                <div class="promo-code__img" v-lazy:background-image="'./img/promo-code-img.png'"></div>
+                                <div class="promo-code__info">
+                                    <p class="promo-code__time">Промокод активен до 18.09.2020</p>
+                                    <p class="promo-code__name">Выгода до 70% на женские коллекции!</p>
+                                    <p class="promo-code__text">Зайдите в раздел распродажи по ссылке и покупайте товары из женских коллекций с большой экономией</p>
+                                </div>
+                                <div class="promo-code__buttons">
+                                    <div class="general-drop-wrapper general-drop-wrapper--promo-code js-drop-item">
+                                         <button class="promo-code__social-button js-drop-button">
+                                            <span class="icon-social"></span>
+                                        </button>
+                                        <div class="general-drop-content__wrapper general-drop-content__wrapper--promo-code">
+                                            <ul class="social__list social__list--inner-content">
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--fb">
+                                                        <span class="icon-fb"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-whatsapp"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link social__link--telegram">
+                                                        <span class="icon-telegram"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social__item">
+                                                    <a href="#" class="social__link">
+                                                        <span class="icon-viber"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="main-button main-button--promo-code">
+                                        <span class="text">использовать промокод</span>
+                                        <span class="icon-drop-arrow"></span>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="seo-blog">
+                <div class="seo-blog__wrapper container">
+                    <p class="main-caption-m">Как использовать промокоды</p>
+                    <div class="seo-text">
+                        <p>Получите на нашем сайте бесплатные промокоды – уникальные скидочные купоны, которые позволят вам принимать участие в самых горячих акциях</p>
+                        <p> Чтобы забрать промокод, просто выберите подходящую по времени и условиям проведения акцию, нажмите кнопку «Использовать промокод», выберите товар из каталога и скидка автоматически применится в корзине</p>
+                        <p>Обратите внимание, что один промокод можно использовать только один раз. Условия получения скидки по промокоду зависят от правил акции, по которой он получен – например, код может распространяться только на определенную группу товаров или на заказы на определенную суммуе</p>
                     </div>
                 </div>
             </section>

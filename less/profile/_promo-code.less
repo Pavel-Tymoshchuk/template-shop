@@ -1,0 +1,221 @@
+/* Promo code */
+
+.promo-code__main-caption {
+    margin-bottom: 30px;
+}
+
+.promo-code-sub-caption {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.promo-code__list {
+    margin-bottom: 40px;
+}
+
+.promo-code__list--disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.promo-code__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+    &:last-child {
+        margin-bottom: 0p;
+    }
+}
+
+.promo-code__img {
+    width: 74px;
+    height: 74px;
+    border-radius: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 30px;
+}
+
+.promo-code__info {
+    margin-right: auto;
+}
+
+.promo-code__time {
+    font-size: 12px;
+    line-height: 14px;
+    color: #828282;
+    margin-bottom: 10px;
+}
+
+.promo-code__name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2F80ED;
+    margin-bottom: 15px;
+}
+
+.promo-code__text {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.promo-code__buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    
+    .social__list {
+        margin-right: 0px;
+    }
+    
+    .social__item {
+        &:last-of-type {
+            margin-right: 0px;
+        }
+    }
+}
+
+.promo-code__social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    transition: color .4s;
+}
+
+.main-button--promo-code {
+    margin-left: 10px;
+    white-space: nowrap;
+    
+    .text {
+        margin-right: 15px;
+    }
+    
+    .icon-drop-arrow {
+        font-size: 4px;
+        line-height: 4px;
+        transform: rotate(-90deg);
+    }
+}
+
+.general-drop-wrapper--promo-code {
+    &.active {
+        .promo-code__social-button {
+            color: #2F80ED;
+        }
+    }
+}
+
+.general-drop-content__wrapper--promo-code {
+    padding: 20px;
+    min-width: 210px;
+    transform: translateX(calc(50% - 22px));
+}
+
+@media screen and (min-width: 1201px) {
+    .promo-code__social-button {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .promo-code-sub-caption {
+        margin-bottom: 20px;
+    }
+    
+    .promo-code__item {
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .promo-code__img {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+    }
+    
+    .promo-code__info {
+        width: calc(100% - 55px);
+    }
+    
+    .promo-code__name {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .promo-code__buttons {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    
+    .main-button--promo-code {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .general-drop-content__wrapper--promo-code {
+        transform: none;
+        right: auto;
+        left: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .promo-code-sub-caption {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .promo-code__item {
+        padding: 0px 0px 20px;
+        border-bottom: 1px solid #EEEEEE;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: transparent;
+    }
+    
+    .promo-code__img {
+        width: 100%;
+        height: 70px;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    
+    .promo-code__info {
+        width: 100%;
+    }
+    
+    .promo-code__name {
+        font-size: 14px;
+        line-height: 120%;
+    }
+    
+    .promo-code__text {
+        font-size: 12px;
+        line-height: 130%;
+    }
+    
+    .main-button--promo-code {
+        padding: 0px 15px;
+        
+        .text {
+            margin-right: 5px;
+        }
+    }
+}
