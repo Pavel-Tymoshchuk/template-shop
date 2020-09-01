@@ -611,9 +611,9 @@
                         <a href="#" class="preview-cart__promo-code-button">Применить промокод</a>
                     </li>
                 </ul>
-                <a href="#" class="main-button main-button--width">
+                <button class="main-button main-button--width js-button" data-target="transition-to-checkout">
                     <span class="text">оформить заказ</span>
-                </a>
+                </button>
                 <button class="text-button">
                     <span class="text">перейти в корзину</span>
                 </button>
@@ -842,7 +842,7 @@
                         <ul class="products-list position-wrapper__list">
                             <li class="products-item products-item--parameters position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
-                                <div class="products-item__img">
+                                <div class="products-item__img products-item__img--else">
                                     <img v-lazy="'./img/banner-img.png'" alt="title">
                                     <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
@@ -870,7 +870,7 @@
                             </li>
                             <li class="products-item products-item--parameters position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
-                                <div class="products-item__img">
+                                <div class="products-item__img products-item__img--else">
                                     <img v-lazy="'./img/banner-img.png'" alt="title">
                                     <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
@@ -898,7 +898,7 @@
                             </li>
                             <li class="products-item position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
-                                <div class="products-item__img">
+                                <div class="products-item__img products-item__img--else">
                                     <img v-lazy="'./img/banner-img.png'" alt="title">
                                     <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
@@ -919,7 +919,7 @@
                             </li>
                             <li class="products-item position-wrapper__item">
                                 <button class="products-item__open-popup js-button" data-target="product"></button>
-                                <div class="products-item__img">
+                                <div class="products-item__img products-item__img--else">
                                     <img v-lazy="'./img/banner-img.png'" alt="title">
                                     <img v-lazy="'./img/product-hover-img.png'" alt="title">
                                 </div>
@@ -1495,12 +1495,95 @@
                 </form>
             </div>
         </section>
+        <section class="popup popup-form js-popup" data-target="transition-to-checkout">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__sub"><strong>Переход в оформление заказа</strong></p>
+                <div class="popup-form__enter-button">
+                    <button class="general-button-more-info">
+                        <span class="text">продолжить как гость</span>
+                    </button>
+                </div>
+                <p class="popup-form__separator">или</p>
+                <div class="popup-form__enter-button">
+                    <button class="general-button-more-info">
+                        <span class="google-icon" v-lazy:background-image="'./img/icon-google.svg'"></span>
+                        <span class="text">продолжить с google</span>
+                    </button>
+                    <button class="general-button-more-info">
+                        <span class="icon-fb"></span>
+                        <span class="text">продолжить с facebook</span>
+                    </button>
+                    <button class="general-button-more-info js-button" data-target="enter-only-email">
+                        <span class="icon-email"></span>
+                        <span class="text">продолжить c email</span>
+                    </button>
+                </div>
+                
+                <div class="popup-form__footer">
+                    <div class="popup-form__footer__item">
+                        <p>При нажатие на "Регистрироваться" вы соглащаетесь с <a href="#" class="popup-form__footer__button">Условиями пользования</a> и <a href="#" class="popup-form__footer__button">Политикой кофиденциальности</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="popup popup-form popup-enter js-popup" data-target="enter-only-email">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Вход</p>
+                <form action="#" class="popup__form-wrapper popup__form-wrapper--profile">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Email</span>
+                        <input type="email" class="main_input" placeholder="Email">
+                    </label>
+                    <label class="input_wrapper js-input-wrapper">
+                        <span class="input-caption">Пароль</span>
+                        <input type="password" class="main_input main_input--pass-show js-pass-input" placeholder="Пароль" required>
+                        <button class="show-pass js-show-pass" type="button">
+                            <span class="icon-pass"></span>
+                        </button>
+                    </label>
+                    <button class="resest-password js-button" data-target="reset-pass">Забыли пароль?</button>
+                    <button class="main-button main-button--width">
+                        <span class="text">войти</span>
+                    </button>
+                </form>
+                <div class="popup-form__footer">
+                    <div class="popup-form__footer__item">
+                        <p>Нет аккаунта? <button class="popup-form__footer__button js-button" data-target="registration">Зарегистрироваться</button></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="popup popup-form js-popup" data-target="reset-pass">
+            <button class="close__popup js-close">
+                <span class="icon-close"></span>
+            </button>
+            <div class="popup__wrapper">
+                <p class="popup__caption">Сбросить пароль</p>
+                <p class="popup__sub">Введите свою почту</p>
+                <form action="#" class="popup__form-wrapper popup__form-wrapper--profile">
+                    <label class="input_wrapper">
+                        <span class="input-caption">Email</span>
+                        <input type="email" class="main_input" placeholder="Email">
+                    </label>
+                    <button class="main-button main-button--width">
+                        <span class="text">войти</span>
+                    </button>
+                </form>
+            </div>
+        </section>
         <section class="popup popup-form popup-enter js-popup" data-target="enter">
             <button class="close__popup js-close">
                 <span class="icon-close"></span>
             </button>
             <div class="popup__wrapper">
                 <p class="popup__caption">Вход</p>
+                <p class="popup__sub">После регистрации вы сможете быстрее оформлять заказы и отслеживать их</p>
                 <div class="popup-form__enter-button">
                     <button class="general-button-more-info">
                         <span class="google-icon" v-lazy:background-image="'./img/icon-google.svg'"></span>

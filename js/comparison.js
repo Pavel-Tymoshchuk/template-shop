@@ -24,7 +24,7 @@ const app = new Vue({
             let counter = 0;
             allInfoProductItems.forEach((item,index) => {
                 item.setAttribute('style', `height: ${arrayHeights[counter]}px;`);
-                counter == arrayHeights.length - 1 ? counter = 0 : counter ++;;
+                counter == arrayHeights.length - 1 ? counter = 0 : counter++;
             });
         },
         

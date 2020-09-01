@@ -196,6 +196,26 @@ document.addEventListener("DOMContentLoaded", function(){
     
     // Show reviews photo
     
+    // Shop password 
+    
+    document.addEventListener("click", function(e){
+        let item = e.target;
+        
+        if(item.closest(".js-show-pass")) {
+            let wrapperInput = item.closest(".js-input-wrapper");
+            let activeInput = wrapperInput.querySelector(".js-pass-input");
+            let getState = activeInput.getAttribute("type");
+            
+            if(getState == "password") {
+                activeInput.setAttribute("type", "text");
+            }else {
+                activeInput.setAttribute("type", "password");
+            }
+        }
+    });
+    
+    // Shop password 
+    
     // Mask tel
     
     [].forEach.call( document.querySelectorAll('input[type="tel"]'), function(input) {

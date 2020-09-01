@@ -15,6 +15,8 @@ gulp.task('serve', ['less'], function() {
     gulp.watch("less/article/*.less", ['less']);
     gulp.watch("less/comparison/*.less", ['less']);
     gulp.watch("less/profile/*.less", ['less']);
+    gulp.watch("less/faq/*.less", ['less']);
+    gulp.watch("less/contact/*.less", ['less']);
     // gulp.watch("less/*.less").on('change', browserSync.reload);
     // gulp.watch("less/index/*.less").on('change', browserSync.reload);
     gulp.watch("*.html").on('change', browserSync.reload);
@@ -22,14 +24,6 @@ gulp.task('serve', ['less'], function() {
     gulp.watch("js/*.js").on('change', browserSync.reload);
 });
 
-// gulp.task('less', function() {
-//   gulp.src('less/*.less')
-//   // gulp.src('../scss/*.scss')
-//   .pipe(less({outputStyle: 'expanded'}).on('error', less.logError))
-//   .pipe(gulp.dest('css/'))
-//   .pipe(browserSync.stream());
-// });
-//gulp.task('default', ['serve']);
 gulp.task('default', ['serve'],() =>
     gulp.src('css/main.css')
         .pipe(autoprefixer({

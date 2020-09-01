@@ -1,0 +1,229 @@
+/* Faq */
+
+.faq__main-list {
+    margin-top: 90px;
+}
+
+.faq__main-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.faq__type {
+    width: calc(24.5% - 15px);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: #2F80ED;
+}
+
+.faq__main-item__container {
+    width: calc(75.5% - 15px);
+}
+
+.faq__sub-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 20px;
+    
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    
+    &.active {
+        .faq__sub-item__info {
+            display: block;
+            animation: show-faq .4s;
+        }
+        
+        .faq__sub-item__caption {
+            color: #2F80ED;
+            
+            .icon-drop-arrow {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+}
+
+@keyframes show-faq {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.faq__sub-item__caption {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    width: 100%;
+    text-align: left;
+    transition: color .4s;
+    
+    .decor-elem {
+        font-size: 10px;
+        line-height: 16px;
+        text-align: center;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #2F80ED;
+        border-radius: 50%;
+        margin-right: 15px;
+        color: #2F80ED;
+        flex-shrink: 0;
+    }
+    
+    .icon-drop-arrow {
+        margin-left: auto;
+        font-size: 6px;
+        transition: transform .4s;
+    }
+    
+    .text {
+        margin-right: 10px;
+    }
+}
+
+.faq__sub-item__info {
+    display: none;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 120%;
+    color: #4F4F4F;
+    margin-left: 31px;
+    
+    button {
+        color: #2F80ED;
+    }
+    
+    p {
+        margin-bottom: 30px;
+        
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    
+    h1,h2,h3 {
+        font-size: 18px;
+        line-height: 120%;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    
+    h4,h5,h6 {
+        font-size: 16px;
+        line-height: 120%;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+}
+
+.faq__call-back {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.faq__call-back__sub-caption {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 20px;
+}
+
+.faq__call-back__form {
+    max-width: 400px;
+    margin: 20px auto 0px;
+    
+    .main-button {
+        margin: 20px auto 0px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .faq__sub-item__caption {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .faq__main-list {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+    .faq__main-list {
+        margin-top: 20px;
+    }
+    
+    .faq__main-item {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    
+    .faq__type {
+        width: 100%;
+        font-size: 16px;
+        line-height: 120%;
+        margin-bottom: 20px;
+    }
+    
+    .faq__main-item__container {
+        width: 100%;
+    }
+    
+    .faq__sub-item__caption {
+        font-size: 16px;
+        line-height: 120%;
+        
+        .decor-elem {
+            margin-right: 10px;
+        }
+    }
+    
+    .faq__sub-item__info {
+        margin-left: 26px;
+        font-size: 14px;
+        line-height: 120%;
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        h1,h2,h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        h4,h5,h6 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    }
+    
+    .faq__call-back {
+        margin-top: 50px;
+    }
+    
+    .faq__call-back__sub-caption {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

@@ -42,6 +42,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-phone:before {
+  content: "\e915";
+}
+.icon-place:before {
+  content: "\e916";
+}
+.icon-email:before {
+  content: "\e914";
+}
+.icon-pass:before {
+  content: "\e913";
+}
 .icon-social:before {
   content: "\e912";
 }
@@ -248,7 +260,7 @@ main {
             visibility: visible;
             opacity: 1;
             z-index: 5;
-            transition: visibility 0s 0s, opacity .4s;
+            transition: visibility 0s 0s, opacity .3s;
         }
         
         .icon-drop-arrow {
@@ -258,7 +270,7 @@ main {
     
     .icon-drop-arrow {
         font-size: 4px;
-        transition: transform .4s, color .4s;
+        transition: transform .3s, color .3s;
     }
 }
 
@@ -300,7 +312,7 @@ main {
     border-radius: 2px;
     color: @general-color;
     z-index: 4;
-    transition: visibility 0s .4s, opacity .4s;
+    transition: visibility 0s .3s, opacity .3s;
 }
 
 .general-drop-content__wrapper--input {
@@ -342,7 +354,7 @@ main {
 }
 
 .general-drop__link {
-    transition: color .4s;
+    transition: color .3s;
 }
 
 .hidden-input {
@@ -366,9 +378,10 @@ main {
     font-size: 12px;
     line-height: 12px;
     letter-spacing: 0.05em;
+    white-space: nowrap;
     text-transform: uppercase;
     color: @general-color;
-    transition: color .4s, background-color .4s, border-color .4s;
+    transition: color .3s, background-color .3s, border-color .3s;
     
     .icon-drop-arrow {
         font-size: 4px;
@@ -438,8 +451,17 @@ main {
     .general-drop__item {
         padding: 10px 20px;
         margin: 0px;
-        transition: color .4s, background-color .4s;
+        transition: color .3s, background-color .3s;
     }
+}
+
+.show-pass {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 11px;
+    color: #BDBDBD;
+    transition: color .3s;
 }
 
 .input_wrapper--margin-bottom {
@@ -467,7 +489,7 @@ main {
     outline: none;
     border: 1px solid #E0E0E0;
     border-radius: 2px;
-    transition: border-color .4s;
+    transition: border-color .3s;
     
     &::-ms-clear {
         display: none;
@@ -478,7 +500,7 @@ main {
     }
     
     &:focus {
-        border-color: #2F80ED;
+        border-color: #2F80ED !important;
     }
 }
 
@@ -495,7 +517,7 @@ main {
     height: 135px;
     border: 1px solid #E0E0E0;
     border-radius: 2px;
-    transition: border-color .4s;
+    transition: border-color .3s;
     
     &::-ms-clear {
         display: none;
@@ -510,6 +532,10 @@ main {
     }
 }
 
+.main_input--pass-show {
+    padding-right: 40px;
+}
+
 .text-button {
     font-weight: 500;
     font-size: 12px;
@@ -517,7 +543,7 @@ main {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: @general-color;
-    transition: color .4s;
+    transition: color .3s;
     
     &.disabled {
         color: #BDBDBD;
@@ -540,7 +566,7 @@ main {
     height: 45px;
     background: #2F80ED;
     border-radius: 2px;
-    transition: background-color .4s;
+    transition: background-color .3s;
     
     &.disabled {
         opacity: 0.5;
@@ -590,7 +616,7 @@ main {
 }
 
 .arrow-button {
-    transition: color .4s;
+    transition: color .3s;
     
     &.disabled {
         color: #E0E0E0;
@@ -612,7 +638,7 @@ main {
     color: @general-color;
     border: 1px solid #EEEEEE;
     border-radius: 2px;
-    transition: color .4s, border-color .4s;
+    transition: color .3s, border-color .3s;
     
     &.disabled {
         color: #BDBDBD;
@@ -661,7 +687,7 @@ main {
     margin-right: 10px;
     cursor: pointer;
     border-radius: 50%;
-    transition: color .4s, background-color .4s;
+    transition: color .3s, background-color .3s;
     
     &:last-child {
         margin-right: 0px;
@@ -777,7 +803,7 @@ main {
     border: 1px solid #E0E0E0;
     border-radius: 1px;
     flex-shrink: 0;
-    transition: border-color .4s;
+    transition: border-color .3s;
     position: relative;
     
     .icon-active {
@@ -789,7 +815,7 @@ main {
         transform: translate(-50%,-50%);
         opacity: 0;
         color: #2F80ED;
-        transition: opacity .4s;
+        transition: opacity .3s;
     }
 }
 
@@ -850,7 +876,7 @@ main {
         opacity: 0;
         background-color: #2F80ED;
         border-radius: 50%;
-        transition: opacity .4s;
+        transition: opacity .3s;
     }
 }
 
@@ -1015,7 +1041,7 @@ main {
     font-size: 12px;
     line-height: 14px;
     color: #2F80ED;
-    transition: color .4s;
+    transition: color .3s;
 }
 
 .main-push-notification__clear {
@@ -1025,14 +1051,14 @@ main {
     font-size: 13px;
     line-height: 16px;
     color: #828282;
-    transition: color .4s;
+    transition: color .3s;
 }
 
 /* //Notyficaption */
 
 .add-to-comparison {
     font-size: 16px;
-    transition: color .4s
+    transition: color .3s
 }
 
 /* Search */
@@ -1044,7 +1070,7 @@ main {
     top: 50%;
     font-size: 14px;
     transform: translateY(-50%);
-    transition: color .4s;
+    transition: color .3s;
 }
 
 .input-search-icon {
@@ -1054,7 +1080,7 @@ main {
     font-size: 18px;
     pointer-events: none;
     transform: translateY(-50%);
-    transition: color .4s;
+    transition: color .3s;
 }
 
 /* /Search */
@@ -1073,13 +1099,14 @@ main {
     line-height: 21px;
     color: @general-color;
     
-    &::before {
+    &::after {
         content: "";
-        position: absolute;
-        right: -4px;
-        bottom: 0px;
+        display: inline-block;
+        position: relative;
+        bottom: -2px;
         height: 14px;
         width: 1px;
+        margin-left: 8px;
         background-color: @general-color;
         pointer-events: none;
     }
@@ -1089,7 +1116,7 @@ main {
         color: #BDBDBD;
         margin-right: 0px;
         
-        &::before {
+        &::after {
             display: none;
         }
     }
@@ -1209,7 +1236,7 @@ main {
         background: linear-gradient(90deg, #FFFFFF 58.75%, rgba(255, 255, 255, 0) 100%);
         z-index: -1;
         opacity: 0;
-        transition: opacity .4s;
+        transition: opacity .3s;
     }
     
     &.active {
@@ -1252,7 +1279,7 @@ main {
     color: #333333;
     position: relative;
     padding-bottom: 15px;
-    transition: color .4s;
+    transition: color .3s;
     margin-right: 30px;
     white-space: nowrap;
     
@@ -1272,7 +1299,7 @@ main {
         width: 0px;
         height: 1px;
         background-color: #2F80ED;
-        transition: width .4s;
+        transition: width .3s;
     }
 }
 
@@ -1289,12 +1316,12 @@ main {
     height: 10px;
     color: #333333;
     z-index: 3;
-    transition: opacity .4s, visibility 0s 0s;
+    transition: opacity .3s, visibility 0s 0s;
     
     &.hidden {
         opacity: 0;
         visibility: hidden;
-        transition: opacity .4s, visibility 0s .4s;
+        transition: opacity .3s, visibility 0s .3s;
     }
 }
 
@@ -1328,7 +1355,7 @@ main {
 .general__sort-item {
     margin-right: 20px;
     color: #828282;
-    transition: color .4s;
+    transition: color .3s;
     
     &.active {
         color: #333333;
@@ -1411,7 +1438,7 @@ main {
     font-size: 17px;
     opacity: 0;
     z-index: 3;
-    transition: color .4s, opacity .4s;
+    transition: color .3s, opacity .3s;
     
     &.active {
         opacity: 1;
@@ -1525,7 +1552,7 @@ main {
     line-height: 140%;
     text-transform: uppercase;
     margin-bottom: 15px;
-    transition: color .4s;
+    transition: color .3s;
 }
 
 .preview-cart__parm {
@@ -1645,11 +1672,16 @@ main {
     color: #828282;
 }
 
+.preview-cart__total-type {
+    margin-right: 15px;
+}
+
 .preview-cart__promo-code-button {
     font-size: 13px;
     line-height: 16px;
     color: #2F80ED;
-    transition: color .4s;
+    text-align: right;
+    transition: color .3s;
 }
 
 /* Previews cart */
@@ -1851,6 +1883,12 @@ main {
         }
     }
     
+    .show-pass {
+        &:hover {
+            color: #333333; 
+        }
+    }
+    
     .preview-cart__name {
         &:hover {
             color: #2F80ED;
@@ -2006,6 +2044,32 @@ main {
     .main-caption-s {
         font-size: 16px;
         line-height: 130%;
+    }
+    
+    /* Previews cart */
+    
+    .preview-cart__main {
+        padding: 40px 16px 0px;
+    }
+    
+    .preview-cart__footer {
+        padding: 20px 16px 40px;
+    }
+    
+    .preview-cart__img {
+        width: 110px;
+        height: 110px;
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+    
+    .preview-cart__info__footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cart__info__item-description__price--popup {
+        margin-top: 15px;
     }
     
     /* Pagination */

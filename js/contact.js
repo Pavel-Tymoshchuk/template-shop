@@ -11,16 +11,6 @@ const app = new Vue({
     components: {
     },
     methods: {
-        setNameInPopupDelete() {
-            let allButton = document.querySelectorAll('.js-delete-item-button');
-            
-            allButton.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    let namaProduct = item.closest('.js-delete-item').querySelector('.js-delete-item-name').innerHTML;
-                    document.querySelector('.js-popup-name').innerHTML = namaProduct;
-                });
-            });
-        }
     },
     mounted() {
         this.category = [
@@ -46,7 +36,5 @@ const app = new Vue({
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth;
         });
-        
-        this.setNameInPopupDelete();
     }
 });

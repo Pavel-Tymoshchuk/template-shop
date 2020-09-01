@@ -41,6 +41,10 @@
     line-height: 140%;
 }
 
+.footer__navigation__item__link {
+    transition: color .3s;
+}
+
 .footer__navigation__item__caption {
     color: #2F80ED;
     margin-bottom: 20px;
@@ -73,6 +77,14 @@
 
 .footer__copyright {
     color: #4F4F4F;
+}
+
+@media screen and (min-width: 1201px) {
+    .footer__navigation__item__link {
+        &:hover {
+            color: #828282;
+        }
+    }
 }
 
 @media screen and (max-width: 1024px) {

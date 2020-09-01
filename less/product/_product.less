@@ -113,6 +113,10 @@
     }
 }
 
+.product-user-info__calc-reviews {
+    transition: color .3s;
+}
+
 .product__description {
     width: calc(34.5% - 35px);
 }
@@ -208,10 +212,10 @@
     font-size: 14px;
     line-height: 150%;
     color: #4F4F4F;
-    margin-top: 40px;
+    margin-top: 30px;
     
     p {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         
         &:last-child {
             margin-bottom: 0px;
@@ -248,6 +252,12 @@
 
 @media screen and (min-width: 1201px) {
     .characteristic__description {
+        &:hover {
+            color: #2F80ED;
+        }
+    }
+    
+    .product-user-info__calc-reviews {
         &:hover {
             color: #2F80ED;
         }
