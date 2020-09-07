@@ -134,6 +134,40 @@
                         </div>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="header-search" :class="{active: searchInput}">
+                        <label class="input_wrapper">
+                            <input type="text" class="main_input" placeholder="Поиск" v-model="searchInput">
+                        </label>
+                        <button class="clear-search-input" v-if="searchInput" @click="searchInput = ''">
+                            <span class="icon-close"></span>
+                        </button>
+                        <span class="icon-search input-search-icon" v-else></span>
+                        <div class="header-search__live">
+                            <div class="header-search__live__wrapper">
+                                    <ul class="header-search__live__list">
+                                    <li class="header-search__live__item">
+                                        <a href="#" class="header-search__live__link">Распродажа / Lenovo</a>
+                                    </li>
+                                    <li class="header-search__live__item">
+                                        <a href="#" class="header-search__live__link">Новинки/Компьютеры / Lenovo</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header-search__live__wrapper">
+                                <p class="header-search__live__caption">Категории</p>
+                                <ul class="header-search__live__list">
+                                    <li class="header-search__live__item">
+                                        <a href="#" class="header-search__live__link"><span>Расп</span>родажа / Lenovo</a>
+                                    </li>
+                                    <li class="header-search__live__item">
+                                        <a href="#" class="header-search__live__link">Новинки/Компьютеры / Lenovo</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         <section class="push-notifications">
@@ -220,11 +254,12 @@
                 </ul>
             </div>
         </section>
-        <main>
+        <main class="main-search">
             <section class="search-page">
                 <div class="search-page__wrapper container">
                     <p class="search-page-empty">Результатов по запросу “пиво” не найдено</p>
-                    <p class="main-caption-s search-page__caption">Похожие результаты</p>
+                    <!-- <p class="main-caption-s search-page__caption">Похожие результаты</p> -->
+                    <p class="main-caption-s search-page__caption">Результаты поиска “Lenovo”</p>
                     <div class="position-wrapper">
                         <ul class="products-list position-wrapper__list">
                             <li class="products-item position-wrapper__item products-item--parameters">

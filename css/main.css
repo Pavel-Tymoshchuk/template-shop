@@ -217,6 +217,7 @@ main {
 }
 .container {
   max-width: 1330px;
+  width: 100%;
   padding: 0px 20px;
   margin: 0px auto;
 }
@@ -1617,6 +1618,9 @@ main {
   /* //General error page */
 }
 @media screen and (max-width: 767px) {
+  .main-search {
+    margin-top: 100px;
+  }
   .main-page {
     margin-top: 85px;
   }
@@ -4140,6 +4144,9 @@ main {
     margin-bottom: 10px;
     max-width: 100%;
     width: 100%;
+  }
+  .catalog-sub-category__list {
+    margin-top: 35px;
   }
   .catalog-sub-category__item {
     font-size: 12px;
